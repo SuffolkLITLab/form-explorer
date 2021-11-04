@@ -1,0 +1,328 @@
+<!--ZOOMSTOP-->
+ 
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<meta name='robots' content='noindex, nofollow'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8;" />
+<meta scheme="agency" content="Administrative Office of the Courts" name="agency" />
+<meta name="verify-v1" content="fa7QMTpyDeaY0ghZ2CHAsgfX/7x1I2ajsFGFUStf1mc=" />
+<meta name="msvalidate.01" content="E8E613521451073D5C60BE30468A13DF" />
+
+<!-- mobile viewport settings -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- link to new default font -->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="/anc/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/anc/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"> 
+
+<!-- current css -->
+<link type="text/css" rel="stylesheet" href="/anc/css/compiled/compiled-site.min.css?ver=202109101612" media="all" />
+
+
+<!-- current jQuery api link -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+
+<!--[if IE]><link type="text/css" rel="stylesheet" href="/anc/css/ie.css" media="all" /><![endif]-->
+<!--[if lt IE 7]><link type="text/css" rel="stylesheet" href="/anc/css/ie6.css" media="all" /><![endif]-->
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="/anc/css/ie7.css" media="all" /><![endif]-->
+
+<title>We couldn't find your page...&nbsp; - Utah Courts</title>
+<meta name="ZOOMTITLE" content="We couldn't find your page... ">
+<noscript>
+	<link type="text/css" rel="stylesheet" href="/anc/css/compiled/compiled-noscript.min.css?ver=202109101612" media="all" />
+</noscript>
+</head> 
+<body class="noRight">
+<!--ZOOMSTOP-->
+
+<p id="top"><a name="top"></a></p>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M6HBVS"
+height="0" width="0" style="display:none;visibility:hidden;"></iframe></noscript>
+<script src="/anc/inc/analytics-tag_manager.js"></script>
+<!-- End Google Tag Manager --><script type="text/javascript">if (new Date() < new Date("2021/10/10")) document.write("<div id='alertmsg' class='center printhide'><div class='alert alert-danger center' role='alert'><strong>Notice:</strong> System maintenance will be performed from 6:00 a.m. until 9:00 a.m. on Saturday, October 09, 2021. <br>Some or all areas of the website may be unavailable during this maintenance period.</div></div>")</script>	
+<div id="origcontainer"><br />
+ 
+<div class="printtitle"><h1>Utah Courts</h1></div>
+<div class="blackbox-container printhide">
+	<div class="blackbox2 printhide"><!-- This is to create the black box area in the title--></div>
+	<div class="blackbox1 printhide"><!-- This is to create the black box area in the title--></div>
+	<div class="bannertitle">
+		<h1 id="utahcourts"><a href="/">UTAH COURTS</a></h1>
+		<!-- This regulates the spacing of the search box on mobile devices --><p class="search-settings-p"></p>
+		<div class="search-settings printhide">
+		<a onClick="toggle('sizecontroldiv')" class="pointer sizecontrollink">
+		<img src="/anc/img/font.png" class="settings-button" alt="Settings" width="0" height="0" />
+		<!--<img src="/images/main/font.gif" class="settings-button" alt="Settings" /> -->
+		</a>
+		<form method="get" action="/search/search/" name="gs" id="search" title="Website Search">
+				<input type="hidden" name="zoom_per_page" value="10"/>
+				<input type="hidden" name="zoom_and" value="0"/>
+				<input type="hidden" name="zoom_sort" value="0"/>
+				<label for="SearchWebsite">
+					<input type="text" name="zoom_query" maxlength="256" value="" id="SearchWebsite" placeholder="Search utcourts.gov" class="gsearch" />
+					<input type="image" class="search-main" src="/anc/img/search.png" alt="Search the Utah Courts Website" />
+				</label>
+		</form>
+		</div>
+	</div>
+</div>
+
+<!--
+This is the text size widget. Needs work.
+<div id="sizecontroldiv" class="controlstyle hidden" style="font-size: 12px;">
+	<span><strong>Text Size</strong></span><br>
+	<a href="#smaller"><img src="/images/main/font-minus.gif" alt="Smaller Font Size" border="0" /></a> 
+	<a href="javascript:mytextsizer.setFontLevel(0)"><img src="/images/main/font-reset.gif" alt="Reset Font Size" border="0" /></a>
+	<a href="#bigger"><img src="/images/main/font-plus.gif" alt="Bigger Font Size" border="0" /></a><br />
+<div class="settings-close"><a onclick="toggle('sizecontroldiv')" class="pointer icon">close <span class="x" style="font-size:10px;">X</span></a></div>
+</div> -->
+			
+<!-- This is the Courthous Alerts link. -->
+<div class="ca printhide"><div class="pagecontainer" style="margin-bottom: -20px;"><div class="box" style="background-color: #fdd;  color:red; font-size:.95em;"><p>Find important information on what to do about your case and where to find help on our <a href="/alerts/">Alerts and Information Page</a> due to the impact of the COVID-19 outbreak.</p>
+
+<p>En nuestra página&nbsp;<a href="https://www.utcourts.gov/alerts/index-sp.php">Información y alertas</a>&nbsp;encontrará información importante sobre qué hacer en cuanto a su caso y dónde encontrar ayuda debido al impacto del brote de COVID-19.</p></div></div></div>
+
+<!-- This creates a space between the header and the content and houses the Home and Previous page links
+<div style="height:23px;" class="printhide">
+	<div style="margin-left: 15px; width: 100px; float:left;"><a href="/" class="em7">Home Page</a></div>
+	<div style="margin-right: 15px; width: 100px; float:right; text-align: right;"><a onClick="window.history.back()" class="em7 pointer">Previous Page</a></div>
+</div>
+	 -->
+<div class="home-prev-nav printhide">
+	<div class="col-xs-6 left">
+<a href="/" class="em7">Home Page</a>
+	</div>
+	<div class="col-xs-6 right">
+<a href="javascript:prevpage()" class="em7 pointer">Previous Page</a>
+	</div>
+</div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+		  <!-- This is the button that shows when navication goes to mobile  -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" style="position: relative; left: 25px;">
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="/">Utah Courts Homepage</a></li>
+				<li><a href="/knowcts/">Court Organization, Judges, Court Governance</a></li>
+				<li><a href="/courts/sup/">Supreme Court</a></li>
+				<li><a href="/courts/coa/">Court of Appeals</a></li>
+				<li><a href="/courts/dist/">District Courts</a></li>
+				<li><a href="/courts/juv/">Juvenile Courts</a></li> 
+				<li><a href="/courts/just/">Justice Courts</a></li>
+				<li><a href="/knowcts/adm/">Judicial Council</a></li>
+				<li><a href="/judgesbios/">Judges' Biographies</a></li>
+				<li><a href="/lawlibrary/">State Law Library</a></li>
+				<li><a href="/specproj/galcasa.htm">Guardian ad Litem and CASA</a></li>
+				<li><a href="/hr/" target="_blank">Human Resources</a></li>
+				<li><a href="/committees/">Boards and Committees</a></li>
+				<li><a href="/directory/">Court Contacts Statewide</a></li>
+			</ul></li>
+
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Self-Help <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="/selfhelp/">Self-Help Resources / Self-Represented Parties</a></li>
+				<li><a href="/ocap/">OCAP: Document Preparation for Selected Cases</a></li>
+				<li><a href="/selfhelp/contact/">Self-Help Center</a></li>
+				<li><a href="/howto/legalclinics/">Legal Clinics</a></li>
+				<li><a href="/howto/legalassist/">Finding Legal Help</a></li>
+				<li><a href="/selfhelp/">Self-Help Resources</a></li>
+				<li><a href="/forms/">Court Forms</a></li>
+				<li><a href="/howto/sp/">Recursos en Espa&ntilde;ol</a></li>
+				<li><a href="/resources/forms/protectorder/">Protection from Abuse</a></li>
+				<li><a href="/waterrights/">Water Rights Adjudications</a></li>
+				<!--<li><a href="/howto/seniors/">Life Planning and Probate</a></li>
+				<li><a href="/resources/forms/military/">Military and Veterans</a></li> -->
+				<li><a href="/resources/government_agencies.html">Government Agencies</a></li>
+				<!--<li><a href="/resources/forms/">Court Forms and Instructions</a></li>-->
+			</ul></li>
+
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Court Records <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="/courts/coa/appellatesearch.htm">Appellate Docket Search</a></li>
+				<li><a href="/records/coris/">Searching Court Records at the Courthouse</a></li>
+				<li><a href="/xchange/">Searching Court Records Online</a></li>
+				<li><a href="/records/digitalrecordings/">Digital Recordings</a></li>
+				<li><a href="/records/weeklyreports/">Weekly Case Reports</a></li>
+				<li><a href="http://archives.utah.gov/research/guides/index.html" target="_blank"><span class="target">Archive Court Records</span></a></li>
+				<li><a href="/resources/fees.htm">Court Filing, Transcript, &amp; Record Fees</a></li>
+			</ul></li>
+
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Publications <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="/opinions/">Appellate Opinions</a></li>
+				<li><a href="/performancemeasures/">Performance Measures</a></li>
+				<li><a href="/notices/courts/">Public Notices</a></li>
+				<li><a href="/resources/ethadv/">Judicial Ethics Opinions</a></li>
+				<li><a href="/resources/muji/">Model Utah Jury Instructions</a></li>
+				<li><a href="/stats/">Court Statistics</a></li>
+				<li><a href="/resources/rules/ucja/append/c_fineba/">Court Fine &amp; Bail Schedule</a></li>
+				<li><a href="/howto/seniors/g_and_c.asp">Basic Guidelines for Guardians and Conservators</a></li>
+				<li><a href="/resources/reports/">Court Reports</a></li>
+				<li><a href="/brochures/">Brochures and Presentations</a></li>
+				<li><a href="/nxt/gateway.dll/New%20Manual/00%20Revision%20Notes/Revision%20Notes.pdf?f=templates&fn=default.htm$3.0$q=$uq=1$x=$up=1" target="_blank">Accounting Manual</a></li>
+				<li><a href="/admin/facilities/">Utah Judicial Facility Design Standards</a></li>
+			</ul></li>
+
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Of Interest To <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="/juryroom/">Jurors (Juror Information / Juryroom)</a></li>				
+				<li><a href="/legal/">Legal Community</a></li>
+				<li><a href="/media/">Media</a></li>
+				<li><a href="/general/volunteer/">Volunteers</a></li>
+				<li><a href="/resources/interp/">Interpreters</a></li>
+				<li><a href="/general/edresources/">Schools</a></li>
+			</ul></li>
+
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="/directory/">Contact Information</a></li>
+				<li><a href="/opinions/">Appellate Opinions and Cases</a></li>
+				<li><a href="/forms/">Court Forms</a></li>
+				<li><a href="https://le.utah.gov/Documents/code_const.htm" target="_blank"><span class="target">Utah Code (like 30-37-5)</span></a></li>
+				<li><a href="/resources/rules/">Court Rules (like URCP 26)</a></li>
+				<li><a href="/cal/">Find a Hearing Date (Court Calendars)</a></li>
+				<li><a href="/notices/courts/">Public Notices</a></li>
+				<li><a href="/specproj/dived/">Find a Divorce Education Class</a></li>
+				<li><a href="/mediation/roster/list_med.asp">Find a Mediator / Arbitrator</a></li>
+				<li><a href="https://secure.utah.gov/warrants/index.html" target="_blank"><span class="target">Warrants (Dept of Public Safety)</span></a></li>
+				<li><a href="/admin/jobs/">Employment Opportunities</a></li>
+				<li><a href="/search/">Search the Website</a></li>
+			</ul></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<div id="origcontent" class="clear-block">
+<noscript><div class="alert" style="z-index: 9999999; width: 100%; background-color: #fff; border: 5px solid #000; padding: 10px; font-weight: bold;">
+<p>Please note that the Utah Courts website uses Javascript. Some functions, such as the navigation menu and email links, may not work without Javascript enabled. Please enable Javascript in your browser.</p> 
+<p>If you need to contact the courts by email and do not have Javascript enabled, please go to this web page: <a href="https://www.utcourts.gov/email/">www.utcourts.gov/email/</a>.</p></div>
+</noscript>
+<div id="content" class="clear-block"><div class="floatfix"><div class="padding">
+
+<div id="lang">&nbsp;</div>
+<div id="attytalk" class="box" style="margin: 20px; padding: 15px;">
+
+<h3>Finding Legal Help</h3>
+
+<p>You are not required to hire an attorney, but legal matters can be complicated. Consider talking to an attorney to go over your options. See the <a href="/howto/legalassist/">Finding Legal Help</a> page for information about free and low cost ways to get legal help. </p>
+
+</div>
+
+
+<div id="attytalk-sp" class="box" style="margin: 20px; padding: 15px;">
+
+<h3>Como encontrar ayuda legal</h3>
+
+<p>Usted no está obligado a contratar un abogado, pero los asuntos legales pueden ser complicados. Considere la posibilidad de hablar con un abogado para hablar de sus opciones. Para información sobre cómo obtener ayuda legal vea nuestra página <a href="/howto/legalassist/index-sp.html">Como encontrar ayuda legal</a>.</p>
+</div>
+<!--ZOOMSRETART-->
+<h2 class="title">We couldn't find your page... <span class="little"></span></h2>
+
+<!-- Use this div if there's a sidebar: <div class="col-xs-12 col-sm-9"> -->
+<link href="/error/-404.css" rel="stylesheet" />
+        <!-- Main Content -->
+
+
+<p><br /><strong> - If you typed in the URL please check the spelling.</strong></p><br />
+
+
+<div class="center box">
+
+<h4 class="center">Search the Utah Courts Website:</h4>
+
+<p><form method="get" action="/search/search/" name="gs" id="search" title="Website Search">
+	<input type="hidden" name="zoom_per_page" value="10"/>
+	<input type="hidden" name="zoom_and" value="0"/>
+	<input type="hidden" name="zoom_sort" value="0"/>
+	<label for="SearchWebsite"></label>
+		<input type="text" name="zoom_query" maxlength="256" value="" title="Enter Search Information Here" id="SearchForm" placeholder="Search utcourts.gov" class="gsearch searchbox" />
+		<p><input name="btnG" alt="Search Button" value="Search the Utah Courts Website" type="submit" /></p>
+	
+</form></p>
+
+</div>  
+
+        <!-- End Main Content -->
+<!-- Use this include if there's a sidebar: -->
+<!--ZOOMSTOP-->
+<p class="mission">The Utah State Courts mission is to provide the people an open, fair, efficient, and independent system for the advancement of justice under the law.</p>
+</div>
+</div>
+		</div></div></div>
+		<div class="clearance"></div>
+
+
+<div style="text-align:right; padding: 10px 15px 2px 0px; font-size: smaller;">
+
+<p>Page Last modified: 4/9/2021<br />
+<a class="icon" href="#top">Return to Top</a></p>
+</div>
+	</div>
+
+<div class="clearance"></div>
+<div class="footerbox">
+<div class="footerblack">
+	<div id="footer" class="footer center printhide">
+	<p class="center">
+		<a href="/notices/courts/"><strong>Public Notices</strong></a> - 
+		<a href="/admin/jobs/">Jobs with the Courts</a> - 
+		<a href="/hr/" target="_blank">Human Resources</a> - 
+		<a href="/directory/">Contact Information</a> - 
+<!--ZOOMSTOP--><a email="info" class="pointer contact" title="info@utcourts.gov">Website Comments</a><!--ZOOMRESTART-->
+	<br />
+		<a href="/admin/ada/">ADA Accessibility</a> - 
+		<a href="/privacy/">Privacy Policy</a> - 
+		<a href="/courts/">About the Courts</a> - 
+		<a href="/main/publications.html">Publications</a> - 
+		<a href="/records/">Records</a> - 
+		<a href="/vine/">VINE</a> - 
+<!--ZOOMSTOP--><a class="pointer" onclick="window.print()" title="Javascript is required for the 'Print This Page' feature. You can use 'CTRL + P' if you do not have Javascript enabled.">Print Page</a><!--ZOOMRESTART-->
+	</p>
+	</div>
+	<p id="social" class="center printhide">
+		<a href="https://www.facebook.com/UtahStateCourts/" target="_blank"><img src="/anc/img/social/facebook.png" border="0" alt="Facebook" title="Utah Courts Facebook Page"></a>
+		<a href="https://www.youtube.com/user/UtahStateCourts?feature=mhum" target="_blank"><img src="/anc/img/social/youtube.png" border="0" alt="YouTube" title="Utah Courts YouTube Channel"></a>
+		<a href="https://twitter.com/UtahStateCourts" target="_blank"><img src="/anc/img/social/twitter.png" border="0" alt="Twitter" title="Utah Courts Twitter Feed"></a>
+		<a href="/rss/"><img src="/anc/img/social/rss.png" border="0" alt="RSS" title="Utah Courts RSS Feeds"></a>
+	</p> 
+</div>
+<br />
+</div>
+
+<div class="emailblackout"></div>
+<div id="emailpop" class="pop">
+	<div class="emailcontainer">
+	<p><a class="pointer icon" id="close">Close <span class="x">&times;</span></a></p>
+	<iframe id="emailform" class="emailform" src=""></iframe>
+	</div>
+</div>
+
+<!-- current jQuery api link -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+
+<!-- current local js link -->
+<script src="/anc/js/compiled.min.js?ver=202104091123"></script>
+
+<!-- Bootstrap theme -->
+<script src="/anc/bootstrap/js/bootstrap.min.js"></script>  
+
+<a name="end"></a>
+</body>
+</html>
