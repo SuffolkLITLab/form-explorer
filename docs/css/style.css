@@ -54,6 +54,21 @@ a.foota {
 	color:#555;
 }
 
+.pdf {
+	float:left;
+	width:60%;
+	margin-right:20px;
+	box-sizing: border-box;
+}
+
+.pdfinfo {
+	float:left;
+	width:35%;
+	box-sizing: border-box;
+	padding:0;
+	margin-left:10px;"
+}
+
 .note {
 	background:#ffd;
 	padding:15px;
@@ -524,6 +539,26 @@ a.xbutton:hover, a.xbutton:active {
 		margin:15px auto;
 		width:400px;
 	}
+
+}
+
+@media only screen and (max-width: 900px) {
+	.pdf {
+		float:left;
+		width:100%;
+		margin-right:0px;
+		box-sizing: border-box;
+	}
+
+	.pdfinfo {
+		float:left;
+		width:100%;
+		box-sizing: border-box;
+		padding:0;
+		margin-left:0px;
+		margin-top:20px;
+	}
+
 
 }
 
