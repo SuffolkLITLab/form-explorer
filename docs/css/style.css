@@ -8,6 +8,13 @@ body {
 	line-height: 22px;
 }
 
+a.exlink{
+	background-image: url("../images/external-ltr.svg");
+	background-position: center right;
+	background-repeat: no-repeat;
+	padding-right: 13px;
+}
+
 .caption {
 	padding:8px 5px 8px 5px;
 	text-color:#555;
