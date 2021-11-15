@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Certificate of Legal Counsel/Waiver of Attendance", "label": "Certificate of Legal Counsel/Waiver of Attendance", "shape": "dot", "size": 10}, {"id": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "label": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "shape": "dot", "size": 10}, {"id": "Certification and Report on Petition for Judicial Admission", "label": "Certification and Report on Petition for Judicial Admission", "shape": "dot", "size": 10}, {"id": "Clinical Certificate", "label": "Clinical Certificate", "shape": "dot", "size": 10}, {"id": "Continuing Order for Mental Health Treatment", "label": "Continuing Order for Mental Health Treatment", "shape": "dot", "size": 10}, {"id": "Demand for Hearing", "label": "Demand for Hearing", "shape": "dot", "size": 10}, {"id": "Initial Order After Hearing on Petition for Mental Health Treatment", "label": "Initial Order After Hearing on Petition for Mental Health Treatment", "shape": "dot", "size": 10}, {"id": "Notice of Hearing and Advice of Rights", "label": "Notice of Hearing and Advice of Rights", "shape": "dot", "size": 10}, {"id": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "label": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "shape": "dot", "size": 10}, {"id": "Notice of Hospitalization and Certificate of Service", "label": "Notice of Hospitalization and Certificate of Service", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Certification and Report on Petition for Judicial Admission", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Clinical Certificate", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Continuing Order for Mental Health Treatment", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Demand for Hearing", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Initial Order After Hearing on Petition for Mental Health Treatment", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Notice of Hearing and Advice of Rights", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Certificate of Legal Counsel/Waiver of Attendance", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Certification and Report on Petition for Judicial Admission", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Clinical Certificate", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Continuing Order for Mental Health Treatment", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Demand for Hearing", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Initial Order After Hearing on Petition for Mental Health Treatment", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Notice of Hearing and Advice of Rights", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Petition for Continued Hospitalization of Minor", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Certification and Report on Petition for Judicial Admission", "to": "Clinical Certificate", "weight": 1}, {"from": "Certification and Report on Petition for Judicial Admission", "to": "Continuing Order for Mental Health Treatment", "weight": 1}, {"from": "Certification and Report on Petition for Judicial Admission", "to": "Demand for Hearing", "weight": 1}, {"from": "Certification and Report on Petition for Judicial Admission", "to": "Initial Order After Hearing on Petition for Mental Health Treatment", "weight": 1}, {"from": "Certification and Report on Petition for Judicial Admission", "to": "Notice of Hearing and Advice of Rights", "weight": 1}, {"from": "Certification and Report on Petition for Judicial Admission", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Certification and Report on Petition for Judicial Admission", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Clinical Certificate", "to": "Continuing Order for Mental Health Treatment", "weight": 1}, {"from": "Clinical Certificate", "to": "Demand for Hearing", "weight": 1}, {"from": "Clinical Certificate", "to": "Initial Order After Hearing on Petition for Mental Health Treatment", "weight": 1}, {"from": "Clinical Certificate", "to": "Notice of Hearing and Advice of Rights", "weight": 1}, {"from": "Clinical Certificate", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Clinical Certificate", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Continuing Order for Mental Health Treatment", "to": "Demand for Hearing", "weight": 1}, {"from": "Continuing Order for Mental Health Treatment", "to": "Initial Order After Hearing on Petition for Mental Health Treatment", "weight": 1}, {"from": "Continuing Order for Mental Health Treatment", "to": "Notice of Hearing and Advice of Rights", "weight": 1}, {"from": "Continuing Order for Mental Health Treatment", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Continuing Order for Mental Health Treatment", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Demand for Hearing", "to": "Initial Order After Hearing on Petition for Mental Health Treatment", "weight": 1}, {"from": "Demand for Hearing", "to": "Notice of Hearing and Advice of Rights", "weight": 1}, {"from": "Demand for Hearing", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Demand for Hearing", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Initial Order After Hearing on Petition for Mental Health Treatment", "to": "Notice of Hearing and Advice of Rights", "weight": 1}, {"from": "Initial Order After Hearing on Petition for Mental Health Treatment", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Initial Order After Hearing on Petition for Mental Health Treatment", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Notice of Hearing and Advice of Rights", "to": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "weight": 1}, {"from": "Notice of Hearing and Advice of Rights", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}, {"from": "Notice of Hearing and Appointment of Attorney on Objection to Hospitalization or Administrative Admission", "to": "Notice of Hospitalization and Certificate of Service", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

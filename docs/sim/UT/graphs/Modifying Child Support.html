@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Affidavit with Exhibits ", "label": "Affidavit with Exhibits ", "shape": "dot", "size": 10}, {"id": "Counter Motion ", "label": "Counter Motion ", "shape": "dot", "size": 10}, {"id": "Exhibit Summary ", "label": "Exhibit Summary ", "shape": "dot", "size": 10}, {"id": "Findings of fact and conclusions of law on petition to modify child support ", "label": "Findings of fact and conclusions of law on petition to modify child support ", "shape": "dot", "size": 10}, {"id": "Motion or stipulated motion to adjust child support ", "label": "Motion or stipulated motion to adjust child support ", "shape": "dot", "size": 10}, {"id": "Motion or stipulated motion to adjust child support - Commissioner ", "label": "Motion or stipulated motion to adjust child support - Commissioner ", "shape": "dot", "size": 10}, {"id": "Nonpublic information - minor ", "label": "Nonpublic information - minor ", "shape": "dot", "size": 10}, {"id": "Nonpublic information - parent identification and location ", "label": "Nonpublic information - parent identification and location ", "shape": "dot", "size": 10}, {"id": "Nonpublic information - safeguarded contact information ", "label": "Nonpublic information - safeguarded contact information ", "shape": "dot", "size": 10}, {"id": "Notice of modification ", "label": "Notice of modification ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Affidavit with Exhibits ", "to": "Counter Motion ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Exhibit Summary ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Findings of fact and conclusions of law on petition to modify child support ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Motion or stipulated motion to adjust child support ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Motion or stipulated motion to adjust child support - Commissioner ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Nonpublic information - minor ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Nonpublic information - parent identification and location ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Affidavit with Exhibits ", "to": "Notice of modification ", "weight": 1}, {"from": "Counter Motion ", "to": "Exhibit Summary ", "weight": 1}, {"from": "Counter Motion ", "to": "Findings of fact and conclusions of law on petition to modify child support ", "weight": 1}, {"from": "Counter Motion ", "to": "Motion or stipulated motion to adjust child support ", "weight": 1}, {"from": "Counter Motion ", "to": "Motion or stipulated motion to adjust child support - Commissioner ", "weight": 1}, {"from": "Counter Motion ", "to": "Nonpublic information - minor ", "weight": 1}, {"from": "Counter Motion ", "to": "Nonpublic information - parent identification and location ", "weight": 1}, {"from": "Counter Motion ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Counter Motion ", "to": "Notice of modification ", "weight": 1}, {"from": "Exhibit Summary ", "to": "Findings of fact and conclusions of law on petition to modify child support ", "weight": 1}, {"from": "Exhibit Summary ", "to": "Motion or stipulated motion to adjust child support ", "weight": 1}, {"from": "Exhibit Summary ", "to": "Motion or stipulated motion to adjust child support - Commissioner ", "weight": 1}, {"from": "Exhibit Summary ", "to": "Nonpublic information - minor ", "weight": 1}, {"from": "Exhibit Summary ", "to": "Nonpublic information - parent identification and location ", "weight": 1}, {"from": "Exhibit Summary ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Exhibit Summary ", "to": "Notice of modification ", "weight": 1}, {"from": "Findings of fact and conclusions of law on petition to modify child support ", "to": "Motion or stipulated motion to adjust child support ", "weight": 1}, {"from": "Findings of fact and conclusions of law on petition to modify child support ", "to": "Motion or stipulated motion to adjust child support - Commissioner ", "weight": 1}, {"from": "Findings of fact and conclusions of law on petition to modify child support ", "to": "Nonpublic information - minor ", "weight": 1}, {"from": "Findings of fact and conclusions of law on petition to modify child support ", "to": "Nonpublic information - parent identification and location ", "weight": 1}, {"from": "Findings of fact and conclusions of law on petition to modify child support ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Findings of fact and conclusions of law on petition to modify child support ", "to": "Notice of modification ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support ", "to": "Motion or stipulated motion to adjust child support - Commissioner ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support ", "to": "Nonpublic information - minor ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support ", "to": "Nonpublic information - parent identification and location ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support ", "to": "Notice of modification ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support - Commissioner ", "to": "Nonpublic information - minor ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support - Commissioner ", "to": "Nonpublic information - parent identification and location ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support - Commissioner ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Motion or stipulated motion to adjust child support - Commissioner ", "to": "Notice of modification ", "weight": 1}, {"from": "Nonpublic information - minor ", "to": "Nonpublic information - parent identification and location ", "weight": 1}, {"from": "Nonpublic information - minor ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Nonpublic information - minor ", "to": "Notice of modification ", "weight": 1}, {"from": "Nonpublic information - parent identification and location ", "to": "Nonpublic information - safeguarded contact information ", "weight": 1}, {"from": "Nonpublic information - parent identification and location ", "to": "Notice of modification ", "weight": 1}, {"from": "Nonpublic information - safeguarded contact information ", "to": "Notice of modification ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "label": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "shape": "dot", "size": 10}, {"id": "Alternative Dispute Resolution Summary Report", "label": "Alternative Dispute Resolution Summary Report", "shape": "dot", "size": 10}, {"id": "Advice of Rights Regarding Use of Friend of the Court Services", "label": "Advice of Rights Regarding Use of Friend of the Court Services", "shape": "dot", "size": 10}, {"id": "Agreement Suspending Immediate Income Withholding", "label": "Agreement Suspending Immediate Income Withholding", "shape": "dot", "size": 10}, {"id": "Bench Warrant and Memorandum (two-page form)", "label": "Bench Warrant and Memorandum (two-page form)", "shape": "dot", "size": 10}, {"id": "Cash Performance Bond (Civil Contempt)", "label": "Cash Performance Bond (Civil Contempt)", "shape": "dot", "size": 10}, {"id": "Certificate of Inactivation", "label": "Certificate of Inactivation", "shape": "dot", "size": 10}, {"id": "Change in Personal Information FOC 108", "label": "Change in Personal Information FOC 108", "shape": "dot", "size": 10}, {"id": "Child-Care Verification", "label": "Child-Care Verification", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Alternative Dispute Resolution Summary Report", "weight": 1}, {"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Advice of Rights Regarding Use of Friend of the Court Services", "weight": 1}, {"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Agreement Suspending Immediate Income Withholding", "weight": 1}, {"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Bench Warrant and Memorandum (two-page form)", "weight": 1}, {"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Cash Performance Bond (Civil Contempt)", "weight": 1}, {"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Certificate of Inactivation", "weight": 1}, {"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Change in Personal Information FOC 108", "weight": 1}, {"from": "21-Day Notice to Alleged Violator of Custody or Parenting Time Provisions", "to": "Child-Care Verification", "weight": 1}, {"from": "Alternative Dispute Resolution Summary Report", "to": "Advice of Rights Regarding Use of Friend of the Court Services", "weight": 1}, {"from": "Alternative Dispute Resolution Summary Report", "to": "Agreement Suspending Immediate Income Withholding", "weight": 1}, {"from": "Alternative Dispute Resolution Summary Report", "to": "Certificate of Inactivation", "weight": 1}, {"from": "Alternative Dispute Resolution Summary Report", "to": "Change in Personal Information FOC 108", "weight": 1}, {"from": "Alternative Dispute Resolution Summary Report", "to": "Bench Warrant and Memorandum (two-page form)", "weight": 1}, {"from": "Alternative Dispute Resolution Summary Report", "to": "Cash Performance Bond (Civil Contempt)", "weight": 1}, {"from": "Alternative Dispute Resolution Summary Report", "to": "Child-Care Verification", "weight": 1}, {"from": "Advice of Rights Regarding Use of Friend of the Court Services", "to": "Agreement Suspending Immediate Income Withholding", "weight": 1}, {"from": "Advice of Rights Regarding Use of Friend of the Court Services", "to": "Change in Personal Information FOC 108", "weight": 1}, {"from": "Advice of Rights Regarding Use of Friend of the Court Services", "to": "Child-Care Verification", "weight": 1}, {"from": "Advice of Rights Regarding Use of Friend of the Court Services", "to": "Bench Warrant and Memorandum (two-page form)", "weight": 1}, {"from": "Advice of Rights Regarding Use of Friend of the Court Services", "to": "Cash Performance Bond (Civil Contempt)", "weight": 1}, {"from": "Advice of Rights Regarding Use of Friend of the Court Services", "to": "Certificate of Inactivation", "weight": 1}, {"from": "Agreement Suspending Immediate Income Withholding", "to": "Change in Personal Information FOC 108", "weight": 1}, {"from": "Agreement Suspending Immediate Income Withholding", "to": "Child-Care Verification", "weight": 1}, {"from": "Agreement Suspending Immediate Income Withholding", "to": "Bench Warrant and Memorandum (two-page form)", "weight": 1}, {"from": "Agreement Suspending Immediate Income Withholding", "to": "Cash Performance Bond (Civil Contempt)", "weight": 1}, {"from": "Agreement Suspending Immediate Income Withholding", "to": "Certificate of Inactivation", "weight": 1}, {"from": "Bench Warrant and Memorandum (two-page form)", "to": "Child-Care Verification", "weight": 1}, {"from": "Bench Warrant and Memorandum (two-page form)", "to": "Cash Performance Bond (Civil Contempt)", "weight": 1}, {"from": "Bench Warrant and Memorandum (two-page form)", "to": "Certificate of Inactivation", "weight": 1}, {"from": "Bench Warrant and Memorandum (two-page form)", "to": "Change in Personal Information FOC 108", "weight": 1}, {"from": "Cash Performance Bond (Civil Contempt)", "to": "Child-Care Verification", "weight": 1}, {"from": "Cash Performance Bond (Civil Contempt)", "to": "Change in Personal Information FOC 108", "weight": 1}, {"from": "Cash Performance Bond (Civil Contempt)", "to": "Certificate of Inactivation", "weight": 1}, {"from": "Certificate of Inactivation", "to": "Change in Personal Information FOC 108", "weight": 1}, {"from": "Certificate of Inactivation", "to": "Child-Care Verification", "weight": 1}, {"from": "Change in Personal Information FOC 108", "to": "Child-Care Verification", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

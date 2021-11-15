@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Affidavit for Filing an Out-of-State Protective Order ", "label": "Affidavit for Filing an Out-of-State Protective Order ", "shape": "dot", "size": 10}, {"id": "Dating Violence Protective Order ", "label": "Dating Violence Protective Order ", "shape": "dot", "size": 10}, {"id": "Modified Protective Order ", "label": "Modified Protective Order ", "shape": "dot", "size": 10}, {"id": "Modified Temporary Protective Order ", "label": "Modified Temporary Protective Order ", "shape": "dot", "size": 10}, {"id": "Modified Temporary Sexual Violence Protective Order ", "label": "Modified Temporary Sexual Violence Protective Order ", "shape": "dot", "size": 10}, {"id": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "label": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "shape": "dot", "size": 10}, {"id": "Order Denying Dating Violence Protective Order ", "label": "Order Denying Dating Violence Protective Order ", "shape": "dot", "size": 10}, {"id": "Order Denying Protective Order ", "label": "Order Denying Protective Order ", "shape": "dot", "size": 10}, {"id": "Notice of Hearing On Request for Dating Violence Protective Order ", "label": "Notice of Hearing On Request for Dating Violence Protective Order ", "shape": "dot", "size": 10}, {"id": "Notice of Hearing On Request for Protective Order ", "label": "Notice of Hearing On Request for Protective Order ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Dating Violence Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Modified Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Modified Temporary Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Modified Temporary Sexual Violence Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Order Denying Dating Violence Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Order Denying Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Affidavit for Filing an Out-of-State Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Modified Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Modified Temporary Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Modified Temporary Sexual Violence Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Order Denying Dating Violence Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Order Denying Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Dating Violence Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}, {"from": "Modified Protective Order ", "to": "Modified Temporary Protective Order ", "weight": 1}, {"from": "Modified Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Modified Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}, {"from": "Modified Protective Order ", "to": "Order Denying Protective Order ", "weight": 1}, {"from": "Modified Protective Order ", "to": "Modified Temporary Sexual Violence Protective Order ", "weight": 1}, {"from": "Modified Protective Order ", "to": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "weight": 1}, {"from": "Modified Protective Order ", "to": "Order Denying Dating Violence Protective Order ", "weight": 1}, {"from": "Modified Temporary Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Modified Temporary Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}, {"from": "Modified Temporary Protective Order ", "to": "Order Denying Protective Order ", "weight": 1}, {"from": "Modified Temporary Protective Order ", "to": "Modified Temporary Sexual Violence Protective Order ", "weight": 1}, {"from": "Modified Temporary Protective Order ", "to": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "weight": 1}, {"from": "Modified Temporary Protective Order ", "to": "Order Denying Dating Violence Protective Order ", "weight": 1}, {"from": "Modified Temporary Sexual Violence Protective Order ", "to": "Order Denying Protective Order ", "weight": 1}, {"from": "Modified Temporary Sexual Violence Protective Order ", "to": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "weight": 1}, {"from": "Modified Temporary Sexual Violence Protective Order ", "to": "Order Denying Dating Violence Protective Order ", "weight": 1}, {"from": "Modified Temporary Sexual Violence Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}, {"from": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "to": "Order Denying Dating Violence Protective Order ", "weight": 1}, {"from": "Notice of Hearing on Request to Dismiss or Vacate Protective Order ", "to": "Order Denying Protective Order ", "weight": 1}, {"from": "Order Denying Dating Violence Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Order Denying Dating Violence Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}, {"from": "Order Denying Dating Violence Protective Order ", "to": "Order Denying Protective Order ", "weight": 1}, {"from": "Order Denying Protective Order ", "to": "Notice of Hearing On Request for Dating Violence Protective Order ", "weight": 1}, {"from": "Order Denying Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}, {"from": "Notice of Hearing On Request for Dating Violence Protective Order ", "to": "Notice of Hearing On Request for Protective Order ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

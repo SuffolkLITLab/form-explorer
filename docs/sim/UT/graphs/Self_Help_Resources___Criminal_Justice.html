@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Permanent Criminal Stalking Injunction ", "label": "Permanent Criminal Stalking Injunction ", "shape": "dot", "size": 10}, {"id": "Petition for Relief Under the Post Conviction Remedies Act ", "label": "Petition for Relief Under the Post Conviction Remedies Act ", "shape": "dot", "size": 10}, {"id": "Statement of Defendant in Support of Plea", "label": "Statement of Defendant in Support of Plea", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Permanent Criminal Stalking Injunction ", "to": "Petition for Relief Under the Post Conviction Remedies Act ", "weight": 1}, {"from": "Permanent Criminal Stalking Injunction ", "to": "Statement of Defendant in Support of Plea", "weight": 1}, {"from": "Petition for Relief Under the Post Conviction Remedies Act ", "to": "Statement of Defendant in Support of Plea", "weight": 1}, {"from": "Statement of Defendant in Support of Plea", "to": "Statement of Defendant in Support of Plea", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

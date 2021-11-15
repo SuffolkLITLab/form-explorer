@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Acceptance of Appointment", "label": "Acceptance of Appointment", "shape": "dot", "size": 10}, {"id": "Account of Fiduciary, Long Form", "label": "Account of Fiduciary, Long Form", "shape": "dot", "size": 10}, {"id": "Account of Fiduciary, Short Form", "label": "Account of Fiduciary, Short Form", "shape": "dot", "size": 10}, {"id": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "label": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "shape": "dot", "size": 10}, {"id": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "label": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "shape": "dot", "size": 10}, {"id": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "label": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "shape": "dot", "size": 10}, {"id": "Authorization to Release Will Held for Safekeeping", "label": "Authorization to Release Will Held for Safekeeping", "shape": "dot", "size": 10}, {"id": "Appearance of Parent of Minor", "label": "Appearance of Parent of Minor", "shape": "dot", "size": 10}, {"id": "Application/Petition to Reopen Estate", "label": "Application/Petition to Reopen Estate", "shape": "dot", "size": 10}, {"id": "Bond of Fiduciary", "label": "Bond of Fiduciary", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Acceptance of Appointment", "to": "Account of Fiduciary, Long Form", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Account of Fiduciary, Short Form", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Authorization to Release Will Held for Safekeeping", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Appearance of Parent of Minor", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Acceptance of Appointment", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Account of Fiduciary, Short Form", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Authorization to Release Will Held for Safekeeping", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Appearance of Parent of Minor", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Account of Fiduciary, Long Form", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Account of Fiduciary, Short Form", "to": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "weight": 1}, {"from": "Account of Fiduciary, Short Form", "to": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "weight": 1}, {"from": "Account of Fiduciary, Short Form", "to": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "weight": 1}, {"from": "Account of Fiduciary, Short Form", "to": "Authorization to Release Will Held for Safekeeping", "weight": 1}, {"from": "Account of Fiduciary, Short Form", "to": "Appearance of Parent of Minor", "weight": 1}, {"from": "Account of Fiduciary, Short Form", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Account of Fiduciary, Short Form", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "to": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "weight": 1}, {"from": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "to": "Appearance of Parent of Minor", "weight": 1}, {"from": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "to": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "weight": 1}, {"from": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "to": "Authorization to Release Will Held for Safekeeping", "weight": 1}, {"from": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Application for Informal Probate and/or Appointment of Personal Representative (Testate/Intestate)", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "to": "Authorization to Release Will Held for Safekeeping", "weight": 1}, {"from": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "to": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "weight": 1}, {"from": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "to": "Appearance of Parent of Minor", "weight": 1}, {"from": "Affidavit of Decedent\u2019s Successor for Delivery of Certain Assets Owned by Decedent", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "to": "Appearance of Parent of Minor", "weight": 1}, {"from": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "to": "Authorization to Release Will Held for Safekeeping", "weight": 1}, {"from": "Application for Appointment of Successor Personal Representative (Estate Not Closed)", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Authorization to Release Will Held for Safekeeping", "to": "Appearance of Parent of Minor", "weight": 1}, {"from": "Authorization to Release Will Held for Safekeeping", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Authorization to Release Will Held for Safekeeping", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Appearance of Parent of Minor", "to": "Application/Petition to Reopen Estate", "weight": 1}, {"from": "Appearance of Parent of Minor", "to": "Bond of Fiduciary", "weight": 1}, {"from": "Application/Petition to Reopen Estate", "to": "Bond of Fiduciary", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

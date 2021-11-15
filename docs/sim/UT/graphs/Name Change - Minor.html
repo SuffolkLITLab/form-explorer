@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Application for Appointment of a Guardian Ad Litem ", "label": "Application for Appointment of a Guardian Ad Litem ", "shape": "dot", "size": 10}, {"id": "Order Appointing Guardian Ad Litem ", "label": "Order Appointing Guardian Ad Litem ", "shape": "dot", "size": 10}, {"id": "Consent to Minor\u2019s Name Change ", "label": "Consent to Minor\u2019s Name Change ", "shape": "dot", "size": 10}, {"id": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "label": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "shape": "dot", "size": 10}, {"id": "Motion to Waive Service ", "label": "Motion to Waive Service ", "shape": "dot", "size": 10}, {"id": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "label": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "shape": "dot", "size": 10}, {"id": "Order to Waive Service ", "label": "Order to Waive Service ", "shape": "dot", "size": 10}, {"id": "Petition for Minor\u0027s Name Change ", "label": "Petition for Minor\u0027s Name Change ", "shape": "dot", "size": 10}, {"id": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "label": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "shape": "dot", "size": 10}, {"id": "Order Changing Minor\u0027s Name ", "label": "Order Changing Minor\u0027s Name ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Order Appointing Guardian Ad Litem ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Consent to Minor\u2019s Name Change ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Motion to Waive Service ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Order to Waive Service ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Petition for Minor\u0027s Name Change ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Application for Appointment of a Guardian Ad Litem ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Consent to Minor\u2019s Name Change ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Motion to Waive Service ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Order to Waive Service ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Petition for Minor\u0027s Name Change ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Consent to Minor\u2019s Name Change ", "to": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "weight": 1}, {"from": "Consent to Minor\u2019s Name Change ", "to": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "weight": 1}, {"from": "Consent to Minor\u2019s Name Change ", "to": "Petition for Minor\u0027s Name Change ", "weight": 1}, {"from": "Consent to Minor\u2019s Name Change ", "to": "Motion to Waive Service ", "weight": 1}, {"from": "Consent to Minor\u2019s Name Change ", "to": "Order to Waive Service ", "weight": 1}, {"from": "Consent to Minor\u2019s Name Change ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Consent to Minor\u2019s Name Change ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "to": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "weight": 1}, {"from": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "to": "Petition for Minor\u0027s Name Change ", "weight": 1}, {"from": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "to": "Motion to Waive Service ", "weight": 1}, {"from": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "to": "Order to Waive Service ", "weight": 1}, {"from": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Department of Corrections Certification Regarding Sex and Kidnap Offender and Child Abuse Offender Registries \u2013 Minor Child ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Motion to Waive Service ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Motion to Waive Service ", "to": "Order to Waive Service ", "weight": 1}, {"from": "Motion to Waive Service ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Motion to Waive Service ", "to": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "weight": 1}, {"from": "Motion to Waive Service ", "to": "Petition for Minor\u0027s Name Change ", "weight": 1}, {"from": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "to": "Petition for Minor\u0027s Name Change ", "weight": 1}, {"from": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "to": "Order to Waive Service ", "weight": 1}, {"from": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Notice of Hearing on Petition for Minor\u2019s Name Change ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Order to Waive Service ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Order to Waive Service ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Order to Waive Service ", "to": "Petition for Minor\u0027s Name Change ", "weight": 1}, {"from": "Petition for Minor\u0027s Name Change ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}, {"from": "Petition for Minor\u0027s Name Change ", "to": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "weight": 1}, {"from": "Petitioner\u0027s Affidavit in Support of Motion to Waive Service ", "to": "Order Changing Minor\u0027s Name ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

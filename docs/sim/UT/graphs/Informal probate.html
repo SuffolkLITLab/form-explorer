@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Acceptance of Appointment as Personal Representative  ", "label": "Acceptance of Appointment as Personal Representative  ", "shape": "dot", "size": 10}, {"id": "Application for Informal Probate of Will and Appointment of Personal Representative ", "label": "Application for Informal Probate of Will and Appointment of Personal Representative ", "shape": "dot", "size": 10}, {"id": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "label": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "shape": "dot", "size": 10}, {"id": "Certificate of Service - Probate Cases ", "label": "Certificate of Service - Probate Cases ", "shape": "dot", "size": 10}, {"id": "Objection to Appointment of Personal Representative and Request for Hearing ", "label": "Objection to Appointment of Personal Representative and Request for Hearing ", "shape": "dot", "size": 10}, {"id": "Announcement of Appointment and Notice to Creditors ", "label": "Announcement of Appointment and Notice to Creditors ", "shape": "dot", "size": 10}, {"id": "Renunciation or Nomination  ", "label": "Renunciation or Nomination  ", "shape": "dot", "size": 10}, {"id": "Letters of Administration ", "label": "Letters of Administration ", "shape": "dot", "size": 10}, {"id": "Letters Testamentary ", "label": "Letters Testamentary ", "shape": "dot", "size": 10}, {"id": "Affidavit for Collecting Personal Property in a Small Estate Proceeding ", "label": "Affidavit for Collecting Personal Property in a Small Estate Proceeding ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Acceptance of Appointment as Personal Representative  ", "to": "Application for Informal Probate of Will and Appointment of Personal Representative ", "weight": 1}, {"from": "Acceptance of Appointment as Personal Representative  ", "to": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "weight": 1}, {"from": "Acceptance of Appointment as Personal Representative  ", "to": "Certificate of Service - Probate Cases ", "weight": 1}, {"from": "Acceptance of Appointment as Personal Representative  ", "to": "Objection to Appointment of Personal Representative and Request for Hearing ", "weight": 1}, {"from": "Acceptance of Appointment as Personal Representative  ", "to": "Announcement of Appointment and Notice to Creditors ", "weight": 1}, {"from": "Acceptance of Appointment as Personal Representative  ", "to": "Renunciation or Nomination  ", "weight": 1}, {"from": "Acceptance of Appointment as Personal Representative  ", "to": "Letters of Administration ", "weight": 1}, {"from": "Acceptance of Appointment as Personal Representative  ", "to": "Letters Testamentary ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Affidavit for Collecting Personal Property in a Small Estate Proceeding ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Announcement of Appointment and Notice to Creditors ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Certificate of Service - Probate Cases ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Objection to Appointment of Personal Representative and Request for Hearing ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Renunciation or Nomination  ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Letters of Administration ", "weight": 1}, {"from": "Application for Informal Probate of Will and Appointment of Personal Representative ", "to": "Letters Testamentary ", "weight": 1}, {"from": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "to": "Affidavit for Collecting Personal Property in a Small Estate Proceeding ", "weight": 1}, {"from": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "to": "Announcement of Appointment and Notice to Creditors ", "weight": 1}, {"from": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "to": "Certificate of Service - Probate Cases ", "weight": 1}, {"from": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "to": "Objection to Appointment of Personal Representative and Request for Hearing ", "weight": 1}, {"from": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "to": "Renunciation or Nomination  ", "weight": 1}, {"from": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "to": "Letters of Administration ", "weight": 1}, {"from": "Application for Informal Probate When There is No Will and Informal Appointment of Personal Representative ", "to": "Letters Testamentary ", "weight": 1}, {"from": "Certificate of Service - Probate Cases ", "to": "Affidavit for Collecting Personal Property in a Small Estate Proceeding ", "weight": 1}, {"from": "Certificate of Service - Probate Cases ", "to": "Announcement of Appointment and Notice to Creditors ", "weight": 1}, {"from": "Certificate of Service - Probate Cases ", "to": "Objection to Appointment of Personal Representative and Request for Hearing ", "weight": 1}, {"from": "Certificate of Service - Probate Cases ", "to": "Renunciation or Nomination  ", "weight": 1}, {"from": "Certificate of Service - Probate Cases ", "to": "Letters of Administration ", "weight": 1}, {"from": "Certificate of Service - Probate Cases ", "to": "Letters Testamentary ", "weight": 1}, {"from": "Objection to Appointment of Personal Representative and Request for Hearing ", "to": "Affidavit for Collecting Personal Property in a Small Estate Proceeding ", "weight": 1}, {"from": "Objection to Appointment of Personal Representative and Request for Hearing ", "to": "Announcement of Appointment and Notice to Creditors ", "weight": 1}, {"from": "Objection to Appointment of Personal Representative and Request for Hearing ", "to": "Letters of Administration ", "weight": 1}, {"from": "Objection to Appointment of Personal Representative and Request for Hearing ", "to": "Letters Testamentary ", "weight": 1}, {"from": "Objection to Appointment of Personal Representative and Request for Hearing ", "to": "Renunciation or Nomination  ", "weight": 1}, {"from": "Announcement of Appointment and Notice to Creditors ", "to": "Letters of Administration ", "weight": 1}, {"from": "Announcement of Appointment and Notice to Creditors ", "to": "Letters Testamentary ", "weight": 1}, {"from": "Announcement of Appointment and Notice to Creditors ", "to": "Renunciation or Nomination  ", "weight": 1}, {"from": "Renunciation or Nomination  ", "to": "Affidavit for Collecting Personal Property in a Small Estate Proceeding ", "weight": 1}, {"from": "Renunciation or Nomination  ", "to": "Letters of Administration ", "weight": 1}, {"from": "Renunciation or Nomination  ", "to": "Letters Testamentary ", "weight": 1}, {"from": "Letters of Administration ", "to": "Letters Testamentary ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

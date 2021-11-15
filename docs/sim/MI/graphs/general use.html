@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Addendum to Protected Personal Identifying Information", "label": "Addendum to Protected Personal Identifying Information", "shape": "dot", "size": 10}, {"id": "Cash Bond", "label": "Cash Bond", "shape": "dot", "size": 10}, {"id": "Fee Waiver Request", "label": "Fee Waiver Request", "shape": "dot", "size": 10}, {"id": "Affidavit of Incorrect Address", "label": "Affidavit of Incorrect Address", "shape": "dot", "size": 10}, {"id": "Appearance", "label": "Appearance", "shape": "dot", "size": 10}, {"id": "Contact Information", "label": "Contact Information", "shape": "dot", "size": 10}, {"id": "Financial Statement", "label": "Financial Statement", "shape": "dot", "size": 10}, {"id": "Blank (does not contain SCAO approval)", "label": "Blank (does not contain SCAO approval)", "shape": "dot", "size": 10}, {"id": "Certification of Records/Attestation of Exemplified Copies", "label": "Certification of Records/Attestation of Exemplified Copies", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Addendum to Protected Personal Identifying Information", "to": "Cash Bond", "weight": 1}, {"from": "Addendum to Protected Personal Identifying Information", "to": "Fee Waiver Request", "weight": 1}, {"from": "Addendum to Protected Personal Identifying Information", "to": "Affidavit of Incorrect Address", "weight": 1}, {"from": "Addendum to Protected Personal Identifying Information", "to": "Appearance", "weight": 1}, {"from": "Addendum to Protected Personal Identifying Information", "to": "Contact Information", "weight": 1}, {"from": "Addendum to Protected Personal Identifying Information", "to": "Financial Statement", "weight": 1}, {"from": "Addendum to Protected Personal Identifying Information", "to": "Blank (does not contain SCAO approval)", "weight": 1}, {"from": "Addendum to Protected Personal Identifying Information", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}, {"from": "Cash Bond", "to": "Affidavit of Incorrect Address", "weight": 1}, {"from": "Cash Bond", "to": "Appearance", "weight": 1}, {"from": "Cash Bond", "to": "Blank (does not contain SCAO approval)", "weight": 1}, {"from": "Cash Bond", "to": "Fee Waiver Request", "weight": 1}, {"from": "Cash Bond", "to": "Contact Information", "weight": 1}, {"from": "Cash Bond", "to": "Financial Statement", "weight": 1}, {"from": "Cash Bond", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}, {"from": "Fee Waiver Request", "to": "Affidavit of Incorrect Address", "weight": 1}, {"from": "Fee Waiver Request", "to": "Appearance", "weight": 1}, {"from": "Fee Waiver Request", "to": "Blank (does not contain SCAO approval)", "weight": 1}, {"from": "Fee Waiver Request", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}, {"from": "Fee Waiver Request", "to": "Contact Information", "weight": 1}, {"from": "Fee Waiver Request", "to": "Financial Statement", "weight": 1}, {"from": "Affidavit of Incorrect Address", "to": "Appearance", "weight": 1}, {"from": "Affidavit of Incorrect Address", "to": "Blank (does not contain SCAO approval)", "weight": 1}, {"from": "Affidavit of Incorrect Address", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}, {"from": "Affidavit of Incorrect Address", "to": "Contact Information", "weight": 1}, {"from": "Affidavit of Incorrect Address", "to": "Financial Statement", "weight": 1}, {"from": "Appearance", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}, {"from": "Appearance", "to": "Blank (does not contain SCAO approval)", "weight": 1}, {"from": "Appearance", "to": "Contact Information", "weight": 1}, {"from": "Appearance", "to": "Financial Statement", "weight": 1}, {"from": "Contact Information", "to": "Blank (does not contain SCAO approval)", "weight": 1}, {"from": "Contact Information", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}, {"from": "Contact Information", "to": "Financial Statement", "weight": 1}, {"from": "Financial Statement", "to": "Blank (does not contain SCAO approval)", "weight": 1}, {"from": "Financial Statement", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}, {"from": "Blank (does not contain SCAO approval)", "to": "Certification of Records/Attestation of Exemplified Copies", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

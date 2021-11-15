@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "label": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "shape": "dot", "size": 10}, {"id": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "label": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "shape": "dot", "size": 10}, {"id": "Sixth District Waiver of Rights by Defendant ", "label": "Sixth District Waiver of Rights by Defendant ", "shape": "dot", "size": 10}, {"id": "Sixth District Request for Copy of Audio Record ", "label": "Sixth District Request for Copy of Audio Record ", "shape": "dot", "size": 10}, {"id": "Sixth District Order in re: Removal of Case File ", "label": "Sixth District Order in re: Removal of Case File ", "shape": "dot", "size": 10}, {"id": "Sixth District Paper Travel Slip and Order ", "label": "Sixth District Paper Travel Slip and Order ", "shape": "dot", "size": 10}, {"id": "Sixth District Request to Remove Case File ", "label": "Sixth District Request to Remove Case File ", "shape": "dot", "size": 10}, {"id": "Sixth District Response to Request for Ex Part Child Protective Order ", "label": "Sixth District Response to Request for Ex Part Child Protective Order ", "shape": "dot", "size": 10}, {"id": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "label": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "weight": 1}, {"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Waiver of Rights by Defendant ", "weight": 1}, {"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Request for Copy of Audio Record ", "weight": 1}, {"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Order in re: Removal of Case File ", "weight": 1}, {"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Paper Travel Slip and Order ", "weight": 1}, {"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Request to Remove Case File ", "weight": 1}, {"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Response to Request for Ex Part Child Protective Order ", "weight": 1}, {"from": "Sixth District Affidavit and Application for Court-Appointed Lawyer ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}, {"from": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "to": "Sixth District Order in re: Removal of Case File ", "weight": 1}, {"from": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}, {"from": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "to": "Sixth District Request for Copy of Audio Record ", "weight": 1}, {"from": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "to": "Sixth District Request to Remove Case File ", "weight": 1}, {"from": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "to": "Sixth District Response to Request for Ex Part Child Protective Order ", "weight": 1}, {"from": "Sixth District Statement of Probable Cause for a Warrantless Arrest ", "to": "Sixth District Waiver of Rights by Defendant ", "weight": 1}, {"from": "Sixth District Waiver of Rights by Defendant ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}, {"from": "Sixth District Request for Copy of Audio Record ", "to": "Sixth District Order in re: Removal of Case File ", "weight": 1}, {"from": "Sixth District Request for Copy of Audio Record ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}, {"from": "Sixth District Request for Copy of Audio Record ", "to": "Sixth District Request to Remove Case File ", "weight": 1}, {"from": "Sixth District Request for Copy of Audio Record ", "to": "Sixth District Response to Request for Ex Part Child Protective Order ", "weight": 1}, {"from": "Sixth District Order in re: Removal of Case File ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}, {"from": "Sixth District Order in re: Removal of Case File ", "to": "Sixth District Request to Remove Case File ", "weight": 1}, {"from": "Sixth District Order in re: Removal of Case File ", "to": "Sixth District Paper Travel Slip and Order ", "weight": 1}, {"from": "Sixth District Order in re: Removal of Case File ", "to": "Sixth District Response to Request for Ex Part Child Protective Order ", "weight": 1}, {"from": "Sixth District Paper Travel Slip and Order ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}, {"from": "Sixth District Paper Travel Slip and Order ", "to": "Sixth District Request to Remove Case File ", "weight": 1}, {"from": "Sixth District Paper Travel Slip and Order ", "to": "Sixth District Response to Request for Ex Part Child Protective Order ", "weight": 1}, {"from": "Sixth District Request to Remove Case File ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}, {"from": "Sixth District Request to Remove Case File ", "to": "Sixth District Response to Request for Ex Part Child Protective Order ", "weight": 1}, {"from": "Sixth District Response to Request for Ex Part Child Protective Order ", "to": "Sixth District Petitioner\u0027s Response to Denial of Ex Parte Order ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

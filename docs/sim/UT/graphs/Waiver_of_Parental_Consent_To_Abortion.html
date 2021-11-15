@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Certificate of the Clerk ", "label": "Certificate of the Clerk ", "shape": "dot", "size": 10}, {"id": "Findings of Fact, Conclusions of Law and Order on Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "label": "Findings of Fact, Conclusions of Law and Order on Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "shape": "dot", "size": 10}, {"id": "Order Appointing Attorney and/or Guardian ad Litem for a Minor ", "label": "Order Appointing Attorney and/or Guardian ad Litem for a Minor ", "shape": "dot", "size": 10}, {"id": "Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "label": "Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "shape": "dot", "size": 10}, {"id": "Notice of Hearing \u2013 Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "label": "Notice of Hearing \u2013 Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Certificate of the Clerk ", "to": "Findings of Fact, Conclusions of Law and Order on Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}, {"from": "Certificate of the Clerk ", "to": "Order Appointing Attorney and/or Guardian ad Litem for a Minor ", "weight": 1}, {"from": "Certificate of the Clerk ", "to": "Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}, {"from": "Certificate of the Clerk ", "to": "Notice of Hearing \u2013 Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}, {"from": "Findings of Fact, Conclusions of Law and Order on Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "to": "Order Appointing Attorney and/or Guardian ad Litem for a Minor ", "weight": 1}, {"from": "Findings of Fact, Conclusions of Law and Order on Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "to": "Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}, {"from": "Findings of Fact, Conclusions of Law and Order on Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "to": "Notice of Hearing \u2013 Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}, {"from": "Order Appointing Attorney and/or Guardian ad Litem for a Minor ", "to": "Notice of Hearing \u2013 Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}, {"from": "Order Appointing Attorney and/or Guardian ad Litem for a Minor ", "to": "Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}, {"from": "Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "to": "Notice of Hearing \u2013 Petition for Waiver of Parental Consent to Minor\u2019s Abortion ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

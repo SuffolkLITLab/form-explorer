@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Abstract of Records ", "label": "Abstract of Records ", "shape": "dot", "size": 10}, {"id": "Findings of Fact and Conclusions of Law on Motion to Shorten Period of Driver\u0027s License Suspension or Denial ", "label": "Findings of Fact and Conclusions of Law on Motion to Shorten Period of Driver\u0027s License Suspension or Denial ", "shape": "dot", "size": 10}, {"id": "Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "label": "Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "shape": "dot", "size": 10}, {"id": "Order on Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "label": "Order on Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "shape": "dot", "size": 10}, {"id": "Statement of No Unlawful Alcohol Consumption ", "label": "Statement of No Unlawful Alcohol Consumption ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Abstract of Records ", "to": "Findings of Fact and Conclusions of Law on Motion to Shorten Period of Driver\u0027s License Suspension or Denial ", "weight": 1}, {"from": "Abstract of Records ", "to": "Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "weight": 1}, {"from": "Abstract of Records ", "to": "Order on Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "weight": 1}, {"from": "Abstract of Records ", "to": "Statement of No Unlawful Alcohol Consumption ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Motion to Shorten Period of Driver\u0027s License Suspension or Denial ", "to": "Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Motion to Shorten Period of Driver\u0027s License Suspension or Denial ", "to": "Order on Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Motion to Shorten Period of Driver\u0027s License Suspension or Denial ", "to": "Statement of No Unlawful Alcohol Consumption ", "weight": 1}, {"from": "Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "to": "Order on Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "weight": 1}, {"from": "Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "to": "Statement of No Unlawful Alcohol Consumption ", "weight": 1}, {"from": "Order on Motion to Shorten Period of Driver\u2019s License Suspension or Denial ", "to": "Statement of No Unlawful Alcohol Consumption ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

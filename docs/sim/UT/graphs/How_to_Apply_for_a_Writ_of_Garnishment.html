@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Application for writ of garnishment ", "label": "Application for writ of garnishment ", "shape": "dot", "size": 10}, {"id": "Ex Parte Verified Motion to enforce writ of garnishment ", "label": "Ex Parte Verified Motion to enforce writ of garnishment ", "shape": "dot", "size": 10}, {"id": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "label": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "shape": "dot", "size": 10}, {"id": "Garnishee\u0027s answers to interrogatories for earnings ", "label": "Garnishee\u0027s answers to interrogatories for earnings ", "shape": "dot", "size": 10}, {"id": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "label": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "shape": "dot", "size": 10}, {"id": "Judgment Information Statement ", "label": "Judgment Information Statement ", "shape": "dot", "size": 10}, {"id": "Order on Motion to Enforce Writ of Garnishment ", "label": "Order on Motion to Enforce Writ of Garnishment ", "shape": "dot", "size": 10}, {"id": "Order to Attend  Hearing - Garnishee ", "label": "Order to Attend  Hearing - Garnishee ", "shape": "dot", "size": 10}, {"id": "Reply and request for hearing ", "label": "Reply and request for hearing ", "shape": "dot", "size": 10}, {"id": "Request for verification of employment ", "label": "Request for verification of employment ", "shape": "dot", "size": 10}, {"id": "Response to request for verification of employment ", "label": "Response to request for verification of employment ", "shape": "dot", "size": 10}, {"id": "Writ of continuing garnishment and instructions ", "label": "Writ of continuing garnishment and instructions ", "shape": "dot", "size": 10}, {"id": "Writ of garnishment and instructions ", "label": "Writ of garnishment and instructions ", "shape": "dot", "size": 10}, {"id": "Notice of garnishment and exemptions ", "label": "Notice of garnishment and exemptions ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Application for writ of garnishment ", "to": "Ex Parte Verified Motion to enforce writ of garnishment ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Garnishee\u0027s answers to interrogatories for earnings ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Judgment Information Statement ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Order on Motion to Enforce Writ of Garnishment ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Order to Attend  Hearing - Garnishee ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Application for writ of garnishment ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Garnishee\u0027s answers to interrogatories for earnings ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Judgment Information Statement ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Order on Motion to Enforce Writ of Garnishment ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Order to Attend  Hearing - Garnishee ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Ex Parte Verified Motion to enforce writ of garnishment ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Garnishee\u0027s answers to interrogatories for earnings ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Judgment Information Statement ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Order on Motion to Enforce Writ of Garnishment ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Order to Attend  Hearing - Garnishee ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Ex Parte Verified Motion to Enforce Writ of Garnishment - Commissioner ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Judgment Information Statement ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Order on Motion to Enforce Writ of Garnishment ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Order to Attend  Hearing - Garnishee ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for earnings ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Judgment Information Statement ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Order on Motion to Enforce Writ of Garnishment ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Order to Attend  Hearing - Garnishee ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Garnishee\u0027s answers to interrogatories for property other than earnings ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Judgment Information Statement ", "to": "Order on Motion to Enforce Writ of Garnishment ", "weight": 1}, {"from": "Judgment Information Statement ", "to": "Order to Attend  Hearing - Garnishee ", "weight": 1}, {"from": "Judgment Information Statement ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Judgment Information Statement ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Judgment Information Statement ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Judgment Information Statement ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Judgment Information Statement ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Order on Motion to Enforce Writ of Garnishment ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Order on Motion to Enforce Writ of Garnishment ", "to": "Order to Attend  Hearing - Garnishee ", "weight": 1}, {"from": "Order on Motion to Enforce Writ of Garnishment ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Order on Motion to Enforce Writ of Garnishment ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Order on Motion to Enforce Writ of Garnishment ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Order on Motion to Enforce Writ of Garnishment ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Order on Motion to Enforce Writ of Garnishment ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Order to Attend  Hearing - Garnishee ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Order to Attend  Hearing - Garnishee ", "to": "Reply and request for hearing ", "weight": 1}, {"from": "Order to Attend  Hearing - Garnishee ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Order to Attend  Hearing - Garnishee ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Order to Attend  Hearing - Garnishee ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Order to Attend  Hearing - Garnishee ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Reply and request for hearing ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Reply and request for hearing ", "to": "Request for verification of employment ", "weight": 1}, {"from": "Reply and request for hearing ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Reply and request for hearing ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Reply and request for hearing ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Request for verification of employment ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Request for verification of employment ", "to": "Response to request for verification of employment ", "weight": 1}, {"from": "Request for verification of employment ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Request for verification of employment ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Response to request for verification of employment ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Response to request for verification of employment ", "to": "Writ of continuing garnishment and instructions ", "weight": 1}, {"from": "Response to request for verification of employment ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Writ of continuing garnishment and instructions ", "to": "Notice of garnishment and exemptions ", "weight": 1}, {"from": "Writ of continuing garnishment and instructions ", "to": "Writ of garnishment and instructions ", "weight": 1}, {"from": "Writ of garnishment and instructions ", "to": "Notice of garnishment and exemptions ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

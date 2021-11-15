@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Final Statement on Garnishment of Periodic Payments", "label": "Final Statement on Garnishment of Periodic Payments", "shape": "dot", "size": 10}, {"id": "Order Regarding Installment Payments", "label": "Order Regarding Installment Payments", "shape": "dot", "size": 10}, {"id": "Garnishment Release", "label": "Garnishment Release", "shape": "dot", "size": 10}, {"id": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "label": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "shape": "dot", "size": 10}, {"id": "Motion to Set Aside Order for Installment Payments", "label": "Motion to Set Aside Order for Installment Payments", "shape": "dot", "size": 10}, {"id": "Order on Motion to Set Aside Order for Installment Payments", "label": "Order on Motion to Set Aside Order for Installment Payments", "shape": "dot", "size": 10}, {"id": "Order on Objections to Garnishment", "label": "Order on Objections to Garnishment", "shape": "dot", "size": 10}, {"id": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "label": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "shape": "dot", "size": 10}, {"id": "Request and Writ for Garnishment (Nonperiodic)", "label": "Request and Writ for Garnishment (Nonperiodic)", "shape": "dot", "size": 10}, {"id": "Request and Writ for Garnishment (Periodic)", "label": "Request and Writ for Garnishment (Periodic)", "shape": "dot", "size": 10}, {"id": "Garnishee Disclosure", "label": "Garnishee Disclosure", "shape": "dot", "size": 10}, {"id": "Objections to Garnishment and Notice of Hearing", "label": "Objections to Garnishment and Notice of Hearing", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Final Statement on Garnishment of Periodic Payments", "to": "Order Regarding Installment Payments", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Garnishment Release", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Order on Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Order on Objections to Garnishment", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Final Statement on Garnishment of Periodic Payments", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Garnishment Release", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Order on Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Order on Objections to Garnishment", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Order Regarding Installment Payments", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Garnishment Release", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Garnishment Release", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Garnishment Release", "to": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "weight": 1}, {"from": "Garnishment Release", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Garnishment Release", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Garnishment Release", "to": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "weight": 1}, {"from": "Garnishment Release", "to": "Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Garnishment Release", "to": "Order on Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Garnishment Release", "to": "Order on Objections to Garnishment", "weight": 1}, {"from": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "to": "Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "to": "Order on Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "to": "Order on Objections to Garnishment", "weight": 1}, {"from": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "to": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "weight": 1}, {"from": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Motion and Affidavit for Installment Payments/To Amend Order for Installment Payments", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Motion to Set Aside Order for Installment Payments", "to": "Order on Motion to Set Aside Order for Installment Payments", "weight": 1}, {"from": "Motion to Set Aside Order for Installment Payments", "to": "Order on Objections to Garnishment", "weight": 1}, {"from": "Motion to Set Aside Order for Installment Payments", "to": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "weight": 1}, {"from": "Motion to Set Aside Order for Installment Payments", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Motion to Set Aside Order for Installment Payments", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Motion to Set Aside Order for Installment Payments", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Order on Motion to Set Aside Order for Installment Payments", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Order on Motion to Set Aside Order for Installment Payments", "to": "Order on Objections to Garnishment", "weight": 1}, {"from": "Order on Motion to Set Aside Order for Installment Payments", "to": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "weight": 1}, {"from": "Order on Motion to Set Aside Order for Installment Payments", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Order on Motion to Set Aside Order for Installment Payments", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Order on Objections to Garnishment", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Order on Objections to Garnishment", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Order on Objections to Garnishment", "to": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "weight": 1}, {"from": "Order on Objections to Garnishment", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Order on Objections to Garnishment", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "to": "Request and Writ for Garnishment (Nonperiodic)", "weight": 1}, {"from": "Request and Writ for Garnishment (Income Tax Refund/Credit)", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Request and Writ for Garnishment (Nonperiodic)", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Request and Writ for Garnishment (Nonperiodic)", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Request and Writ for Garnishment (Nonperiodic)", "to": "Request and Writ for Garnishment (Periodic)", "weight": 1}, {"from": "Request and Writ for Garnishment (Periodic)", "to": "Garnishee Disclosure", "weight": 1}, {"from": "Request and Writ for Garnishment (Periodic)", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}, {"from": "Garnishee Disclosure", "to": "Objections to Garnishment and Notice of Hearing", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

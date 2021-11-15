@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Notice of Appointment ", "label": "Notice of Appointment ", "shape": "dot", "size": 10}, {"id": "Notice of Inability to Locate or Communicate with Service Member ", "label": "Notice of Inability to Locate or Communicate with Service Member ", "shape": "dot", "size": 10}, {"id": "Order Appointing Attorney ", "label": "Order Appointing Attorney ", "shape": "dot", "size": 10}, {"id": "Service Member\u2019s Statement about Limited Appearance ", "label": "Service Member\u2019s Statement about Limited Appearance ", "shape": "dot", "size": 10}, {"id": "Notice of Limited Appearance ", "label": "Notice of Limited Appearance ", "shape": "dot", "size": 10}, {"id": "Stipulation to Enter Judgment ", "label": "Stipulation to Enter Judgment ", "shape": "dot", "size": 10}, {"id": "Service Member\u2019s Preferences and Contact Information  ", "label": "Service Member\u2019s Preferences and Contact Information  ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Notice of Appointment ", "to": "Notice of Inability to Locate or Communicate with Service Member ", "weight": 1}, {"from": "Notice of Appointment ", "to": "Order Appointing Attorney ", "weight": 1}, {"from": "Notice of Appointment ", "to": "Service Member\u2019s Statement about Limited Appearance ", "weight": 1}, {"from": "Notice of Inability to Locate or Communicate with Service Member ", "to": "Notice of Limited Appearance ", "weight": 1}, {"from": "Notice of Inability to Locate or Communicate with Service Member ", "to": "Service Member\u2019s Statement about Limited Appearance ", "weight": 1}, {"from": "Notice of Inability to Locate or Communicate with Service Member ", "to": "Stipulation to Enter Judgment ", "weight": 1}, {"from": "Notice of Inability to Locate or Communicate with Service Member ", "to": "Service Member\u2019s Preferences and Contact Information  ", "weight": 1}, {"from": "Notice of Inability to Locate or Communicate with Service Member ", "to": "Order Appointing Attorney ", "weight": 1}, {"from": "Order Appointing Attorney ", "to": "Notice of Limited Appearance ", "weight": 1}, {"from": "Order Appointing Attorney ", "to": "Service Member\u2019s Statement about Limited Appearance ", "weight": 1}, {"from": "Order Appointing Attorney ", "to": "Stipulation to Enter Judgment ", "weight": 1}, {"from": "Service Member\u2019s Statement about Limited Appearance ", "to": "Notice of Limited Appearance ", "weight": 1}, {"from": "Service Member\u2019s Statement about Limited Appearance ", "to": "Service Member\u2019s Preferences and Contact Information  ", "weight": 1}, {"from": "Service Member\u2019s Statement about Limited Appearance ", "to": "Stipulation to Enter Judgment ", "weight": 1}, {"from": "Notice of Limited Appearance ", "to": "Stipulation to Enter Judgment ", "weight": 1}, {"from": "Notice of Limited Appearance ", "to": "Service Member\u2019s Preferences and Contact Information  ", "weight": 1}, {"from": "Stipulation to Enter Judgment ", "to": "Service Member\u2019s Preferences and Contact Information  ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

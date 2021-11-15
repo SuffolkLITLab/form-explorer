@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Acceptance of Appointment ", "label": "Acceptance of Appointment ", "shape": "dot", "size": 10}, {"id": "Accounting of Minor\u2019s Estate ", "label": "Accounting of Minor\u2019s Estate ", "shape": "dot", "size": 10}, {"id": "Certification of Readiness for Trial - Probate Case ", "label": "Certification of Readiness for Trial - Probate Case ", "shape": "dot", "size": 10}, {"id": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "label": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "shape": "dot", "size": 10}, {"id": "Inventory of Minor\u2019s Estate ", "label": "Inventory of Minor\u2019s Estate ", "shape": "dot", "size": 10}, {"id": "Motion to Change Reporting Period ", "label": "Motion to Change Reporting Period ", "shape": "dot", "size": 10}, {"id": "Motion to Change Venue ", "label": "Motion to Change Venue ", "shape": "dot", "size": 10}, {"id": "Motion to Terminate ", "label": "Motion to Terminate ", "shape": "dot", "size": 10}, {"id": "Notice of Hearing ", "label": "Notice of Hearing ", "shape": "dot", "size": 10}, {"id": "Letter of Conservatorship ", "label": "Letter of Conservatorship ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Acceptance of Appointment ", "to": "Accounting of Minor\u2019s Estate ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Certification of Readiness for Trial - Probate Case ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Inventory of Minor\u2019s Estate ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Motion to Change Reporting Period ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Motion to Change Venue ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Motion to Terminate ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Acceptance of Appointment ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Certification of Readiness for Trial - Probate Case ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Inventory of Minor\u2019s Estate ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Motion to Change Reporting Period ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Motion to Change Venue ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Motion to Terminate ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Accounting of Minor\u2019s Estate ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Certification of Readiness for Trial - Probate Case ", "to": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "weight": 1}, {"from": "Certification of Readiness for Trial - Probate Case ", "to": "Inventory of Minor\u2019s Estate ", "weight": 1}, {"from": "Certification of Readiness for Trial - Probate Case ", "to": "Motion to Change Reporting Period ", "weight": 1}, {"from": "Certification of Readiness for Trial - Probate Case ", "to": "Motion to Change Venue ", "weight": 1}, {"from": "Certification of Readiness for Trial - Probate Case ", "to": "Motion to Terminate ", "weight": 1}, {"from": "Certification of Readiness for Trial - Probate Case ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Certification of Readiness for Trial - Probate Case ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "to": "Inventory of Minor\u2019s Estate ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "to": "Motion to Change Reporting Period ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "to": "Motion to Change Venue ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "to": "Motion to Terminate ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Findings of Fact and Conclusions of Law on Petition to Appoint a Conservator for the Minor ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Inventory of Minor\u2019s Estate ", "to": "Motion to Change Reporting Period ", "weight": 1}, {"from": "Inventory of Minor\u2019s Estate ", "to": "Motion to Change Venue ", "weight": 1}, {"from": "Inventory of Minor\u2019s Estate ", "to": "Motion to Terminate ", "weight": 1}, {"from": "Inventory of Minor\u2019s Estate ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Inventory of Minor\u2019s Estate ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Motion to Change Reporting Period ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Motion to Change Reporting Period ", "to": "Motion to Change Venue ", "weight": 1}, {"from": "Motion to Change Reporting Period ", "to": "Motion to Terminate ", "weight": 1}, {"from": "Motion to Change Reporting Period ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Motion to Change Venue ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Motion to Change Venue ", "to": "Motion to Terminate ", "weight": 1}, {"from": "Motion to Change Venue ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Motion to Terminate ", "to": "Letter of Conservatorship ", "weight": 1}, {"from": "Motion to Terminate ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Notice of Hearing ", "to": "Letter of Conservatorship ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 6}}, "layout": {"hierarchical": {"enabled": true, "levelSeparation": 30, "edgeMinimization": false}}, "interaction": {"navigationButtons": true}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
