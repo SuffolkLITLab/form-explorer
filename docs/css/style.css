@@ -84,6 +84,27 @@ a.foota {
 	text-align:center;
 }
 
+.launch {
+  background: #0072E8;
+  width: 195px;
+  height: 60px;
+  line-height: 60px;
+  text-align:center;
+  color:white;
+  font-weight:600;
+  border-radius:10px;
+  margin:25px auto;
+  box-sizing: border-box;
+}
+
+a.launch {
+	font-family: sans-serif;
+	text-align:center;
+  color:white;
+  font-weight:550;
+	text-decoration:none;
+}
+
 h1 {
 	margin: 5px auto 10px auto;
 	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;

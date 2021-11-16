@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "label": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "shape": "dot", "size": 10}, {"id": "Statement of Claim", "label": "Statement of Claim", "shape": "dot", "size": 10}, {"id": "Affidavit and Request for Service", "label": "Affidavit and Request for Service", "shape": "dot", "size": 10}, {"id": "Notice of Small Claims Appeal", "label": "Notice of Small Claims Appeal", "shape": "dot", "size": 10}, {"id": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "label": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "shape": "dot", "size": 10}, {"id": "Jurisdictional Affidavit", "label": "Jurisdictional Affidavit", "shape": "dot", "size": 10}, {"id": "SSN Disclosure Form (AD,GS,NC)", "label": "SSN Disclosure Form (AD,GS,NC)", "shape": "dot", "size": 10}, {"id": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "label": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "shape": "dot", "size": 10}, {"id": "Request for Disclosure Hearing", "label": "Request for Disclosure Hearing", "shape": "dot", "size": 10}, {"id": "Acknowledgment of Service (Formerly Notice of Service)", "label": "Acknowledgment of Service (Formerly Notice of Service)", "shape": "dot", "size": 10}, {"id": "Compliance Report of the Guardian Ad Litem", "label": "Compliance Report of the Guardian Ad Litem", "shape": "dot", "size": 10}, {"id": "Guardianship Case File Checklist", "label": "Guardianship Case File Checklist", "shape": "dot", "size": 10}, {"id": "Private Party Adoption Case File Checklist", "label": "Private Party Adoption Case File Checklist", "shape": "dot", "size": 10}, {"id": "Name Change Case File Checklist", "label": "Name Change Case File Checklist", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Statement of Claim", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Affidavit and Request for Service", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Notice of Small Claims Appeal", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Jurisdictional Affidavit", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "SSN Disclosure Form (AD,GS,NC)", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Information Regarding Protection From Abuse Filings by Email and Filing Certification", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Statement of Claim", "to": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "weight": 1}, {"from": "Statement of Claim", "to": "Jurisdictional Affidavit", "weight": 1}, {"from": "Statement of Claim", "to": "SSN Disclosure Form (AD,GS,NC)", "weight": 1}, {"from": "Statement of Claim", "to": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "weight": 1}, {"from": "Statement of Claim", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Statement of Claim", "to": "Affidavit and Request for Service", "weight": 1}, {"from": "Statement of Claim", "to": "Notice of Small Claims Appeal", "weight": 1}, {"from": "Statement of Claim", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "Statement of Claim", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "Jurisdictional Affidavit", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "SSN Disclosure Form (AD,GS,NC)", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Affidavit and Request for Service", "to": "Notice of Small Claims Appeal", "weight": 1}, {"from": "Notice of Small Claims Appeal", "to": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "weight": 1}, {"from": "Notice of Small Claims Appeal", "to": "Jurisdictional Affidavit", "weight": 1}, {"from": "Notice of Small Claims Appeal", "to": "SSN Disclosure Form (AD,GS,NC)", "weight": 1}, {"from": "Notice of Small Claims Appeal", "to": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "weight": 1}, {"from": "Notice of Small Claims Appeal", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Notice of Small Claims Appeal", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "Notice of Small Claims Appeal", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "to": "Jurisdictional Affidavit", "weight": 1}, {"from": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "to": "SSN Disclosure Form (AD,GS,NC)", "weight": 1}, {"from": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "to": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "weight": 1}, {"from": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "Cover Sheet for Email Filing in Protection from Abuse or Protection from Harassment Case (PMO-SJC-3A)", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Jurisdictional Affidavit", "to": "SSN Disclosure Form (AD,GS,NC)", "weight": 1}, {"from": "Jurisdictional Affidavit", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Jurisdictional Affidavit", "to": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "weight": 1}, {"from": "Jurisdictional Affidavit", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "Jurisdictional Affidavit", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "SSN Disclosure Form (AD,GS,NC)", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "SSN Disclosure Form (AD,GS,NC)", "to": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "weight": 1}, {"from": "SSN Disclosure Form (AD,GS,NC)", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "SSN Disclosure Form (AD,GS,NC)", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "to": "Request for Disclosure Hearing", "weight": 1}, {"from": "Order Appointing Guardian Ad Litem (GAL) for Minor(s)", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Request for Disclosure Hearing", "to": "Compliance Report of the Guardian Ad Litem", "weight": 1}, {"from": "Request for Disclosure Hearing", "to": "Acknowledgment of Service (Formerly Notice of Service)", "weight": 1}, {"from": "Guardianship Case File Checklist", "to": "Private Party Adoption Case File Checklist", "weight": 1}, {"from": "Guardianship Case File Checklist", "to": "Name Change Case File Checklist", "weight": 1}, {"from": "Private Party Adoption Case File Checklist", "to": "Name Change Case File Checklist", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
