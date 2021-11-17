@@ -9,8 +9,8 @@ def regex_norm_field(text):
 
         # Personal info
         ## Name & Bio
-        ["^(My\s)?Name$","users1_name"],
-        ["^Printed Name\s?\d*$","users1_name"],
+        ["^((My|Full( legal)?) )?Name$","users1_name"],
+        ["^(Typed or )?Printed Name\s?\d*$","users1_name"],
         ["^(DOB|Date of Birth|Birthday)$","users1_birthdate"],
         ## Address
         ["^(Street )?Address$","users1_address_line_one"],
@@ -18,14 +18,21 @@ def regex_norm_field(text):
         ["^City$","users1_address_city"],
         ["^Zip( Code)?$","users1_address_zip"],
         ## Contact
-        ["^Phone$","users1_phone_number"],
-        ["^Email$","users1_email"],
+        ["^(Phone|Telephone)$","users1_phone_number"],
+        ["^Email( Adress)$","users1_email"],
+
+        # Parties
+        ["plaintiff","plantiff1_name"],
+        ["defendant","defendant1_name"],
+        ["petitioners","petitioners1_name"],
+        ["respondents","respondents1_name"],
 
         # Court info
         ["^(Court\s)?Case\s?(No|Number)?\s?A?$","docket_number"],
         ["^File\s?(No|Number)?\s?A?$","docket_number"],
 
         # Form info
+        ["^(Signature|Sign( here)?)\s?\d*$","users1_signature"],
         ["^Date\s?\d*$","signature_date"],
     ]
 
