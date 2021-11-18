@@ -33,21 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-16">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-17">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;"><b>This page is not active.</b> This page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
+<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
         The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-16</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-17</font></span>
         </center>
     </h1>
 
@@ -71,10 +72,12 @@
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Child support obligation worksheet </h1>
       <p>
-        [insert some description of what we're doing here]
+        This info page is part of the LIT Lab's <i>Form Explorer</i> project. It is not associated with the Utah state courts. 
+        To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.utcourts.gov/resources/forms/ch_support/1021FA_Child_Support_Worksheet_Sole_Custody.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) and the <a href="https://courtformsonline.org/forms/cf28ce1dfcaf7a868001c4a53c57bed10d4ee141a8ff62dfab4b4fb8.pdf" target="_blank">machine-processed form</a> with normalized data fields.
+        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.utcourts.gov/resources/forms/ch_support/1021FA_Child_Support_Worksheet_Sole_Custody.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) 
+        and the <a href="https://courtformsonline.org/forms/cf28ce1dfcaf7a868001c4a53c57bed10d4ee141a8ff62dfab4b4fb8.pdf">machine-processed form</a> with normalized data fields.
       </p>
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
@@ -85,15 +88,23 @@
         <li>Average fields per page: 19</li>
         <li>Reading Level: Grade 9</li>
       </ul>
-      <!--
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:*</h3>
-      <p>Filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male.</p>
-      -->
       
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified and Standardized Data Fields<!--and Utilization:<sup>&dagger;</sup>-->:</h3>
+      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
+      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
+      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
       If we think we've found a match to a question in our library, it is highlighted in green. The new names found here are auto generated. So, you will probably need to edit some of them.</p>
+      
+      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
+      (e.g., <b>X%</b> of the time this field is left blank...). 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <ul><li><code>district_court</code> was <i>DISTRICT COURT</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>in_the</code> was <i>IN THE</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__1</code> was <i>undefined</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>child_custody_civil</code> was <i>CHILD SUPPORT OBLIGATION WORKSHEET SOLE CUSTODY AND PATERNITY Civil No</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>vs</code> was <i>vs</i> (0.50 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>sole_custody_paternity</code> was <i>SOLE CUSTODY AND PATERNITY</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>mother</code> was <i>MOTHER</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>combined</code> was <i>COMBINED</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__2</code> was <i>undefined_2</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>previously_actually_paid_case__1</code> was <i>2b Enter previously ordered alimony that is actually paid Do not enter alimony ordered for this case</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>previously_actually_paid_case__2</code> was <i>2b Enter previously ordered alimony that is actually paid Do not enter alimony ordered for this case_2</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__3</code> was <i>undefined_3</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>previously_child_children__1</code> was <i>2c Enter previously ordered child support Do not enter obligations ordered for the children in Line 1</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>previously_child_children__2</code> was <i>2c Enter previously ordered child support Do not enter obligations ordered for the children in Line 1_2</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__4</code> was <i>undefined_4</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>enter_present_either__1</code> was <i>2d OPTIONAL Enter the amount from Line 12 of the Children in Present Home Worksheet for either parent</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>enter_present_either__2</code> was <i>2d OPTIONAL Enter the amount from Line 12 of the Children in Present Home Worksheet for either parent_2</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__5</code> was <i>undefined_5</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill__1</code> was <i>fill_27</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill__2</code> was <i>fill_28</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill__3</code> was <i>fill_29</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__6</code> was <i>undefined_6</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__7</code> was <i>undefined_7</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__8</code> was <i>undefined_8</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill__4</code> was <i>fill_30</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__9</code> was <i>undefined_9</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__10</code> was <i>undefined_10</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__11</code> was <i>undefined_11</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__12</code> was <i>undefined_12</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__13</code> was <i>undefined_13</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__14</code> was <i>undefined_14</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill__5</code> was <i>fill_38</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__15</code> was <i>undefined_15</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__16</code> was <i>undefined_16</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>support_award_amount_line</code> was <i>Is the support award the same as the guideline amount in Line 7</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>yes</code> was <i>Yes</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>absence_custodial_parent</code> was <i>absence of need of the custodial parent</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>other</code> was <i>other</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>attorney_bar</code> was <i>Attorney Bar No</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li>
         <!--<li><a href="../form/">show more</a></li>-->
         </ul>
@@ -102,23 +113,22 @@
       <p>For more context, visit the <a href="../../sim/UT">Similar Forms View</a>.</p>
       <ul><li><a href="15de535b3f80be3a6df4627fc7c6d3173e1bba0834e8bed1e603bbca.html">Child support obligation worksheet </a> (shares 37% of data fields)</li><li><a href="dc6fd69b48b942b4b05869a42d85f451d5a4d5a62d20a13d495f2dd3.html">Worksheet to determine mother's obligation in her present home </a> (shares 32% of data fields)</li><li><a href="4a700aa8ce6b4cd534a335b5529fa25cb5ecc83b6de76b2ed2767b16.html">Worksheet to determine father's obligation in his present home </a> (shares 30% of data fields)</li><li><a href="b457c54e156dd6c57e0b3cabf7338bb0a23013025b905a82482545ba.html">Child support obligation worksheet </a> (shares 25% of data fields)</li><li><a href="592f8aa77d8f855614c0d957e3d76b4c57d69dca1680c64975d4e017.html">Petition for Declaration of Emancipation of a Minor </a> (shares 21% of data fields)</li></ul>
       <!--
-      <li><a href="../form/">show more</a></li>
-      <!--
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>Before using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>After using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      -->
+      <li><a href="../form/">show more</a></li>-->
+      
+      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
+      <p>For more context, visit the <a href="../../flow/UT">Flows View</a>.</p>
+       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
+       what forms a user used before this one. 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
+      <p>For more context, visit the <a href="../../flow/UT">Flows View</a>.</p>
+      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
+      what forms a user used after this one. 
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
       <p>Using the Document Assembly Line Linter you can...</p>
       <p>
@@ -133,7 +143,7 @@
       <p>
         <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/cf28ce1dfcaf7a868001c4a53c57bed10d4ee141a8ff62dfab4b4fb8.pdf" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
       </p>
-
+      
     </div>
   </div>
     

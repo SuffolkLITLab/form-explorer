@@ -33,21 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-16">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-17">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;"><b>This page is not active.</b> This page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
+<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
         The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-16</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-17</font></span>
         </center>
     </h1>
 
@@ -71,10 +72,12 @@
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Motion for Appointment of Receiver</h1>
       <p>
-        [insert some description of what we're doing here]
+        This info page is part of the LIT Lab's <i>Form Explorer</i> project. It is not associated with the Michigan state courts. 
+        To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.michigan.gov/4a2872/siteassets/forms/scao-approved/mc445.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) and the <a href="https://courtformsonline.org/forms/fccad5f43595f287346f207a861e5f24259287f8f14ff88e64c5f87e.pdf" target="_blank">machine-processed form</a> with normalized data fields.
+        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.michigan.gov/4a2872/siteassets/forms/scao-approved/mc445.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) 
+        and the <a href="https://courtformsonline.org/forms/fccad5f43595f287346f207a861e5f24259287f8f14ff88e64c5f87e.pdf">machine-processed form</a> with normalized data fields.
       </p>
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
@@ -85,15 +88,23 @@
         <li>Average fields per page: 30</li>
         <li>Reading Level: Grade 10</li>
       </ul>
-      <!--
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:*</h3>
-      <p>Filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male.</p>
-      -->
       
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified and Standardized Data Fields<!--and Utilization:<sup>&dagger;</sup>-->:</h3>
+      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
+      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
+      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
       If we think we've found a match to a question in our library, it is highlighted in green. The new names found here are auto generated. So, you will probably need to edit some of them.</p>
+      
+      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
+      (e.g., <b>X%</b> of the time this field is left blank...). 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <ul><li><code>names_addresses_telephone__1</code> was <i>Plaintiffs names addresses and telephone nos</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>plaintiffs_attorney_address</code> was <i>Plaintiffs attorney bar no address and telephone no</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>names_addresses_telephone__2</code> was <i>Defendants names addresses and telephone nos</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>attorney_address_telephone</code> was <i>Defendants attorney bar no address and telephone no</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>probate</code> was <i>Probate</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>matter</code> was <i>In the matter of</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>1_i</code> was <i>1 I</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__1</code> was <i>Page</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__1</code> was <i>undefined</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>statutory_sections</code> was <i>Statutory sections</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>other</code> was <i>Other</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__2</code> was <i>undefined_2</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__3</code> was <i>undefined_3</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__2</code> was <i>Page_2</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__4</code> was <i>undefined_4</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__5</code> was <i>undefined_5</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>plaintiff</code> was <i>Plaintiff</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>defendant</code> was <i>Defendant</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>other_2</code> was <i>Other_2</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__6</code> was <i>undefined_6</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__7</code> was <i>undefined_7</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__3</code> was <i>Page_3</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__8</code> was <i>undefined_8</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>computers_computer_data</code> was <i>Books records computers computer data and passwords</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>deposit_accounts</code> was <i>Deposit accounts</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>goods</code> was <i>Goods</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>investment_property</code> was <i>Investment property</i> (0.74 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>provide_description_brief</code> was <i>Real property provide legal description in the accompanying brief</i> (0.72 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>titled_vehicles</code> was <i>Titled vehicles</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>chattel_paper</code> was <i>Chattel paper</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fixtures</code> was <i>Fixtures</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>inventory</code> was <i>Inventory</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>equipment</code> was <i>Equipment</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>general_intangibles</code> was <i>General Intangibles</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>patents_copyrights</code> was <i>Patents trademarks copyrights and other intellectual property</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>rents</code> was <i>Rents</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>other_3</code> was <i>Other_3</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__9</code> was <i>undefined_9</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__4</code> was <i>Page_4</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__10</code> was <i>undefined_10</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__5</code> was <i>Page_5</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>of</code> was <i>of</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>nominated_receiver</code> was <i>5 The nominated receiver is</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__6</code> was <i>Page_6</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__11</code> was <i>undefined_11</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__7</code> was <i>Page_7</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__12</code> was <i>undefined_12</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__13</code> was <i>undefined_13</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__8</code> was <i>Page_8</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__14</code> was <i>undefined_14</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>parties_agreed_nominal_bond</code> was <i>a The parties have agreed to a nominal bond of</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>b_court_set_bond</code> was <i>b The court should set bond at</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>based_factors_mcr_g</code> was <i>based on the factors in MCR 2622G</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/signature_date.html">signature_date__1</a></code> was <i>Date</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/signature_date.html">signature_date__2</a></code> was <i>Date_2</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__1</code> was <i>Text1</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__2</code> was <i>Text2</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__3</code> was <i>Text3</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__4</code> was <i>Text4</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__5</code> was <i>Text5</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/docket_number.html">docket_number</a></code> was <i>CASE NO</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li>
         <!--<li><a href="../form/">show more</a></li>-->
         </ul>
@@ -102,23 +113,22 @@
       <p>For more context, visit the <a href="../../sim/MI">Similar Forms View</a>.</p>
       <ul><li><a href="1688c8182fa17b1213a7c2f2646f744f667730366dad9939c5f14bc6.html">Minor Conservatorship - Final Account, Waiver and Consent</a> (shares 24% of data fields)</li><li><a href="e35701b65b1ba3494e069e49570305808292da2f0cab362af7c4e35d.html">Authorization for Return of Bond</a> (shares 24% of data fields)</li><li><a href="dbc716721a58cd00b02cf73ce64dec0085ea5fa8761162e702a9b268.html">Acceptance of Receivership Appointment (Receivership Estate)</a> (shares 21% of data fields)</li><li><a href="bd312f34dbcef5fe7cda8cf68740a029b3efa685f5939e8321058064.html">Notice of Receiver's Application for Compensation, Fees or Expenses (Receivership Estate)</a> (shares 20% of data fields)</li><li><a href="528c582ba2cfc97538a075a0304942057e8d33534624fe905ac8ef13.html">Juror Personal History Questionnaire</a> (shares 19% of data fields)</li></ul>
       <!--
-      <li><a href="../form/">show more</a></li>
-      <!--
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>Before using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>After using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      -->
+      <li><a href="../form/">show more</a></li>-->
+      
+      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
+      <p>For more context, visit the <a href="../../flow/MI">Flows View</a>.</p>
+       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
+       what forms a user used before this one. 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
+      <p>For more context, visit the <a href="../../flow/MI">Flows View</a>.</p>
+      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
+      what forms a user used after this one. 
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
       <p>Using the Document Assembly Line Linter you can...</p>
       <p>
@@ -133,7 +143,7 @@
       <p>
         <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/fccad5f43595f287346f207a861e5f24259287f8f14ff88e64c5f87e.pdf" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
       </p>
-
+      
     </div>
   </div>
     

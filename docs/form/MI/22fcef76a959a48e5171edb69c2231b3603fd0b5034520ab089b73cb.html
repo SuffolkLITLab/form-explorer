@@ -33,21 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-16">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-17">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;"><b>This page is not active.</b> This page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
+<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
         The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-16</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-17</font></span>
         </center>
     </h1>
 
@@ -71,10 +72,12 @@
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Petition for Personal Protection Order (Nondomestic Sexual Assault)</h1>
       <p>
-        [insert some description of what we're doing here]
+        This info page is part of the LIT Lab's <i>Form Explorer</i> project. It is not associated with the Michigan state courts. 
+        To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.michigan.gov/4a7f2a/siteassets/forms/scao-approved/cc395.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) and the <a href="https://courtformsonline.org/forms/22fcef76a959a48e5171edb69c2231b3603fd0b5034520ab089b73cb.pdf" target="_blank">machine-processed form</a> with normalized data fields.
+        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.michigan.gov/4a7f2a/siteassets/forms/scao-approved/cc395.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) 
+        and the <a href="https://courtformsonline.org/forms/22fcef76a959a48e5171edb69c2231b3603fd0b5034520ab089b73cb.pdf">machine-processed form</a> with normalized data fields.
       </p>
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
@@ -85,15 +88,23 @@
         <li>Average fields per page: 19</li>
         <li>Reading Level: Grade 12</li>
       </ul>
-      <!--
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:*</h3>
-      <p>Filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male.</p>
-      -->
       
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified and Standardized Data Fields<!--and Utilization:<sup>&dagger;</sup>-->:</h3>
+      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
+      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
+      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
       If we think we've found a match to a question in our library, it is highlighted in green. The new names found here are auto generated. So, you will probably need to edit some of them.</p>
+      
+      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
+      (e.g., <b>X%</b> of the time this field is left blank...). 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <ul><li><code>petitioners_name</code> was <i>Petitioners name</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>age__1</code> was <i>Age</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>age__2</code> was <i>Age_2</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>address_telephone_court</code> was <i>Address and telephone no where court can reach petitioner</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>required_carry_employment</code> was <i>The respondent is required to carry a firearm in the course of hisher employment</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown</code> was <i>Unknown</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>are</code> was <i>are</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>are_not</code> was <i>are not</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/docket_number.html">docket_number__1</a></code> was <i>Case number</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_county_state_province__1</code> was <i>Name of court county and state or province</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name_judge__1</code> was <i>Name of judge</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>are_2</code> was <i>are_2</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>are_not_2</code> was <i>are not_2</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>case_number</code> was <i>Case number_2</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_county_state_province__2</code> was <i>Name of court county and state or province_2</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name_judge__2</code> was <i>Name of judge_2</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>convicted_sexual_assault_case</code> was <i>a the respondent has been convicted of sexual assault against me insert case number in item 3b</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>minor_respondent_violation</code> was <i>b I am a minor and the respondent has been convicted of furnishing obscene material to me in violation of MCL 750142</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>sexual_assault_sexually</code> was <i>c I have a reasonable apprehension of sexual assault because the respondent has sexually assaulted me or threatened</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>material_explain_additional</code> was <i>d I am a minor and the respondent has furnished obscene material to me Explain what has happened attach additional sheets</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>entering_onto_property_live</code> was <i>entering onto property where I live</i> (0.74 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>entering_onto_property</code> was <i>entering onto property at</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>threatening_physically_person</code> was <i>threatening to sexually assault kill or physically injure me or another named person</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>purchasing_possessing_firearm</code> was <i>purchasing or possessing a firearm</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>property_premises_solely</code> was <i>interfering with my efforts to remove my children or personal property from premises that are solely owned or leased by</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>employment_education_conduct</code> was <i>interfering with me at my place of employment or education or engaging in conduct that impairs my employment or</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>following_appearing_within</code> was <i>following me or appearing within my sight</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>public_private_property</code> was <i>approaching or confronting me in a public place or on private property</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>appearing_workplace_residence</code> was <i>appearing at my workplace or residence</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>property_leased_occupied__1</code> was <i>entering onto or remaining on property owned leased or occupied by me</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>contacting_telephone</code> was <i>contacting me by telephone</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>sending_mail_communications</code> was <i>sending mail or electronic communications to me</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>property_leased_occupied__2</code> was <i>placing an object on or delivering an object to property owned leased or occupied by me</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>way_would_make</code> was <i>posting an electronic message with the intent to cause others to contact me in a way that would make me feel terrorized</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>act_conduct_upon</code> was <i>doing any other specific act or conduct that imposes upon or interferes with my personal liberty or that causes me a</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__1</code> was <i>undefined</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined__2</code> was <i>undefined_2</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>violence_sexual_assault</code> was <i>reasonable apprehension of violence or sexual assault as follows</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>immediate_injury_damage_occur</code> was <i>6 I request an ex parte order because immediate and irreparable injury loss or damage will occur between now and a</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>certify_disqualified_statute</code> was <i>7 I have a next friend petitioning for me I certify that the next friend is not disqualified by statute and is an adult</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>officer_certificate</code> was <i>OFFICER CERTIFICATE</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>affidavit_process_server</code> was <i>AFFIDAVIT OF PROCESS SERVER</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>copy_personal_order</code> was <i>I served a copy of the petition for personal protection order by</i> (0.72 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>personally_personal_order</code> was <i>I have personally attempted to serve a copy of the petition for personal protection order on the following respondent and have</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>personal_service</code> was <i>personal service</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>mail_delivery_receipt</code> was <i>registered mail delivery restricted to the respondent return receipt attached</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>respondent_name__1</code> was <i>Respondent name</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>complete_address_service__1</code> was <i>Complete address of service</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>day_date_time__1</code> was <i>Day date time</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>respondent_name__2</code> was <i>Respondent name_2</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>complete_address_service__2</code> was <i>Complete address of service_2</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>service_fee</code> was <i>Service fee</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name_type_print</code> was <i>Name type or print</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>total_fee</code> was <i>TOTAL FEE</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>title</code> was <i>Title</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/signature_date.html">signature_date__1</a></code> was <i>Date</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>county_michigan</code> was <i>County Michigan</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/signature_date.html">signature_date__2</a></code> was <i>Date_2</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>deputy_court_clerk_notary</code> was <i>Deputy court clerkNotary public</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>public_state_michigan_county</code> was <i>Notary public State of Michigan County of</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>day_date_time__2</code> was <i>Day date time_2</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__1</code> was <i>Text1</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__2</code> was <i>Text2</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/docket_number.html">docket_number__2</a></code> was <i>CASE NO</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__3</code> was <i>Text3</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__4</code> was <i>Text4</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__5</code> was <i>Text5</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__6</code> was <i>Text6</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__7</code> was <i>Text7</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__8</code> was <i>Text8</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__9</code> was <i>Text9</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__10</code> was <i>Text10</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__11</code> was <i>Text11</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__12</code> was <i>Text12</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__13</code> was <i>Text13</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__14</code> was <i>Text14</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__15</code> was <i>Text15</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li>
         <!--<li><a href="../form/">show more</a></li>-->
         </ul>
@@ -102,23 +113,22 @@
       <p>For more context, visit the <a href="../../sim/MI">Similar Forms View</a>.</p>
       <ul><li><a href="5abaaf9c4c206462a2da5e2280708ff08ef1c22a98a3e75ddbe74f11.html">Petition for Personal Protection Order  (Nondomestic)</a> (shares 75% of data fields)</li><li><a href="266fad9f16270d2ae97213edeabbf79af230ea0c83dfd6398c2d4624.html">Petition for Personal Protection Order Against a Minor (Nondomestic)</a> (shares 39% of data fields)</li><li><a href="dc4f152d190d9efea9b5394c7b796fd12c6deff66ca9acaab28b9ea2.html">Petition for Personal Protection Order (Domestic Relationship)</a> (shares 34% of data fields)</li><li><a href="098a361c8ba51e9fdc76aa70ec1df1df98a697c265c551f072f518a9.html">Petition for Personal Protection Order Against a Minor (Nondomestic Sexual Assault)</a> (shares 34% of data fields)</li><li><a href="3eb25b769913afc91eaafb4242ca0d818996258b65aeb809fd81577b.html">Petition for Personal Protection Order Against a Minor (Domestic Relationship)</a> (shares 33% of data fields)</li></ul>
       <!--
-      <li><a href="../form/">show more</a></li>
-      <!--
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>Before using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>After using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      -->
+      <li><a href="../form/">show more</a></li>-->
+      
+      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
+      <p>For more context, visit the <a href="../../flow/MI">Flows View</a>.</p>
+       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
+       what forms a user used before this one. 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
+      <p>For more context, visit the <a href="../../flow/MI">Flows View</a>.</p>
+      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
+      what forms a user used after this one. 
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
       <p>Using the Document Assembly Line Linter you can...</p>
       <p>
@@ -133,7 +143,7 @@
       <p>
         <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/22fcef76a959a48e5171edb69c2231b3603fd0b5034520ab089b73cb.pdf" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
       </p>
-
+      
     </div>
   </div>
     

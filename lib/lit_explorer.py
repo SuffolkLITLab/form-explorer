@@ -16,16 +16,17 @@ def regex_norm_field(text):
         ["^(Street )?Address$","users1_address_line_one"],
         ["^City State Zip$","users1_address_line_two"],
         ["^City$","users1_address_city"],
+        ["^State$","users1_address_state"],
         ["^Zip( Code)?$","users1_address_zip"],
         ## Contact
         ["^(Phone|Telephone)$","users1_phone_number"],
         ["^Email( Adress)$","users1_email"],
 
         # Parties
-        ["plaintiff","plantiff1_name"],
-        ["defendant","defendant1_name"],
-        ["petitioners","petitioners1_name"],
-        ["respondents","respondents1_name"],
+        ["^plaintiff\(?s?\)?$","plantiff1_name"],
+        ["^defendant\(?s?\)?$","defendant1_name"],
+        ["^petitioner\(?s?\)?$","petitioners1_name"],
+        ["^respondent\(?s?\)?$","respondents1_name"],
 
         # Court info
         ["^(Court\s)?Case\s?(No|Number)?\s?A?$","docket_number"],

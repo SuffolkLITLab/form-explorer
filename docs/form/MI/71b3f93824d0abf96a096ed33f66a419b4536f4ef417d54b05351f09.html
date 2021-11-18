@@ -33,21 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-16">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-17">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;"><b>This page is not active.</b> This page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
+<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
         The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-16</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-17</font></span>
         </center>
     </h1>
 
@@ -71,10 +72,12 @@
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Complaint and Summons Regarding Dangerous Animal</h1>
       <p>
-        [insert some description of what we're doing here]
+        This info page is part of the LIT Lab's <i>Form Explorer</i> project. It is not associated with the Michigan state courts. 
+        To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.michigan.gov/4a27a5/siteassets/forms/scao-approved/dc118.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) and the <a href="https://courtformsonline.org/forms/71b3f93824d0abf96a096ed33f66a419b4536f4ef417d54b05351f09.pdf" target="_blank">machine-processed form</a> with normalized data fields.
+        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.michigan.gov/4a27a5/siteassets/forms/scao-approved/dc118.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-11) 
+        and the <a href="https://courtformsonline.org/forms/71b3f93824d0abf96a096ed33f66a419b4536f4ef417d54b05351f09.pdf">machine-processed form</a> with normalized data fields.
       </p>
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
@@ -85,15 +88,23 @@
         <li>Average fields per page: 17</li>
         <li>Reading Level: Grade 14</li>
       </ul>
-      <!--
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:*</h3>
-      <p>Filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male.</p>
-      -->
       
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified and Standardized Data Fields<!--and Utilization:<sup>&dagger;</sup>-->:</h3>
+      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
+      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
+      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
       If we think we've found a match to a question in our library, it is highlighted in green. The new names found here are auto generated. So, you will probably need to edit some of them.</p>
+      
+      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
+      (e.g., <b>X%</b> of the time this field is left blank...). 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <ul><li><code>state_judicial_district</code> was <i>STATE OF MICHIGAN JUDICIAL DISTRICT</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>dangerous_animal</code> was <i>a dangerous animal</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>animal_named_dangerous</code> was <i>2 The animal named above is dangerous because</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>undefined</code> was <i>undefined</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>dog_old_without_large</code> was <i>the dog is over 6 months old was without a license attached to its collar and ran at large unaccompanied by its owner or</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>caused_damage_person</code> was <i>the dog destroyed property or habitually caused damage by trespassing on property of a person not the owner MCL</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>dog_attacked_bit_person_mcl</code> was <i>the dog attacked or bit a person MCL 287286a</i> (0.74 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>dog_vicious_person_public</code> was <i>the dog showed vicious habits or molested a person when that person was lawfully on the public highway MCL 287286a</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>dog_even_though_wearing_license</code> was <i>the dog ran at large even though licensed and wearing the license tag MCL 287286a</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>caused_serious_death_person</code> was <i>the animal caused serious injury or death to a person or a dog MCL 287322</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name_type_print</code> was <i>Name type or print</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/users1_address_line_one.html">users1_address_line_one</a></code> was <i>Address</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/users1_address_city.html">users1_address_city</a></code> was <i>City</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/users1_address_state.html">users1_address_state</a></code> was <i>State</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/users1_address_zip.html">users1_address_zip</a></code> was <i>Zip</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>complainant_address</code> was <i>Complainant address</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>city</code> was <i>City_2</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>state</code> was <i>State_2</i> (0.52 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>zip</code> was <i>Zip_2</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>telephone</code> was <i>Telephone no</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/signature_date.html">signature_date__1</a></code> was <i>Date</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>county_michigan</code> was <i>County Michigan</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/signature_date.html">signature_date__2</a></code> was <i>Date_2</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>public_state_michigan_county</code> was <i>Notary public State of Michigan County of</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/signature_date.html">signature_date__3</a></code> was <i>Date_3</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>time</code> was <i>Time</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cause_failure_appear</code> was <i>to show cause why the animal identified in the above complaint should not be destroyed Failure to appear for this hearing</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>hearing_decision_made</code> was <i>be held at the owners expense until the hearing is held and a decision is made for the disposition of the animal pursuant</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>date_issued</code> was <i>Date issued</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>expiration_date</code> was <i>Expiration date</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>bar</code> was <i>Bar no</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__1</code> was <i>Text1</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__2</code> was <i>Text2</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__3</code> was <i>Text3</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/MI/fields/docket_number.html">docket_number</a></code> was <i>CASE NO</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li>
         <!--<li><a href="../form/">show more</a></li>-->
         </ul>
@@ -102,23 +113,22 @@
       <p>For more context, visit the <a href="../../sim/MI">Similar Forms View</a>.</p>
       <ul><li><a href="3eb4f5b85959fec253f5ba96a017f021afaaac4f5e6800ca3e1f6ea9.html">Order Regarding Extradition</a> (shares 26% of data fields)</li><li><a href="3ecd6cb40d58b1fccb15934a84de73a08e550d84fee21486cc8ba596.html">Demand and Order for Removal, Small Claims</a> (shares 25% of data fields)</li><li><a href="d35a9c6e99ad24957adb6be82f92c99ae8c61ccf3c76cf380b82bdbc.html">Ex Parte Motion and Order to Renew Civil Judgment</a> (shares 23% of data fields)</li><li><a href="784a16f0c55c56cf1f7a7e236be6014203d205f156239a4779218f4e.html">Order Regarding Appointment of Temporary Guardian of Incapacitated Individual</a> (shares 22% of data fields)</li><li><a href="bd312f34dbcef5fe7cda8cf68740a029b3efa685f5939e8321058064.html">Notice of Receiver's Application for Compensation, Fees or Expenses (Receivership Estate)</a> (shares 21% of data fields)</li></ul>
       <!--
-      <li><a href="../form/">show more</a></li>
-      <!--
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>Before using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      <h3><a name="cat1" href="#cat1" class="anchor"></a>After using this form, users used:*</h3>
-      <p>For more context, visit the <a href="../flow/">Flows View</a>.</p>
-      <ul>
-        <li><a href="../form/">Form one</a> (shares 90% of data fields)</li>
-        <li><a href="../form/">Form one</a> (shares 70% of data fields)</li>
-        <li><a href="../form/">show more</a></li>
-      </ul>
-      -->
+      <li><a href="../form/">show more</a></li>-->
+      
+      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
+      <p>For more context, visit the <a href="../../flow/MI">Flows View</a>.</p>
+       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
+       what forms a user used before this one. 
+       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
+      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
+      <p>For more context, visit the <a href="../../flow/MI">Flows View</a>.</p>
+      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
+      what forms a user used after this one. 
+      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+      </i></p>
+      
       <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
       <p>Using the Document Assembly Line Linter you can...</p>
       <p>
@@ -133,7 +143,7 @@
       <p>
         <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/71b3f93824d0abf96a096ed33f66a419b4536f4ef417d54b05351f09.pdf" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
       </p>
-
+      
     </div>
   </div>
     
