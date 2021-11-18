@@ -33,7 +33,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-17">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2021-11-18">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
@@ -48,7 +48,7 @@
     <h1 style="text-align:center;">
         The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-17</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-18</font></span>
         </center>
     </h1>
 
@@ -75,6 +75,35 @@
     <p>Download a .csv file including meta data on all 656 forms, including source urls, field names, and reading levels: 
     <a href="UT_form_data.csv" target="_blank">UT_form_data.csv</a>
     </p>
+    
+    Choose Ordering: 
+    <select id="form_ordering" onChange="sort_links()">
+        <option value='court_grouping'>Court Groupings</option>
+        <option value='LIST_grouping'>LIST Groupings</option>
+        <option value='most_used'>Most Used</option>
+    </select>
+    <script>
+        function sort_links(){
+            if($('#form_ordering').val() == "court_grouping"){
+                $('#court_grouping').show()
+                $('#LIST_grouping').hide()
+                $('#most_used').hide()
+            } else if($('#form_ordering').val() == "LIST_grouping"){
+                $('#court_grouping').hide()
+                $('#LIST_grouping').show()
+                $('#most_used').hide()
+            } else if($('#form_ordering').val() == "most_used"){
+                $('#court_grouping').hide()
+                $('#LIST_grouping').hide()
+                $('#most_used').show()
+            }
+        }
+    
+    </script>
+    
+    <div id="court_grouping" style="width:100;">
+    
+    <p><i>Links are grouped by categories found on the court's website.</i></p>
     
     
         <h3><a name="3rd_District_Juvenile_Court_Forms_and_Pamphlets" href="#3rd_District_Juvenile_Court_Forms_and_Pamphlets" class="anchor"></a>3rd District Juvenile Court: Forms and Pamphlets</h3>
@@ -306,7 +335,29 @@
         <h3><a name="Writ_of_Execution" href="#Writ_of_Execution" class="anchor"></a>Writ of Execution</h3>
         <ul><li><a href="../../form/UT/176f43b57fd3d0550b1abfb4eed1dd078aefdf81c776f10826be559a.html">Application for Writ of Executon </a></li><li><a href="../../form/UT/ca173e71a9c9eece89828b9baa2df64a27e7ec5339a53b350c951919.html">Notice of execution and exemptions </a></li><li><a href="../../form/UT/dd780cf5725705a93bed99e750ec408569d9d909f9274a041741cc66.html">Reply and request for hearing </a></li><li><a href="../../form/UT/4c1880581745f10037b36fa4e2294b44679ee6bc2e183f11e272d9b6.html">Writ of Execution </a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p>
         <h3><a name="Wrongful_Liens" href="#Wrongful_Liens" class="anchor"></a>Wrongful Liens</h3>
-        <ul><li><a href="../../form/UT/9e19a44392bdd3dd0c1a2ef88b84c75878819dda60f18cab9507a9b6.html">Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/74495f5ac80edf067e7bf609805e30ef1e67974fbf6d4468813c6786.html">Ex Parte Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/a8a88c0d521c7276703a8aa1e1edfea3a14c70fe1164f3bda9b339e5.html">Order Revoking Ex Parte Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/821243f1187eda4dde628ce1d50f08d7d87b59434deb186d093c7e88.html">Petition for Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/ce86dca7a26b3e75620508b4f73885b12a654c9ab8fba406f2fa55b0.html">Request for Hearing – Civil Wrongful Lien Injunction </a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p></div><div style="float:right;width:35%;">
+        <ul><li><a href="../../form/UT/9e19a44392bdd3dd0c1a2ef88b84c75878819dda60f18cab9507a9b6.html">Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/74495f5ac80edf067e7bf609805e30ef1e67974fbf6d4468813c6786.html">Ex Parte Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/a8a88c0d521c7276703a8aa1e1edfea3a14c70fe1164f3bda9b339e5.html">Order Revoking Ex Parte Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/821243f1187eda4dde628ce1d50f08d7d87b59434deb186d093c7e88.html">Petition for Civil Wrongful Lien Injunction </a></li><li><a href="../../form/UT/ce86dca7a26b3e75620508b4f73885b12a654c9ab8fba406f2fa55b0.html">Request for Hearing – Civil Wrongful Lien Injunction </a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p></div>
+    
+    <div id="LIST_grouping" style="display:none;width:100;">
+    
+    <p><i>Links are grouped by categories from the <a href="https://taxonomy.legal/" target="_blank" class="exlink">Legal Issue Taxonomy (LIST)</a>. Note: the grouping below was doneby machine and may have some errors.</i></p>
+    <p style="background:yellow;"><b>Coming Soon!</b></p>
+    
+    </div>
+    
+    <div id="most_used" style="display:none;width:100;">
+    
+    <p><i>Links are orderd by most used.</i></p>
+    
+    <p style="background:#fcf19d">
+        <i>
+            <b>Under Construction:</b> With historical form data we could provde insights on how frequently forms are used.
+            If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+        </i>
+    </p>
+    
+    </div>
+    </div>
+    <div style="float:right;width:35%;">
             <h2>Search Utah Forms</h2>
             <table cellpadding="0px"><tr><td width="100%">
             <input id="q" style="width:100%">
@@ -314,6 +365,8 @@
             <input type="button" value="Search" onClick="open_search();">
             </td></tr></table>
             <script>
+                sort_links();
+            
                 function open_search(){
                     alert('Coming Soon!');
                 }
