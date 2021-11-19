@@ -33,7 +33,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css?v=2021-11-17">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css?v=2021-11-19">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
@@ -46,9 +46,9 @@
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../../images/seal.jpg');"><a href="../../../" alt="home"><img src="../../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
-        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-17</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2021-11-19</font></span>
         </center>
     </h1>
 
@@ -67,12 +67,20 @@
       <div class="content">
       <div style="float:left;width:60%;">
       <h2><a name="title" href="#title" class="anchor"></a>California court forms that use: <i>users1_birthdate</i></h2>
-      <p>Out of <a href="../">0 forms</a>, <span style="background:yellow"><b>the following 0 forms use <i>users1_birthdate</i>:</b></span>
+      <p>Out of <a href="../">1477 forms</a>, <span style="background:yellow"><b>the following 6 forms use <i>users1_birthdate</i>:</b></span>
       
       To learn more about our standard field names, read <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables">Field labels to use in template files</a>.
       
       </p>
-</div></div><div style="float:right;width:35%;">
+
+        <h3><a name="DV" href="#DV" class="anchor"></a>DV</h3>
+        <ul><li><a href="../../../form/CA/c68b57924fafba8747a525e70711279c.html">Order to Renew Domestic Violence Restraining Order</a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p>
+        <h3><a name="FL" href="#FL" class="anchor"></a>FL</h3>
+        <ul><li><a href="../../../form/CA/ec71943daa871e25fd0a553451906ea7.html">Case Information—Family Law</a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p>
+        <h3><a name="GC" href="#GC" class="anchor"></a>GC</h3>
+        <ul><li><a href="../../../form/CA/46d6844a56599d982b5120b9bcf74813.html">Guardianship Petition-Child Information Attachment</a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p>
+        <h3><a name="JV" href="#JV" class="anchor"></a>JV</h3>
+        <ul><li><a href="../../../form/CA/0eb523d040f8188ae4110fd1591e08f2.html">Authorization to Release Health and Mental Health Information</a></li><li><a href="../../../form/CA/aabc26ff7178a16ead68ad622961551b.html">Jurisdiction Hearing—Juvenile Delinquency</a></li><li><a href="../../../form/CA/2c43a04525d90244af472423bf933385.html">Notification to Sheriff of Juvenile Delinquency Felony Adjudication (Welf. & Inst. Code Section 827.2)</a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p></div></div><div style="float:right;width:35%;">
             <h2>Search California Forms</h2>
             <table cellpadding="0px"><tr><td width="100%">
             <input id="q" style="width:100%">
@@ -81,6 +89,9 @@
             </td></tr></table>
             <script>
                 function open_search(){
+                    alert('Coming Soon!');
+                }
+                function open_search_(){
                     window.open('https://www.google.com/search?q='+$('#q').val()+'+site:suffolklitlab.org/form-explorer/form/CA')
                 }
                 $("#q").on('keyup', function (e) {
@@ -93,7 +104,7 @@
             <h2>Standard Field Names</h2>
             <p>We maintain a bank of <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables">standard questions and field names</a>. A list of common fields is found below, click a field to see those forms using it.</p>
             <ul>
-    <li><a href="fields/users1_name.html">users1_name</a></li><li><a href="fields/users1_birthdate.html">users1_birthdate</a></li><li><a href="fields/users1_address_line_one.html">users1_address_line_one</a></li><li><a href="fields/users1_address_line_two.html">users1_address_line_two</a></li><li><a href="fields/users1_address_city.html">users1_address_city</a></li><li><a href="fields/users1_address_state.html">users1_address_state</a></li><li><a href="fields/users1_address_zip.html">users1_address_zip</a></li><li><a href="fields/users1_phone_number.html">users1_phone_number</a></li><li><a href="fields/users1_email.html">users1_email</a></li><li><a href="fields/plantiffs1_name.html">plantiffs1_name</a></li><li><a href="fields/defendants1_name.html">defendants1_name</a></li><li><a href="fields/petitioners1_name.html">petitioners1_name</a></li><li><a href="fields/respondents1_name.html">respondents1_name</a></li><li><a href="fields/docket_number.html">docket_number</a></li><li><a href="fields/trial_court_county.html">trial_court_county</a></li><li><a href="fields/users1_signature.html">users1_signature</a></li><li><a href="fields/signature_date.html">signature_date</a></li></ul></div>
+    <li><a href="users1_name.html">users1_name</a></li><li><a href="users1_birthdate.html">users1_birthdate</a></li><li><a href="users1_address_line_one.html">users1_address_line_one</a></li><li><a href="users1_address_line_two.html">users1_address_line_two</a></li><li><a href="users1_address_city.html">users1_address_city</a></li><li><a href="users1_address_state.html">users1_address_state</a></li><li><a href="users1_address_zip.html">users1_address_zip</a></li><li><a href="users1_phone_number.html">users1_phone_number</a></li><li><a href="users1_email.html">users1_email</a></li><li><a href="plantiffs1_name.html">plantiffs1_name</a></li><li><a href="defendants1_name.html">defendants1_name</a></li><li><a href="petitioners1_name.html">petitioners1_name</a></li><li><a href="respondents1_name.html">respondents1_name</a></li><li><a href="docket_number.html">docket_number</a></li><li><a href="trial_court_county.html">trial_court_county</a></li><li><a href="users1_signature.html">users1_signature</a></li><li><a href="signature_date.html">signature_date</a></li></ul></div>
 
 <div class="footer">
     <a href="/" alt="home"><img src="../../../images/blue_logo.png" width="50px" align="left" border="0" alt="LIT Logo"/></a>
