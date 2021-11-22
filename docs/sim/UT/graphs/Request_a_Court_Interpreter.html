@@ -50,8 +50,8 @@
         
 
         // parsing and collecting nodes and edges from the python
-        nodes = new vis.DataSet([{"id": "Request a Court Interpreter - General Request ", "label": "Request a Court Interpreter - General Request ", "shape": "dot", "size": 10}, {"id": "Request a Court Interpreter - Vietnamese ", "label": "Request a Court Interpreter - Vietnamese ", "shape": "dot", "size": 10}, {"id": "Request a Court Interpreter - Spanish ", "label": "Request a Court Interpreter - Spanish ", "shape": "dot", "size": 10}]);
-        edges = new vis.DataSet([{"from": "Request a Court Interpreter - General Request ", "to": "Request a Court Interpreter - Vietnamese ", "weight": 1}, {"from": "Request a Court Interpreter - General Request ", "to": "Request a Court Interpreter - Spanish ", "weight": 1}, {"from": "Request a Court Interpreter - Vietnamese ", "to": "Request a Court Interpreter - Spanish ", "weight": 1}]);
+        nodes = new vis.DataSet([{"id": "Request a Court Interpreter - General Request ", "label": "Request a Court Interpreter - General Request ", "shape": "dot", "size": 10}, {"id": "Request a Court Interpreter - Spanish ", "label": "Request a Court Interpreter - Spanish ", "shape": "dot", "size": 10}, {"id": "Request a Court Interpreter - Vietnamese ", "label": "Request a Court Interpreter - Vietnamese ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Request a Court Interpreter - General Request ", "to": "Request a Court Interpreter - Spanish ", "weight": 1}, {"from": "Request a Court Interpreter - General Request ", "to": "Request a Court Interpreter - Vietnamese ", "weight": 1}, {"from": "Request a Court Interpreter - Spanish ", "to": "Request a Court Interpreter - Vietnamese ", "weight": 1}]);
 
         // adding nodes and edges to the graph
         data = {nodes: nodes, edges: edges};

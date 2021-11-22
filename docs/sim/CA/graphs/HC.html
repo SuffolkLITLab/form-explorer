@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Petition for Writ of Habeas Corpus", "label": "Petition for Writ of Habeas Corpus", "shape": "dot", "size": 10}, {"id": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "label": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "shape": "dot", "size": 10}, {"id": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "label": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "shape": "dot", "size": 10}, {"id": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "label": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "shape": "dot", "size": 10}, {"id": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "label": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "shape": "dot", "size": 10}, {"id": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "label": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "shape": "dot", "size": 10}, {"id": "Notice and Request for Ruling", "label": "Notice and Request for Ruling", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Petition for Writ of Habeas Corpus", "to": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus", "to": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus", "to": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus", "to": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus", "to": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "to": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "to": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "to": "Notice and Request for Ruling", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "to": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "weight": 1}, {"from": "Petition for Writ of Habeas Corpus\u2014LPS Act (Mental Health)", "to": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "to": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "to": "Notice and Request for Ruling", "weight": 1}, {"from": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "to": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "weight": 1}, {"from": "Petition for Writ Of Habeas Corpus\u2014Penal Commitment (Mental Health)", "to": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "to": "Notice and Request for Ruling", "weight": 1}, {"from": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "to": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Order Appointing Counsel in Death Penalty-Related Habeas Corpus Proceedings", "to": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "weight": 1}, {"from": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "to": "Notice and Request for Ruling", "weight": 1}, {"from": "Petitioner\u0027s Notice of Appeal-Death Penalty-Related Habeas Corpus Decision", "to": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "weight": 1}, {"from": "Declaration of Counsel Re Minimum Qualifications for Appointment in Death Penalty-Related Habeas Corpus Proceedings", "to": "Notice and Request for Ruling", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
