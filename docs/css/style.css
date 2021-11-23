@@ -642,8 +642,7 @@ code {
 .tab {
 	float:left;
 	box-sizing: border-box;
-	width:100px;
-	border-right: solid 1px #ccc;
+	border: solid 1px #555;
 	text-align:center;
 	padding:10px 15px;
 }
