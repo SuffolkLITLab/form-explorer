@@ -1,6 +1,13 @@
+# Written 2021-11-24
+
 import os
 import re
 import spacy
+import PyPDF2
+import pikepdf
+import textstat
+import requests
+import json
 import numpy as np
 from numpy import unique
 from numpy import where
@@ -10,35 +17,96 @@ from sklearn.preprocessing import normalize
 from joblib import load
 from nltk.corpus import stopwords
 import math
+import signal
+from contextlib import contextmanager
+
+stop_words = set(stopwords.words('english'))
+nlp = spacy.load('en_core_web_lg') # this takes a while to loadimport os
+
+
+# Load local variables, models, and API key(s).
 
 included_fields = load(os.path.join(os.path.dirname(__file__), 'data', 'included_fields.joblib'))
 jurisdictions = load(os.path.join(os.path.dirname(__file__), 'data', 'jurisdictions.joblib'))
 groups = load(os.path.join(os.path.dirname(__file__), 'data', 'groups.joblib'))
 clf_field_names = load(os.path.join(os.path.dirname(__file__), 'data', 'clf_field_names.joblib'))
-stop_words = set(stopwords.words('english'))
+with open(os.path.join(os.path.dirname(__file__), '../../data/keys', 'spot_token.txt'), 'r') as file:
+    spot_token = file.read().rstrip()
 
-nlp = spacy.load('en_core_web_lg') # this takes a while to loadimport os
 
+# This creates a timeout exception that can be triggered when something hangs too long. 
+
+class TimeoutException(Exception): pass
+@contextmanager
+def time_limit(seconds):
+    def signal_handler(signum, frame):
+        raise TimeoutException("Timed out!")
+    signal.signal(signal.SIGALRM, signal_handler)
+    signal.alarm(seconds)
+    try:
+        yield
+    finally:
+        signal.alarm(0)
+
+
+# Pull ID values out of the LIST/NSMI results from Spot.
+
+def recursive_get_id(values_to_unpack, tmpl=None):
+    # h/t to Quinten and Bryce for this code ;)
+    if not tmpl:
+        tmpl = set()
+    if isinstance(values_to_unpack, dict):
+        tmpl.add(values_to_unpack.get('id'))
+        if values_to_unpack.get('children'):
+            tmpl.update(recursive_get_id(values_to_unpack.get('children'), tmpl))
+        return tmpl
+    elif isinstance(values_to_unpack, list):
+        for item in values_to_unpack:
+            tmpl.update(recursive_get_id(item, tmpl))
+        return tmpl
+    else:
+        return set()
+
+# Call the Spot API, but return only the IDs of issues found in the text.
+
+def spot(text,lower=0.25,pred=0.5,upper=0.6):
+
+    headers = { "Authorization": "Bearer " + spot_token, "Content-Type":"application/json" }
+
+    body = {
+      "text": text,
+      "save-text": 0,
+      "cutoff-lower": lower,
+      "cutoff-pred": pred,
+      "cutoff-upper": upper
+    }
+
+    r = requests.post('https://spot.suffolklitlab.org/v0/entities-nested/', headers=headers, data=json.dumps(body))
+    output_ = r.json()
+
+    try:
+        return list(recursive_get_id(output_["labels"]))
+    except:
+        return []
+
+# A function to pull words out of snake_case, camelCase and the like.
 
 def reCase(text):
-    # a quick and dirty way to pull words out of
-    # snake_case, camelCase and the like.
     output = re.sub("(\w|\d)(_|-)(\w|\d)","\\1 \\3",text.strip())
     output = re.sub("([a-z])([A-Z]|\d)","\\1 \\2",output)
     output = re.sub("(\d)([A-Z]|[a-z])","\\1 \\2",output)
     return output
 
+# Takes text from an auto-generated field name and uses regex to convert it into an Assembly Line standard field.
+# See https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/
 
 def regex_norm_field(text):
-    # Takes an auto-generated form field name and uses
-    # regex to convert it into an Assembly Line standard field.
-    # See https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/
-
+    
     regex_list = [
 
         # Personal info
         ## Name & Bio
-        ["^((My|Full( legal)?) )?Name$","users1_name"],
+        ["^((My|Your|Full( legal)?) )?Name$","users1_name"],
         ["^(Typed or )?Printed Name\s?\d*$","users1_name"],
         ["^(DOB|Date of Birth|Birthday)$","users1_birthdate"],
         ## Address
@@ -70,12 +138,9 @@ def regex_norm_field(text):
         text = re.sub(regex[0],regex[1],text, flags=re.IGNORECASE)
     return text
 
+# Tranforms a string of text into a snake_case variable close in length to `max_length` name by summarizing the string and stiching the summary together in snake_case. h/t h/t https://towardsdatascience.com/nlp-building-a-summariser-68e0c19e3a93
 
 def reformat_field(text,max_length=30):
-    # h/t https://towardsdatascience.com/nlp-building-a-summariser-68e0c19e3a93
-
-    #print(text)
-
     orig_title = text.lower()
     orig_title = re.sub("[^a-zA-Z]+"," ",orig_title)
     orig_title_words = orig_title.split()
@@ -98,7 +163,7 @@ def reformat_field(text,max_length=30):
         x_words = math.floor((max_length)/av_word_len)
 
 
-        sim_mat = np.zeros([len(filtered_title_words),len(filtered_title_words)])# will populate it with cosine_similarity values
+        sim_mat = np.zeros([len(filtered_title_words),len(filtered_title_words)])
         # for each word compared to other
         for i in range(len(filtered_title_words)):
             for j in range(len(filtered_title_words)):
@@ -107,7 +172,7 @@ def reformat_field(text,max_length=30):
 
         try:
             nx_graph = nx.from_numpy_array(sim_mat)
-            scores = nx.pagerank(nx_graph)# print final values of words
+            scores = nx.pagerank(nx_graph)
             sorted_scores = sorted(scores.items(), key=lambda item: item[1], reverse=True)
 
             if x_words > len(scores):
@@ -116,7 +181,6 @@ def reformat_field(text,max_length=30):
             i = 0
             new_title = ""
             for x in filtered_title_words:
-                #print(scores[i],sorted_scores[x_words][1])
                 if scores[i] >= sorted_scores[x_words-1][1]:
                     if len(new_title)>0: new_title+="_"
                     new_title += x
@@ -131,11 +195,14 @@ def reformat_field(text,max_length=30):
         else:
             return re.sub("\s+","_",text.lower())
 
+# Vectorize a string of text. 
 
 def vectorize(text):
     output = nlp(str(text)).vector
     return output
 
+
+# Normalize a word vector.
 
 def norm(row):
     try:
@@ -147,6 +214,12 @@ def norm(row):
         print("===================")
         return np.NaN
 
+
+# Given an auto-generated field name and context from the form where it appeared, this function attempts to normalize the field name. Here's what's going on:
+# 1. It will `reCase` the variable text
+# 2. Then it will run the output through `regex_norm_field`
+# 3. If it doesn't find anything, it will use the ML model `clf_field_names`
+# 4. If the prediction isn't very confident, it will run it through `reformat_field`  
 
 def normalize_name(jur,group,n,per,last_field,this_field):
 
@@ -175,8 +248,6 @@ def normalize_name(jur,group,n,per,last_field,this_field):
             params.append(per)
             for vec in norm(vectorize(this_field)):
                 params.append(vec)
-            #for vec in norm(vectorize(last_field)):
-            #    params.append(vec)
 
             for item in included_fields:
                 if last_field==item:
@@ -196,12 +267,18 @@ def normalize_name(jur,group,n,per,last_field,this_field):
 
     if out_put in included_fields:
         if conf >= 0:
-            return "*"+out_put,conf #+"| was <i>%s</i> (%.2f conf)"%(this_field,conf) #, conf
+            return "*"+out_put,conf # this * is a hack to show when something is in the list of known fields later. I need to fix this
         else:
-            return reformat_field(this_field),conf #+"| was <i>%s</i> (%.2f conf)"%(this_field,conf) #, conf
+            return reformat_field(this_field),conf
     else:
-        return reformat_field(this_field),conf #+"| was <i>%s</i> (%.2f conf)"%(this_field,conf) #, conf
+        return reformat_field(this_field),conf
 
+# Take a list of AL variables and spits out suggested groupings. Here's what's going on:
+# 
+# 1. It reads in a list of fields (e.g., `["user_name","user_address"]`)
+# 2. Splits each field into words (e.g., turning `user_name` into `user name`)
+# 3. It then turns these ngrams/"sentences" into vectors using word2vec. 
+# 4. For the collection of fields, it finds clusters of these "sentences" within the semantic space defined by word2vec. Currently it uses Affinity Propagation. See https://machinelearningmastery.com/clustering-algorithms-with-python/
 
 def cluster_screens(fields=[],damping=0.7):
     # Takes in a list (fields) and returns a suggested screen grouping
@@ -235,3 +312,149 @@ def cluster_screens(fields=[],damping=0.7):
         i+=1
 
     return screens
+
+# Get the text content of a pdf.
+
+def read_pdf (file):
+    try:
+        pdfFile = PyPDF2.PdfFileReader(open(file, "rb"))
+        if pdfFile.isEncrypted:
+            try:
+                pdfFile.decrypt('')
+                #print ('File Decrypted (PyPDF2)')
+            except:
+                #
+                #
+                # This didn't go so well on my Windows box so I just ran this in the pdf folder's cmd:
+                # for %f in (*.*) do copy %f temp.pdf /Y && "C:\Program Files (x86)\qpdf-8.0.2\bin\qpdf.exe" --password="" --decrypt temp.pdf %f
+                #
+                #
+                #
+                
+                command="cp "+file+" tmp/temp.pdf; qpdf --password='' --decrypt tmp/temp.pdf "+file
+                os.system(command)
+                #print ('File Decrypted (qpdf)')
+                #re-open the decrypted file
+                pdfFile = PyPDF2.PdfFileReader(open(file, "rb"))
+        text = ""
+        for page in pdfFile.pages:
+            text = text + " " + page.extractText()
+        text = reCase(text)
+        text = re.sub("(\.|,|;|:|!|\?|\n|\]|\))","\\1 ",text)
+        text = re.sub("(\(|\[)"," \\1",text)
+        text = re.sub(" +"," ",text)
+        return text
+    except:
+        return ""
+
+# Read in a pdf, pull out basic stats, attempt to normalize its form fields, and re-write the file with the new fields (if `rewrite=1`). 
+
+def parse_form(fileloc,title=None,jur=None,cat=None,normalize=1,use_spot=0,rewrite=0):
+    f = PyPDF2.PdfFileReader(fileloc)
+
+    if f.isEncrypted:
+        pdf = pikepdf.open(fileloc, allow_overwriting_input=True)
+        pdf.save(fileloc)
+        f = PyPDF2.PdfFileReader(fileloc)
+        
+    npages = f.getNumPages()
+  
+    try:
+        with time_limit(15):
+            ff = f.getFields()
+    except TimeoutException as e:
+        print("Timed out!")
+        ff = None   
+    
+    if ff:
+        fields = list(ff.keys())
+    else:
+        fields = []
+    f_per_page = len(fields)/npages
+    text = read_pdf(fileloc)
+    
+    try:
+        #readbility = int(Readability(text).flesch_kincaid().grade_level)
+        consensus = textstat.text_standard(text)
+        readbility = eval(re.sub("^(\d+)[^0-9]+(\d+)\w*.*","(\\1+\\2)/2",consensus))
+    except:
+        readbility = None
+
+    if title is None:
+        title = reCase(re.search("(.*)\n",text).group(1).strip())
+
+    if use_spot==1:
+        nmsi = spot(title + ". " +text)      
+    else:
+        nmsi = []
+        
+    if normalize==1:
+        i = 0 
+        length = len(fields)
+        last = "null"
+        new_fields = []
+        new_fields_conf = []
+        for field in fields:
+            #print(jur,cat,i,i/length,last,field)
+            this_field,this_conf = normalize_name(jur,cat,i,i/length,last,field)
+            new_fields.append(this_field)
+            new_fields_conf.append(this_conf)
+            last = field
+        
+        new_fields = [v + "__" + str(new_fields[:i].count(v) + 1) if new_fields.count(v) > 1 else v for i, v in enumerate(new_fields)]
+    else:
+        new_fields = fields
+        new_fields_conf = []
+    
+    stats = {
+            "title":title,
+            "category":cat,
+            "pages":npages,
+            "reading grade level": readbility,
+            "list":nmsi,
+            "avg fields per page": f_per_page,
+            "fields":new_fields,
+            "fields_conf":new_fields_conf,
+            "fields_old":fields
+            }    
+    
+    if rewrite==1:
+        try:
+            if 1==1:
+                my_pdf = pikepdf.Pdf.open(fileloc, allow_overwriting_input=True)
+                fields_too = my_pdf.Root.AcroForm.Fields #[0]["/Kids"][0]["/Kids"][0]["/Kids"][0]["/Kids"]
+                #print(repr(fields_too))
+                
+                k =0
+                for field in new_fields:
+                    #print(k,field)
+                    fields_too[k].T = re.sub("^\*","",field)
+                    k+=1
+
+                #f2.T = 'new_hospital_name'
+                #filename = re.search("\/(\w*\.pdf)$",fileloc).groups()[0]
+                #my_pdf.save('/%s'%(filename))
+                my_pdf.save(fileloc)
+            else:
+                file = PdfFileWriter()
+
+                first_page = f.getPage(0)
+
+                file.cloneDocumentFromReader(f)
+                #file.appendPagesFromReader(f)
+
+                x ={}
+                for y in ff:
+                    x[y]=""
+
+                #print(x)
+
+                file.updatePageFormFieldValues(first_page,x)
+
+                output = open('blankPdf.pdf', 'wb')
+                file.write(output)  
+        except:
+            error = "could not change form fields"
+    
+    return stats
+
