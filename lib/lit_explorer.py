@@ -1,4 +1,4 @@
-# Written 2021-11-24
+# Updated on 2021-11-24
 
 import os
 import re
@@ -48,7 +48,6 @@ def time_limit(seconds):
     finally:
         signal.alarm(0)
 
-
 # Pull ID values out of the LIST/NSMI results from Spot.
 
 def recursive_get_id(values_to_unpack, tmpl=None):
@@ -95,6 +94,7 @@ def reCase(text):
     output = re.sub("(\w|\d)(_|-)(\w|\d)","\\1 \\3",text.strip())
     output = re.sub("([a-z])([A-Z]|\d)","\\1 \\2",output)
     output = re.sub("(\d)([A-Z]|[a-z])","\\1 \\2",output)
+    output = re.sub("([A-Z]|[a-z])(\d)","\\1 \\2",output)
     return output
 
 # Takes text from an auto-generated field name and uses regex to convert it into an Assembly Line standard field.
@@ -201,7 +201,6 @@ def vectorize(text):
     output = nlp(str(text)).vector
     return output
 
-
 # Normalize a word vector.
 
 def norm(row):
@@ -213,7 +212,6 @@ def norm(row):
         print("Error: ",e)
         print("===================")
         return np.NaN
-
 
 # Given an auto-generated field name and context from the form where it appeared, this function attempts to normalize the field name. Here's what's going on:
 # 1. It will `reCase` the variable text
@@ -359,6 +357,7 @@ def parse_form(fileloc,title=None,jur=None,cat=None,normalize=1,use_spot=0,rewri
         
     npages = f.getNumPages()
   
+    # When reading some pdfs, this can hang due to their crazy field structure
     try:
         with time_limit(15):
             ff = f.getFields()
@@ -457,4 +456,8 @@ def parse_form(fileloc,title=None,jur=None,cat=None,normalize=1,use_spot=0,rewri
             error = "could not change form fields"
     
     return stats
+
+def form_complexity(n_fields,reading_lv):
+    
+    return 0
 
