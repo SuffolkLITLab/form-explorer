@@ -1,4 +1,4 @@
-# Updated on 2021-11-29
+# Updated on 2021-11-30
 
 import os
 import re
@@ -377,6 +377,8 @@ def parse_form(fileloc,title=None,jur=None,cat=None,normalize=1,use_spot=0,rewri
 
     try:
         #readbility = int(Readability(text).flesch_kincaid().grade_level)
+        text = re.sub("_"," ",text)
+        text = re.sub("\n",". ",text)
         text = re.sub(" +"," ",text)
         if text!= "":
             consensus = textstat.text_standard(text)
