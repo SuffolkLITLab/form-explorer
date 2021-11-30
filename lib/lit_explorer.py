@@ -1,4 +1,4 @@
-# Updated on 2021-11-24
+# Updated on 2021-11-29
 
 import os
 import re
@@ -372,15 +372,19 @@ def parse_form(fileloc,title=None,jur=None,cat=None,normalize=1,use_spot=0,rewri
     f_per_page = len(fields)/npages
     text = read_pdf(fileloc)
     
-    try:
-        #readbility = int(Readability(text).flesch_kincaid().grade_level)
-        consensus = textstat.text_standard(text)
-        readbility = eval(re.sub("^(\d+)[^0-9]+(\d+)\w*.*","(\\1+\\2)/2",consensus))
-    except:
-        readbility = None
-
     if title is None:
         title = reCase(re.search("(.*)\n",text).group(1).strip())
+
+    try:
+        #readbility = int(Readability(text).flesch_kincaid().grade_level)
+        text = re.sub(" +"," ",text)
+        if text!= "":
+            consensus = textstat.text_standard(text)
+            readbility = eval(re.sub("^(\d+)[^0-9]+(\d+)\w*.*","(\\1+\\2)/2",consensus))
+        else:
+            readbility = None
+    except:
+        readbility = None
 
     if use_spot==1:
         nmsi = spot(title + ". " +text)      
@@ -414,7 +418,8 @@ def parse_form(fileloc,title=None,jur=None,cat=None,normalize=1,use_spot=0,rewri
             "avg fields per page": f_per_page,
             "fields":new_fields,
             "fields_conf":new_fields_conf,
-            "fields_old":fields
+            "fields_old":fields,
+            "text":text
             }    
     
     if rewrite==1:
@@ -457,7 +462,11 @@ def parse_form(fileloc,title=None,jur=None,cat=None,normalize=1,use_spot=0,rewri
     
     return stats
 
-def form_complexity(n_fields,reading_lv):
+def form_complexity(text,fields,reading_lv):
+    
+    # check for fields that requier user to look up info, when found add to complexity
+    # maybe score these by minutes to recall/fill out
+    # so, figure out words per minute, mix in with readability and page number and field numbers
     
     return 0
 
