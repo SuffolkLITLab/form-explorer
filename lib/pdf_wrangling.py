@@ -6,6 +6,8 @@ from numbers import Number
 from pathlib import Path
 
 import cv2
+from boxdetect import config
+from boxdetect.pipelines import get_checkboxes
 import numpy as np
 from pdf2image import convert_from_path, convert_from_bytes
 from pikepdf import Pdf
@@ -167,7 +169,7 @@ def swap_pdf_page(*, formed_pdf:Union[str, Path, Pdf], blank_pdf:Union[str, Path
 BoundingBox = Tuple[Number, Number, Number, Number]
 XYPair = Tuple[Number, Number]
 
-def get_possible_fields(in_file:Union[str, Path, BinaryIO]) -> List[List[Union[BoundingBox,XYPair,Tuple[Number]]]]:
+def get_possible_fields(in_file:Union[str, Path, bytes]) -> List[List[FormField]]:
     dpi = 200
     if isinstance(in_file, str) or isinstance(in_file, Path):
         images = convert_from_path(in_file, dpi=dpi)
@@ -178,7 +180,8 @@ def get_possible_fields(in_file:Union[str, Path, BinaryIO]) -> List[List[Union[B
     for file_obj, img in zip(tmp_files, images):
         img.save(file_obj, 'JPEG')
         file_obj.flush()
-    bboxes_per_page = [get_possible_text_fields(tmp_file.name) for tmp_file in tmp_files]
+    text_bboxes_per_page = [get_possible_text_fields(tmp_file.name) for tmp_file in tmp_files]
+    checkbox_bboxes_per_page =[get_possible_checkboxes(tmp_file.name) for tmp_file in tmp_files]
 
     pts_in_inch = 72
     unit_convert = lambda pix: pix / dpi * pts_in_inch
@@ -193,9 +196,23 @@ def get_possible_fields(in_file:Union[str, Path, BinaryIO]) -> List[List[Union[B
         else:
             return (unit_convert(img[0]))
 
-    new_coords = [ [img2pdf_coords(bbox, images[i].height) for bbox in bboxes_in_page] 
-                  for i, bboxes_in_page in enumerate(bboxes_per_page)]
-    return new_coords
+    text_pdf_bboxes = [ [img2pdf_coords(bbox, images[i].height) for bbox in bboxes_in_page] 
+                  for i, bboxes_in_page in enumerate(text_bboxes_per_page)]
+    checkbox_pdf_bboxes = [ [img2pdf_coords(bbox, images[i].height) for bbox, _, _ in bboxes_in_page]
+                  for i, bboxes_in_page in enumerate(checkbox_bboxes_per_page)]
+
+    fields = []
+    i = 0
+    for bboxes_in_page, checkboxes_in_page in zip(text_pdf_bboxes, checkbox_pdf_bboxes):
+      page_fields = [FormField(f'page_{i}_field_{j}', FieldType.TEXT, bbox[0], bbox[1], configs={'width': bbox[2], 'height': 20})
+                for j, bbox in enumerate(bboxes_in_page)]
+      # We're given the top left corner of the checkbox, but reportlab expects the bottom left
+      page_fields += [FormField(f'page_{i}_check_{j}', FieldType.CHECK_BOX, bbox[0] + bbox[2]/4, bbox[1] - bbox[3], 
+                      configs={'size': min(bbox[2], bbox[3])})
+                for j, bbox in enumerate(checkboxes_in_page)]
+      i += 1
+
+    return fields
 
 def intersect_bbox(bbox_a, bbox_b, dialation=2) -> bool:
     a_left, a_right = bbox_a[0] - dialation, bbox_a[0] + bbox_a[2] + dialation
@@ -208,19 +225,39 @@ def intersect_bbox(bbox_a, bbox_b, dialation=2) -> bool:
         return False
     return True
     
-def get_possible_checkboxes(in_file):
+def get_possible_checkboxes(img:Union[str, cv2.Mat]) -> np.ndarray:
+    # Just using the boxdetect library
+    cfg = config.PipelinesConfig()
+    # TODO(brycew): adjust per state?
+    cfg.width_range = (32,65)
+    cfg.height_range = (25,40)
+    cfg.scaling_factors = [0.6]
+    cfg.wh_ratio_range = (0.6, 2.2)
+    cfg.group_size_range = (2, 100)
+    cfg.dilation_iterations = 0
+    checkboxes = get_checkboxes(img, cfg=cfg, px_threshold=0.1, plot=False, verbose=False)
+    return checkboxes
+
+def get_possible_radios(img:Union[str, BinaryIO, cv2.Mat]):
+    if isinstance(img, str):
+        # 0 is for the flags: means nothing special is being used
+        img = cv2.imread(img, 0)
+    if isinstance(img, BinaryIO):
+        img = cv2.imdecode(np.frombuffer(img.read(), np.uint8), 0)
+    
+    # TODO(brycew): need to support radio buttons further down the Weaver pipeline as well
     pass
 
-def get_possible_radios(in_file):
-    pass
-
-def get_possible_text_fields(in_file):
+def get_possible_text_fields(img:Union[str, BinaryIO, cv2.Mat]) -> List[List[BoundingBox]]:
     """
     Caveats so far: only considers straight, normal horizonal lines that don't touch any vertical lines as fields
     Won't find field inputs as boxes
     """
-    # 0 is for the flags: means nothing special is being used
-    img = cv2.imread(in_file, 0)
+    if isinstance(img, str):
+        # 0 is for the flags: means nothing special is being used
+        img = cv2.imread(img, 0)
+    if isinstance(img, BinaryIO):
+        img = cv2.imdecode(np.frombuffer(img.read(), np.uint8), 0)
 
     # fixed level thresholding, turning a gray scale / multichannel img to a black and white one.
     # OTSU = optimum global thresholding: minimizes the variance of each Thresh "class"
@@ -272,10 +309,7 @@ def get_possible_text_fields(in_file):
     else:
         return boundingBoxes
 
-def auto_add_fields(in_filename, out_filename):
-    bboxes_per_page = get_possible_fields(in_filename)
-    fields = [ [FormField(f'page_{i}_field_{j}', FieldType.TEXT, bbox[0], bbox[1], configs={'width': bbox[2], 'height': 20})
-                for j, bbox in enumerate(bboxes_in_page)]
-                for i, bboxes_in_page in enumerate(bboxes_per_page)]
+def auto_add_fields(in_file:Union[str, Path, BinaryIO], out_filename):
+    fields = get_possible_fields(in_file)
     print(fields)
-    set_fields(in_filename, out_filename, fields)
+    set_fields(in_file, out_filename, fields)
