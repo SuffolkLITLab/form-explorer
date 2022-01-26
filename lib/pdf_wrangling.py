@@ -1,11 +1,13 @@
 import io
 from enum import Enum
 import tempfile
-from typing import Any, Dict, Iterable, Union
+from typing import Any, Dict, Iterable, Union, List, Tuple, BinaryIO
+from numbers import Number
+from pathlib import Path
 
 import cv2
 import numpy as np
-from pdf2image import convert_from_path
+from pdf2image import convert_from_path, convert_from_bytes
 from pikepdf import Pdf
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import magenta, pink, blue 
@@ -69,7 +71,7 @@ class FormField:
     def __repr__(self):
         return str(self)
 
-def _create_only_fields(io_obj, fields_per_page:Iterable[Iterable[FormField]], font_name:str='Courier', font_size:int=20):
+def _create_only_fields(io_obj:BinaryIO, fields_per_page:Iterable[Iterable[FormField]], font_name:str='Courier', font_size:int=20):
     """Creates a PDF that contains only AcroForm fields. This PDF is then merged into an existing PDF to add fields to it.
     We're adding fields to a PDF this way because reportlab isn't able to read PDFs, but is the best feature library for
     writing them.
@@ -99,7 +101,9 @@ def _create_only_fields(io_obj, fields_per_page:Iterable[Iterable[FormField]], f
         c.showPage() # Goes to the next page
     c.save()
 
-def set_fields(in_file, out_file, fields_per_page:Iterable[Iterable[FormField]]):
+def set_fields(in_file:Union[str, Path, BinaryIO], 
+        out_file:Union[str, Path, BinaryIO], 
+        fields_per_page:Iterable[Iterable[FormField]]):
     """Adds fields per page to the in_file PDF, writing the new PDF to out_file.
 
     Example usage:
@@ -117,6 +121,7 @@ def set_fields(in_file, out_file, fields_per_page:Iterable[Iterable[FormField]])
         ] 
       ]
     )
+    ```
     """
     if not fields_per_page:
         # Nothing to do, lol
@@ -130,30 +135,50 @@ def set_fields(in_file, out_file, fields_per_page:Iterable[Iterable[FormField]])
     _create_only_fields(io_obj, fields_per_page)
     temp_pdf = Pdf.open(io_obj)
 
-    foreign_root = in_pdf.copy_foreign(temp_pdf.Root)
-    in_pdf.Root.AcroForm = foreign_root.AcroForm
-    for in_page, temp_page in zip(in_pdf.pages, temp_pdf.pages):
-        if not hasattr(temp_page, 'Annots'):
-            continue # no fields on this page, skip
-        annots = temp_pdf.make_indirect(temp_page.Annots)
-        if not hasattr(in_page, 'Annots'):
-            in_page['/Annots'] = in_pdf.copy_foreign(annots)
-        else:
-            in_page.Annots.extend(in_pdf.copy_foreign(annots))
+    in_pdf = swap_pdf_page(formed_pdf=temp_pdf, blank_pdf=in_pdf)
     in_pdf.save(out_file)
+
+def swap_pdf_page(*, formed_pdf:Union[str, Path, Pdf], blank_pdf:Union[str, Path, Pdf]) -> Pdf:
+    """Copies the AcroForm fields from one PDF to another blank PDF form"""
+    if isinstance(formed_pdf, (str, Path)):
+        formed_pdf = Pdf.open(formed_pdf)
+    if isinstance(blank_pdf, (str, Path)):
+        blank_pdf = Pdf.open(blank_pdf)
+
+    if not hasattr(formed_pdf.Root, 'AcroForm'):
+      # if the given PDF doesn't have any fields, don't copy them!
+      return blank_pdf
+
+    foreign_root = blank_pdf.copy_foreign(formed_pdf.Root)
+    blank_pdf.Root.AcroForm = foreign_root.AcroForm
+    for blank_page, formed_page in zip(blank_pdf.pages, formed_pdf.pages):
+        if not hasattr(formed_page, 'Annots'):
+            continue # no fields on this page, skip
+        annots = formed_pdf.make_indirect(formed_page.Annots)
+        if not hasattr(blank_page, 'Annots'):
+            blank_page['/Annots'] = blank_pdf.copy_foreign(annots)
+        else:
+            blank_page.Annots.extend(blank_pdf.copy_foreign(annots))
+    return blank_pdf
 
 
 ####### OpenCV related functions #########
 
-def get_possible_fields(in_pdf_file):
+BoundingBox = Tuple[Number, Number, Number, Number]
+XYPair = Tuple[Number, Number]
+
+def get_possible_fields(in_file:Union[str, Path, BinaryIO]) -> List[List[Union[BoundingBox,XYPair,Tuple[Number]]]]:
     dpi = 200
-    images = convert_from_path(in_pdf_file, dpi=dpi)
+    if isinstance(in_file, str) or isinstance(in_file, Path):
+        images = convert_from_path(in_file, dpi=dpi)
+    else:
+        images = convert_from_bytes(in_file, dpi=dpi)
 
     tmp_files = [tempfile.NamedTemporaryFile() for i in range(len(images))]
     for file_obj, img in zip(tmp_files, images):
         img.save(file_obj, 'JPEG')
         file_obj.flush()
-    bboxes_per_page = [get_contours(tmp_file.name) for tmp_file in tmp_files]
+    bboxes_per_page = [get_possible_text_fields(tmp_file.name) for tmp_file in tmp_files]
 
     pts_in_inch = 72
     unit_convert = lambda pix: pix / dpi * pts_in_inch
@@ -183,7 +208,13 @@ def intersect_bbox(bbox_a, bbox_b, dialation=2) -> bool:
         return False
     return True
     
-def get_contours(in_file):
+def get_possible_checkboxes(in_file):
+    pass
+
+def get_possible_radios(in_file):
+    pass
+
+def get_possible_text_fields(in_file):
     """
     Caveats so far: only considers straight, normal horizonal lines that don't touch any vertical lines as fields
     Won't find field inputs as boxes
@@ -228,6 +259,7 @@ def get_contours(in_file):
         return (cnts, boundingBoxes)
     (contours, boundingBoxes) = sort_contours(contours, method='top-to-bottom')
     vert_contours, _ = cv2.findContours(vertical_lines_img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    # TODO(brycew): also consider checking that the PDF is really blank ~ 1 line space above the horiz line
     if vert_contours:
         # Don't consider horizontal lines that meet up against vertical lines as text fields
         (vert_contours, vert_bounding_boxes) = sort_contours(vert_contours, method='top-to-bottom')
@@ -240,10 +272,10 @@ def get_contours(in_file):
     else:
         return boundingBoxes
 
-def auto_add_fields(in_pdf_file, out_pdf_file):
-    bboxes_per_page = get_possible_fields(in_pdf_file)
-    fields = [ [FormField(f'page_{i}_field_{j}', 'text', bbox[0], bbox[1], configs={'width': bbox[2], 'height': 20})
+def auto_add_fields(in_filename, out_filename):
+    bboxes_per_page = get_possible_fields(in_filename)
+    fields = [ [FormField(f'page_{i}_field_{j}', FieldType.TEXT, bbox[0], bbox[1], configs={'width': bbox[2], 'height': 20})
                 for j, bbox in enumerate(bboxes_in_page)]
                 for i, bboxes_in_page in enumerate(bboxes_per_page)]
     print(fields)
-    set_fields(in_pdf_file, out_pdf_file, fields)
+    set_fields(in_filename, out_filename, fields)
