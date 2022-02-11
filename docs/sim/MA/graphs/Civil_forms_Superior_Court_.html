@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Agreement for Binding Arbitration", "label": "Agreement for Binding Arbitration", "shape": "dot", "size": 10}, {"id": "Exhibit List", "label": "Exhibit List", "shape": "dot", "size": 10}, {"id": "Uniform Counsel Form", "label": "Uniform Counsel Form", "shape": "dot", "size": 10}, {"id": "Waiver of Demands for Jury Trial", "label": "Waiver of Demands for Jury Trial", "shape": "dot", "size": 10}, {"id": "Witness List", "label": "Witness List", "shape": "dot", "size": 10}, {"id": "Agreement for Judgment", "label": "Agreement for Judgment", "shape": "dot", "size": 10}, {"id": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "label": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "shape": "dot", "size": 10}, {"id": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "label": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "shape": "dot", "size": 10}, {"id": "Application for Fee Generating Appointments in Superior Court", "label": "Application for Fee Generating Appointments in Superior Court", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Agreement for Binding Arbitration", "to": "Exhibit List", "weight": 1}, {"from": "Agreement for Binding Arbitration", "to": "Uniform Counsel Form", "weight": 1}, {"from": "Agreement for Binding Arbitration", "to": "Waiver of Demands for Jury Trial", "weight": 1}, {"from": "Agreement for Binding Arbitration", "to": "Witness List", "weight": 1}, {"from": "Agreement for Binding Arbitration", "to": "Agreement for Judgment", "weight": 1}, {"from": "Agreement for Binding Arbitration", "to": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "weight": 1}, {"from": "Agreement for Binding Arbitration", "to": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "weight": 1}, {"from": "Agreement for Binding Arbitration", "to": "Application for Fee Generating Appointments in Superior Court", "weight": 1}, {"from": "Exhibit List", "to": "Agreement for Judgment", "weight": 1}, {"from": "Exhibit List", "to": "Application for Fee Generating Appointments in Superior Court", "weight": 1}, {"from": "Exhibit List", "to": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "weight": 1}, {"from": "Exhibit List", "to": "Uniform Counsel Form", "weight": 1}, {"from": "Exhibit List", "to": "Waiver of Demands for Jury Trial", "weight": 1}, {"from": "Exhibit List", "to": "Witness List", "weight": 1}, {"from": "Exhibit List", "to": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "weight": 1}, {"from": "Uniform Counsel Form", "to": "Agreement for Judgment", "weight": 1}, {"from": "Uniform Counsel Form", "to": "Application for Fee Generating Appointments in Superior Court", "weight": 1}, {"from": "Uniform Counsel Form", "to": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "weight": 1}, {"from": "Uniform Counsel Form", "to": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "weight": 1}, {"from": "Uniform Counsel Form", "to": "Waiver of Demands for Jury Trial", "weight": 1}, {"from": "Uniform Counsel Form", "to": "Witness List", "weight": 1}, {"from": "Waiver of Demands for Jury Trial", "to": "Agreement for Judgment", "weight": 1}, {"from": "Waiver of Demands for Jury Trial", "to": "Application for Fee Generating Appointments in Superior Court", "weight": 1}, {"from": "Waiver of Demands for Jury Trial", "to": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "weight": 1}, {"from": "Waiver of Demands for Jury Trial", "to": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "weight": 1}, {"from": "Waiver of Demands for Jury Trial", "to": "Witness List", "weight": 1}, {"from": "Witness List", "to": "Agreement for Judgment", "weight": 1}, {"from": "Witness List", "to": "Application for Fee Generating Appointments in Superior Court", "weight": 1}, {"from": "Witness List", "to": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "weight": 1}, {"from": "Witness List", "to": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "weight": 1}, {"from": "Agreement for Judgment", "to": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "weight": 1}, {"from": "Agreement for Judgment", "to": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "weight": 1}, {"from": "Agreement for Judgment", "to": "Application for Fee Generating Appointments in Superior Court", "weight": 1}, {"from": "Mortgagee\u0027s Affidavit as Amended by Chapter 224 of the Acts of 2007", "to": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "weight": 1}, {"from": "Request for Default (Pursuant to Mass.R.Civ.P. 55)", "to": "Application for Fee Generating Appointments in Superior Court", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

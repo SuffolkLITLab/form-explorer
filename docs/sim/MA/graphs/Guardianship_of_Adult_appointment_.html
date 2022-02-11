@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "label": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "shape": "dot", "size": 10}, {"id": "Medical Certificate Guardian or Conservatorship ", "label": "Medical Certificate Guardian or Conservatorship ", "shape": "dot", "size": 10}, {"id": "Clinical Team Report ", "label": "Clinical Team Report ", "shape": "dot", "size": 10}, {"id": "Medical Certificate Affidavit ", "label": "Medical Certificate Affidavit ", "shape": "dot", "size": 10}, {"id": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "label": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "shape": "dot", "size": 10}, {"id": "Notice of Hearing ", "label": "Notice of Hearing ", "shape": "dot", "size": 10}, {"id": "Order Appointing Temporary Guardian for an Incapacitated Person ", "label": "Order Appointing Temporary Guardian for an Incapacitated Person ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "to": "Medical Certificate Guardian or Conservatorship ", "weight": 1}, {"from": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "to": "Clinical Team Report ", "weight": 1}, {"from": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "to": "Medical Certificate Affidavit ", "weight": 1}, {"from": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "to": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "weight": 1}, {"from": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Motion for Appointment of Temporary Guardian for Incapacitated Person ", "to": "Order Appointing Temporary Guardian for an Incapacitated Person ", "weight": 1}, {"from": "Medical Certificate Guardian or Conservatorship ", "to": "Clinical Team Report ", "weight": 1}, {"from": "Medical Certificate Guardian or Conservatorship ", "to": "Medical Certificate Affidavit ", "weight": 1}, {"from": "Medical Certificate Guardian or Conservatorship ", "to": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "weight": 1}, {"from": "Medical Certificate Guardian or Conservatorship ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Medical Certificate Guardian or Conservatorship ", "to": "Order Appointing Temporary Guardian for an Incapacitated Person ", "weight": 1}, {"from": "Clinical Team Report ", "to": "Medical Certificate Affidavit ", "weight": 1}, {"from": "Clinical Team Report ", "to": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "weight": 1}, {"from": "Clinical Team Report ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Clinical Team Report ", "to": "Order Appointing Temporary Guardian for an Incapacitated Person ", "weight": 1}, {"from": "Medical Certificate Affidavit ", "to": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "weight": 1}, {"from": "Medical Certificate Affidavit ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Medical Certificate Affidavit ", "to": "Order Appointing Temporary Guardian for an Incapacitated Person ", "weight": 1}, {"from": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "to": "Notice of Hearing ", "weight": 1}, {"from": "Notice of Appointment of Temporary Guardian/Conservator and Notice of Right to Hearing ", "to": "Order Appointing Temporary Guardian for an Incapacitated Person ", "weight": 1}, {"from": "Notice of Hearing ", "to": "Order Appointing Temporary Guardian for an Incapacitated Person ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

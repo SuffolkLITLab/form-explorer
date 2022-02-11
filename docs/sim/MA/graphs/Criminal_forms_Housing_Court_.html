@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Criminal Claim of Appeal", "label": "Criminal Claim of Appeal", "shape": "dot", "size": 10}, {"id": "Criminal Summons", "label": "Criminal Summons", "shape": "dot", "size": 10}, {"id": "Habeas Corpus for Prisoner Ad Testificandum", "label": "Habeas Corpus for Prisoner Ad Testificandum", "shape": "dot", "size": 10}, {"id": "Nolle Prosequi", "label": "Nolle Prosequi", "shape": "dot", "size": 10}, {"id": "Request for Criminal Complaint", "label": "Request for Criminal Complaint", "shape": "dot", "size": 10}, {"id": "Request for Criminal Complaint for Building Code Violations", "label": "Request for Criminal Complaint for Building Code Violations", "shape": "dot", "size": 10}, {"id": "Request for Criminal Complaint for Fire Code Violations", "label": "Request for Criminal Complaint for Fire Code Violations", "shape": "dot", "size": 10}, {"id": "Request for Criminal Complaint for Lead Paint", "label": "Request for Criminal Complaint for Lead Paint", "shape": "dot", "size": 10}, {"id": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "label": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Criminal Claim of Appeal", "to": "Criminal Summons", "weight": 1}, {"from": "Criminal Claim of Appeal", "to": "Habeas Corpus for Prisoner Ad Testificandum", "weight": 1}, {"from": "Criminal Claim of Appeal", "to": "Nolle Prosequi", "weight": 1}, {"from": "Criminal Claim of Appeal", "to": "Request for Criminal Complaint", "weight": 1}, {"from": "Criminal Claim of Appeal", "to": "Request for Criminal Complaint for Building Code Violations", "weight": 1}, {"from": "Criminal Claim of Appeal", "to": "Request for Criminal Complaint for Fire Code Violations", "weight": 1}, {"from": "Criminal Claim of Appeal", "to": "Request for Criminal Complaint for Lead Paint", "weight": 1}, {"from": "Criminal Claim of Appeal", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}, {"from": "Criminal Summons", "to": "Habeas Corpus for Prisoner Ad Testificandum", "weight": 1}, {"from": "Criminal Summons", "to": "Nolle Prosequi", "weight": 1}, {"from": "Criminal Summons", "to": "Request for Criminal Complaint", "weight": 1}, {"from": "Criminal Summons", "to": "Request for Criminal Complaint for Building Code Violations", "weight": 1}, {"from": "Criminal Summons", "to": "Request for Criminal Complaint for Fire Code Violations", "weight": 1}, {"from": "Criminal Summons", "to": "Request for Criminal Complaint for Lead Paint", "weight": 1}, {"from": "Criminal Summons", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}, {"from": "Habeas Corpus for Prisoner Ad Testificandum", "to": "Nolle Prosequi", "weight": 1}, {"from": "Habeas Corpus for Prisoner Ad Testificandum", "to": "Request for Criminal Complaint", "weight": 1}, {"from": "Habeas Corpus for Prisoner Ad Testificandum", "to": "Request for Criminal Complaint for Building Code Violations", "weight": 1}, {"from": "Habeas Corpus for Prisoner Ad Testificandum", "to": "Request for Criminal Complaint for Fire Code Violations", "weight": 1}, {"from": "Habeas Corpus for Prisoner Ad Testificandum", "to": "Request for Criminal Complaint for Lead Paint", "weight": 1}, {"from": "Habeas Corpus for Prisoner Ad Testificandum", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}, {"from": "Nolle Prosequi", "to": "Request for Criminal Complaint", "weight": 1}, {"from": "Nolle Prosequi", "to": "Request for Criminal Complaint for Building Code Violations", "weight": 1}, {"from": "Nolle Prosequi", "to": "Request for Criminal Complaint for Fire Code Violations", "weight": 1}, {"from": "Nolle Prosequi", "to": "Request for Criminal Complaint for Lead Paint", "weight": 1}, {"from": "Nolle Prosequi", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}, {"from": "Request for Criminal Complaint", "to": "Request for Criminal Complaint for Building Code Violations", "weight": 1}, {"from": "Request for Criminal Complaint", "to": "Request for Criminal Complaint for Fire Code Violations", "weight": 1}, {"from": "Request for Criminal Complaint", "to": "Request for Criminal Complaint for Lead Paint", "weight": 1}, {"from": "Request for Criminal Complaint", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}, {"from": "Request for Criminal Complaint for Building Code Violations", "to": "Request for Criminal Complaint for Fire Code Violations", "weight": 1}, {"from": "Request for Criminal Complaint for Building Code Violations", "to": "Request for Criminal Complaint for Lead Paint", "weight": 1}, {"from": "Request for Criminal Complaint for Building Code Violations", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}, {"from": "Request for Criminal Complaint for Fire Code Violations", "to": "Request for Criminal Complaint for Lead Paint", "weight": 1}, {"from": "Request for Criminal Complaint for Fire Code Violations", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}, {"from": "Request for Criminal Complaint for Lead Paint", "to": "Request for Criminal Complaint for Violation of State Sanitary Code Violations", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

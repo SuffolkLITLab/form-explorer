@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+<HEAD>
+    <title>Minnesota Court Forms</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108858221-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108858221-1');
+    </script>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <link rel="apple-touch-icon" href="../../images/icon_300.png"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Minnesota Court Forms"/>
+    <meta property="og:description" content="We're collecting existing pdf forms from multiple jurisdictions and making it possible for folks (e.g., courts and non-profits) to turn them into beautiful webapps with ease. Eventually, you will be able to go from form to prototype webapp in a few clicks. As time goes by, we'll grow the number of jurisdictions and improve our tools' performance. They'll never do all of the work, but they help plot a course for what otherwise might seem an "impossible" task. They'll help make things concrete, allowing for stakeholders and developers to edit their way to a production-ready solution built on suggestions rooted in years of form building experience."/>
+    <meta property="og:image" content="../../images/bigdata.png"/>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SuffolkLITLab">
+    <meta name="twitter:creator" content="@SuffolkLITLab">
+    <meta name="twitter:title" content="Minnesota Court Forms">
+    <meta name="twitter:description" content="We're collecting existing pdf forms from multiple jurisdictions and making it possible for folks (e.g., courts and non-profits) to turn them into beautiful webapps with ease. Eventually, you will be able to go from form to prototype webapp in a few clicks. As time goes by, we'll grow the number of jurisdictions and improve our tools' performance. They'll never do all of the work, but they help plot a course for what otherwise might seem an "impossible" task. They'll help make things concrete, allowing for stakeholders and developers to edit their way to a production-ready solution built on suggestions rooted in years of form building experience.">
+    <meta name="twitter:image" content="http://www.davidcolarusso.com/images/bigdata.png"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="../../images/icon.png"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-02-11">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+</HEAD>
+<BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
+<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
+<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div class="content">
+
+    <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
+    <h1 style="text-align:center;">
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        <center style="margin-top:5px;">
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-02-11</font></span>
+        </center>
+    </h1>
+
+    <div class="menu_bar">
+        <p style="text-align:center;">
+      <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore:</span>&nbsp;&nbsp; <select style="width:100px;" onChange="window.location.href='../'+this.value"><option value="CA" >California</option><option value="ME" >Maine</option><option value="MI" >Michigan</option><option value="UT" >Utah</option><option value="MA" >Massachusetts</option><option value="MN" SELECTED>Minnesota</option>
+      </select>&nbsp;&nbsp;
+      <a href="../../list/MN" class="menu" style="color:black;">&nbsp;Lists&nbsp;</a>
+      <a href="../../sim/MN" class="menu">&nbsp;Similar Forms&nbsp;</a>
+      <a href="../../flow/MN" class="menu">&nbsp;Flows&nbsp;</a>
+        </p>
+    </div>
+
+    <div class="content">
+    <div class="main_col">
+    <h2><a name="title" href="#title" class="anchor"></a>List of Minnesota Court Forms</h2>
+
+    <p>
+    Below you will find 34 forms. The average form is 2 pages long, with 17 fields per page. The median form is written at a 11.50-grade reading level.
+    </p>
+    
+    <p>Download a .csv file including meta data on all 34 forms, including source urls, field names, and reading levels: 
+    <a href="../../data/MN_form_data.csv" target="_blank">MN_form_data.csv</a>
+    </p>
+    
+    Choose Ordering: 
+    <select id="form_ordering" onChange="sort_links()">
+        <option value='court_grouping'>Court Groupings</option>
+        <option value='LIST_grouping'>LIST Groupings</option>
+        <option value='most_used'>Most Used</option>
+    </select>
+    <script>
+        function sort_links(){
+            if($('#form_ordering').val() == "court_grouping"){
+                $('#court_grouping').show()
+                $('#LIST_grouping').hide()
+                $('#most_used').hide()
+            } else if($('#form_ordering').val() == "LIST_grouping"){
+                $('#court_grouping').hide()
+                $('#LIST_grouping').show()
+                $('#most_used').hide()
+            } else if($('#form_ordering').val() == "most_used"){
+                $('#court_grouping').hide()
+                $('#LIST_grouping').hide()
+                $('#most_used').show()
+            }
+        }
+    
+    </script>
+    
+    <div id="court_grouping" style="width:100;">
+    
+    <p><i>Links are grouped by categories found on the court's website.</i></p>
+    
+    
+        <h3><a name="Criminal" href="#Criminal" class="anchor"></a>Criminal</h3>
+        <ul><li><a href="../../form/MN/a70fa17f366cedb098eb94195a1c25f8.html">Hmong - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/d9b292c1695e8801f9997619606687ad.html">Khmer - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/e73547d5c9813322ddee122d7b7bc526.html">Lao - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/0dad456182c7b19e2df452b2d07797e4.html">Russian - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/ea4a1f6c158a59916f221c913105eab1.html">Somali - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/4da3b4aa288c81ac93f117c90c9b8d24.html">Spanish - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/acf14bcb9a8bfc17c357032805029966.html">Hmong - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/ba4e6a6821e014c2f7f7b43d2eb04deb.html">Khmer - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/c4e5fbe8da2d9683cf5897dfddc120ae.html">Lao - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/c93f564ec9bb5f783178fbf796741962.html">Russian - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/10d1f3f11613cfa68866b3472e23bcf7.html">Somali - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/0d2ceced05292919220ef694247c6dc5.html">Spanish - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/0c53477f4445e39a6133b0c3ce78db32.html">Vietnamese - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/3a1a600d0ff05804e9edbad7f65a6c0f.html">Hmong - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/4facc8cee4580f999ab31d2891a61aca.html">Khmer - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/8bbd4654a933f1b391f9956ecdec1caa.html">Lao - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/12568d8d118f2e2059f3c94b9acc5120.html">Russian - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/a31be0ef5278cf3c906a0e278f257abe.html">Somali - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/36f5bfa97ce35047a524ae0623517c86.html">Spanish - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/db783af68063d22abea9cf13d881644a.html">Vietnamese - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/3b503b84908e32372aecbd65fd718da6.html">Hmong - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/961b4ad415d5c8c7c0b379549df2e7c2.html">Khmer - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/8de67bb292f62c18499e025a4b8534cd.html">Lao - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/035f0e6550b9da2416a37bf63e250171.html">Russian - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/d9488b0848e0f4bde0b42d288a2ca8ce.html">Somali - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/e9547c3e3fdd7ffcb80c567b153a1cf2.html">Spanish - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/186b4fde436a6ea1c8c406c8cf68a257.html">Vietnamese - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/e6d2d60d6750b7f95b1f148debcb59d5.html">Hmong - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/6b5fff607a5d8d0260f72334ab253fad.html">Khmer - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/1d46195c6d160f20ed804a7c6422fb53.html">Lao - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/f40569ebd2ac4c6094a89458312e7116.html">Russian - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/08a546d2cd00106b23ce7cf60b9fd7f4.html">Somali - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/c7bb83b51018c792d8ea2d215bcba19e.html">Spanish - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/eb0675afbc021089880addf06f685fd6.html">Vietnamese - Probation Violation Statement of Rights</a></li></ul><p style="text-align:center"><a href="#title">go to top</a></p></div>
+    
+    <div id="LIST_grouping" style="display:none;width:100;">
+    
+    <p><i>Links are grouped by categories from the <a href="https://taxonomy.legal/" target="_blank" class="exlink">Legal Issue Taxonomy (LIST)</a>. Note: the grouping below was done by machine. Consequently, it is incomplete.</i></p>
+    <h3>Public Benefits</h3><ul><li>No matches found</li></ul><h3>Work and Emplyment Law</h3><ul><li>No matches found</li></ul><h3>Estates, Wills, and Gaurdianships</h3><ul><li>No matches found</li></ul><h3>Crime and Prisons</h3><ul><li><a href="../../form/MN/a70fa17f366cedb098eb94195a1c25f8.html">Hmong - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/d9b292c1695e8801f9997619606687ad.html">Khmer - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/e73547d5c9813322ddee122d7b7bc526.html">Lao - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/ea4a1f6c158a59916f221c913105eab1.html">Somali - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/4da3b4aa288c81ac93f117c90c9b8d24.html">Spanish - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/acf14bcb9a8bfc17c357032805029966.html">Hmong - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/ba4e6a6821e014c2f7f7b43d2eb04deb.html">Khmer - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/c4e5fbe8da2d9683cf5897dfddc120ae.html">Lao - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/10d1f3f11613cfa68866b3472e23bcf7.html">Somali - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/0d2ceced05292919220ef694247c6dc5.html">Spanish - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/0c53477f4445e39a6133b0c3ce78db32.html">Vietnamese - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/12568d8d118f2e2059f3c94b9acc5120.html">Russian - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/36f5bfa97ce35047a524ae0623517c86.html">Spanish - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/db783af68063d22abea9cf13d881644a.html">Vietnamese - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/3b503b84908e32372aecbd65fd718da6.html">Hmong - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/961b4ad415d5c8c7c0b379549df2e7c2.html">Khmer - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/8de67bb292f62c18499e025a4b8534cd.html">Lao - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/035f0e6550b9da2416a37bf63e250171.html">Russian - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/d9488b0848e0f4bde0b42d288a2ca8ce.html">Somali - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/e9547c3e3fdd7ffcb80c567b153a1cf2.html">Spanish - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/6b5fff607a5d8d0260f72334ab253fad.html">Khmer - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/1d46195c6d160f20ed804a7c6422fb53.html">Lao - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/c7bb83b51018c792d8ea2d215bcba19e.html">Spanish - Probation Violation Statement of Rights</a></li></ul><h3>Family</h3><ul><li>No matches found</li></ul><h3>Accidents and Torts</h3><ul><li>No matches found</li></ul><h3>Trafic and Cars</h3><ul><li>No matches found</li></ul><h3>Health</h3><ul><li>No matches found</li></ul><h3>Money, Debt, and Consumer Issues</h3><ul><li>No matches found</li></ul><h3>Housing</h3><ul><li>No matches found</li></ul><h3>Veterans and Military</h3><ul><li>No matches found</li></ul><h3>Immigration</h3><ul><li>No matches found</li></ul><h3>Disaster Relief</h3><ul><li>No matches found</li></ul><h3>Civil and Human Rights</h3><ul><li>No matches found</li></ul><h3>Environmental Justice</h3><ul><li>No matches found</li></ul><h3>Native American Issues and Tribal Law</h3><ul><li>No matches found</li></ul><h3>Education</h3><ul><li>No matches found</li></ul><h3>Small Business and IP</h3><ul><li>No matches found</li></ul><h3>Government Services</h3><ul><li>No matches found</li></ul><h3>Courts and Lawyers</h3><ul><li><a href="../../form/MN/d9b292c1695e8801f9997619606687ad.html">Khmer - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/ea4a1f6c158a59916f221c913105eab1.html">Somali - Felony - Gross Misdemeanor First Appearance Statement of Rights</a></li><li><a href="../../form/MN/ba4e6a6821e014c2f7f7b43d2eb04deb.html">Khmer - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/10d1f3f11613cfa68866b3472e23bcf7.html">Somali - Gross Misdemeanor DUI Statement of Rights</a></li><li><a href="../../form/MN/12568d8d118f2e2059f3c94b9acc5120.html">Russian - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/a31be0ef5278cf3c906a0e278f257abe.html">Somali - Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/035f0e6550b9da2416a37bf63e250171.html">Russian - Petty Misdemeanor Statement of Rights</a></li><li><a href="../../form/MN/6b5fff607a5d8d0260f72334ab253fad.html">Khmer - Probation Violation Statement of Rights</a></li><li><a href="../../form/MN/08a546d2cd00106b23ce7cf60b9fd7f4.html">Somali - Probation Violation Statement of Rights</a></li></ul>
+    </div>
+    
+    <div id="most_used" style="display:none;width:100;">
+    
+    <p><i>Links are orderd by most used.</i></p>
+    
+    <p style="background:#fcf19d">
+        <i>
+            <b>Under Construction:</b> With historical form data we could provde insights on how frequently forms are used.
+            If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
+        </i>
+    </p>
+    
+    </div>
+    </div>
+    <div class="sidebar">
+            <h2>Search Minnesota Forms</h2>
+            <table cellpadding="0px"><tr><td width="100%">
+            <input id="q" style="width:100%">
+            </td><td width="1%">&nbsp;&nbsp;&nbsp;</td><td width="1%">
+            <input type="button" value="Search" onClick="open_search();">
+            </td></tr></table>
+            <script>
+                sort_links();
+            
+                function open_search(){
+                    alert('Coming Soon!');
+                }
+                function open_search_(){
+                    window.open('https://www.google.com/search?q='+$('#q').val()+'+site:suffolklitlab.org/form-explorer/form/MN')
+                }
+                $("#q").on('keyup', function (e) {
+                    if (e.key === 'Enter' || e.keyCode === 13) {
+                        open_search()
+                    }
+                });
+            </script>
+            <h2>Standard Field Names</h2>
+            <p>We maintain a bank of <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables">standard questions and field names</a>. A list of common fields is found below, click a field to see those forms using it.</p>
+            <ul>
+    <li><a href="fields/users1_name.html">users1_name</a></li><li><a href="fields/users1_birthdate.html">users1_birthdate</a></li><li><a href="fields/users1_address_line_one.html">users1_address_line_one</a></li><li><a href="fields/users1_address_line_two.html">users1_address_line_two</a></li><li><a href="fields/users1_address_city.html">users1_address_city</a></li><li><a href="fields/users1_address_state.html">users1_address_state</a></li><li><a href="fields/users1_address_zip.html">users1_address_zip</a></li><li><a href="fields/users1_phone_number.html">users1_phone_number</a></li><li><a href="fields/users1_email.html">users1_email</a></li><li><a href="fields/plantiffs1_name.html">plantiffs1_name</a></li><li><a href="fields/defendants1_name.html">defendants1_name</a></li><li><a href="fields/petitioners1_name.html">petitioners1_name</a></li><li><a href="fields/respondents1_name.html">respondents1_name</a></li><li><a href="fields/docket_number.html">docket_number</a></li><li><a href="fields/trial_court_county.html">trial_court_county</a></li><li><a href="fields/users1_signature.html">users1_signature</a></li><li><a href="fields/signature_date.html">signature_date</a></li></ul></div>
+
+<div class="footer">
+    <a href="/" alt="home"><img src="../../images/blue_logo.png" width="50px" align="left" border="0" alt="LIT Logo"/></a>
+<font size=-1><a href="mailto:litlab@suffolk.edu">Email</a> | <a href="https://github.com/SuffolkLITLab" target="_blank">GitHub</a> | <a href="/terms">Terms &amp; Privacy</a> | <a href="/credits">Credits</a></font>
+</div>
+
+</BODY>
+</HTML>

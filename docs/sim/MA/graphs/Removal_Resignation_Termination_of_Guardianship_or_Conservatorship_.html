@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Petition for Removal of a Guardian of a Minor ", "label": "Petition for Removal of a Guardian of a Minor ", "shape": "dot", "size": 10}, {"id": "Petition for Resignation of Guardian of a Minor ", "label": "Petition for Resignation of Guardian of a Minor ", "shape": "dot", "size": 10}, {"id": "Medical Certificate for Termination of Guardianship and/or Conservatorship ", "label": "Medical Certificate for Termination of Guardianship and/or Conservatorship ", "shape": "dot", "size": 10}, {"id": "Decree and Order of Resignation", "label": "Decree and Order of Resignation", "shape": "dot", "size": 10}, {"id": "Decree and Order for Termination/Resignation/Removal of Guardian of a Minor ", "label": "Decree and Order for Termination/Resignation/Removal of Guardian of a Minor ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Petition for Removal of a Guardian of a Minor ", "to": "Petition for Resignation of Guardian of a Minor ", "weight": 1}, {"from": "Petition for Removal of a Guardian of a Minor ", "to": "Medical Certificate for Termination of Guardianship and/or Conservatorship ", "weight": 1}, {"from": "Petition for Removal of a Guardian of a Minor ", "to": "Decree and Order of Resignation", "weight": 1}, {"from": "Petition for Removal of a Guardian of a Minor ", "to": "Decree and Order for Termination/Resignation/Removal of Guardian of a Minor ", "weight": 1}, {"from": "Petition for Resignation of Guardian of a Minor ", "to": "Medical Certificate for Termination of Guardianship and/or Conservatorship ", "weight": 1}, {"from": "Petition for Resignation of Guardian of a Minor ", "to": "Decree and Order of Resignation", "weight": 1}, {"from": "Petition for Resignation of Guardian of a Minor ", "to": "Decree and Order for Termination/Resignation/Removal of Guardian of a Minor ", "weight": 1}, {"from": "Medical Certificate for Termination of Guardianship and/or Conservatorship ", "to": "Decree and Order of Resignation", "weight": 1}, {"from": "Medical Certificate for Termination of Guardianship and/or Conservatorship ", "to": "Decree and Order for Termination/Resignation/Removal of Guardian of a Minor ", "weight": 1}, {"from": "Decree and Order of Resignation", "to": "Decree and Order of Resignation", "weight": 1}, {"from": "Decree and Order of Resignation", "to": "Decree and Order for Termination/Resignation/Removal of Guardian of a Minor ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

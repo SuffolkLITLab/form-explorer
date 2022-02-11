@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Affidavit of compliance with the eFiling requirements in summary process  cases", "label": "Affidavit of compliance with the eFiling requirements in summary process  cases", "shape": "dot", "size": 10}, {"id": "Statement of small claims and notice for eFiling (select District Court", "label": "Statement of small claims and notice for eFiling (select District Court", "shape": "dot", "size": 10}, {"id": "Verification of defendant\u0027s address for eFiling", "label": "Verification of defendant\u0027s address for eFiling", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Affidavit of compliance with the eFiling requirements in summary process  cases", "to": "Statement of small claims and notice for eFiling (select District Court", "weight": 1}, {"from": "Affidavit of compliance with the eFiling requirements in summary process  cases", "to": "Verification of defendant\u0027s address for eFiling", "weight": 1}, {"from": "Statement of small claims and notice for eFiling (select District Court", "to": "Verification of defendant\u0027s address for eFiling", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

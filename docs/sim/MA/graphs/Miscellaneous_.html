@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Juvenile Court Confidential Information Sheet ", "label": "Juvenile Court Confidential Information Sheet ", "shape": "dot", "size": 10}, {"id": "Application for Permission to Provide Information ", "label": "Application for Permission to Provide Information ", "shape": "dot", "size": 10}, {"id": "Certificate of Service ", "label": "Certificate of Service ", "shape": "dot", "size": 10}, {"id": "Juvenile Court Videoconferencing Availability Form ", "label": "Juvenile Court Videoconferencing Availability Form ", "shape": "dot", "size": 10}, {"id": "Request for Counsel ", "label": "Request for Counsel ", "shape": "dot", "size": 10}, {"id": "Request to Access Impounded Medical Information ", "label": "Request to Access Impounded Medical Information ", "shape": "dot", "size": 10}, {"id": "Application for Appointment of Counsel for Parent of Minor Child Guardianship of Minor ", "label": "Application for Appointment of Counsel for Parent of Minor Child Guardianship of Minor ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Juvenile Court Confidential Information Sheet ", "to": "Application for Permission to Provide Information ", "weight": 1}, {"from": "Juvenile Court Confidential Information Sheet ", "to": "Certificate of Service ", "weight": 1}, {"from": "Juvenile Court Confidential Information Sheet ", "to": "Juvenile Court Videoconferencing Availability Form ", "weight": 1}, {"from": "Juvenile Court Confidential Information Sheet ", "to": "Request for Counsel ", "weight": 1}, {"from": "Juvenile Court Confidential Information Sheet ", "to": "Request to Access Impounded Medical Information ", "weight": 1}, {"from": "Application for Permission to Provide Information ", "to": "Juvenile Court Videoconferencing Availability Form ", "weight": 1}, {"from": "Application for Permission to Provide Information ", "to": "Application for Appointment of Counsel for Parent of Minor Child Guardianship of Minor ", "weight": 1}, {"from": "Application for Permission to Provide Information ", "to": "Request for Counsel ", "weight": 1}, {"from": "Application for Permission to Provide Information ", "to": "Request to Access Impounded Medical Information ", "weight": 1}, {"from": "Application for Permission to Provide Information ", "to": "Certificate of Service ", "weight": 1}, {"from": "Certificate of Service ", "to": "Juvenile Court Videoconferencing Availability Form ", "weight": 1}, {"from": "Certificate of Service ", "to": "Application for Appointment of Counsel for Parent of Minor Child Guardianship of Minor ", "weight": 1}, {"from": "Certificate of Service ", "to": "Request for Counsel ", "weight": 1}, {"from": "Certificate of Service ", "to": "Request to Access Impounded Medical Information ", "weight": 1}, {"from": "Juvenile Court Videoconferencing Availability Form ", "to": "Request for Counsel ", "weight": 1}, {"from": "Juvenile Court Videoconferencing Availability Form ", "to": "Request to Access Impounded Medical Information ", "weight": 1}, {"from": "Request for Counsel ", "to": "Application for Appointment of Counsel for Parent of Minor Child Guardianship of Minor ", "weight": 1}, {"from": "Request for Counsel ", "to": "Request to Access Impounded Medical Information ", "weight": 1}, {"from": "Request to Access Impounded Medical Information ", "to": "Application for Appointment of Counsel for Parent of Minor Child Guardianship of Minor ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

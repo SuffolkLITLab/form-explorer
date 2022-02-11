@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Authorization for Court Activity Record Information Check  ", "label": "Authorization for Court Activity Record Information Check  ", "shape": "dot", "size": 10}, {"id": "Bond of Guardianship of a Minor ", "label": "Bond of Guardianship of a Minor ", "shape": "dot", "size": 10}, {"id": "Nomination by Minor of Person to be Appointed as Guardian ", "label": "Nomination by Minor of Person to be Appointed as Guardian ", "shape": "dot", "size": 10}, {"id": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "label": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "shape": "dot", "size": 10}, {"id": "Petition to Remove Guardian ", "label": "Petition to Remove Guardian ", "shape": "dot", "size": 10}, {"id": "Petition to Resign Appointment as Guardian of a Minor ", "label": "Petition to Resign Appointment as Guardian of a Minor ", "shape": "dot", "size": 10}, {"id": "Motion for Temporary Guardianship ", "label": "Motion for Temporary Guardianship ", "shape": "dot", "size": 10}, {"id": "Petition for Appointment of Guardian of a Minor ", "label": "Petition for Appointment of Guardian of a Minor ", "shape": "dot", "size": 10}, {"id": "Report of the Guardian of the Minor ", "label": "Report of the Guardian of the Minor ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Authorization for Court Activity Record Information Check  ", "to": "Bond of Guardianship of a Minor ", "weight": 1}, {"from": "Authorization for Court Activity Record Information Check  ", "to": "Nomination by Minor of Person to be Appointed as Guardian ", "weight": 1}, {"from": "Authorization for Court Activity Record Information Check  ", "to": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "weight": 1}, {"from": "Authorization for Court Activity Record Information Check  ", "to": "Petition to Remove Guardian ", "weight": 1}, {"from": "Authorization for Court Activity Record Information Check  ", "to": "Petition to Resign Appointment as Guardian of a Minor ", "weight": 1}, {"from": "Authorization for Court Activity Record Information Check  ", "to": "Motion for Temporary Guardianship ", "weight": 1}, {"from": "Authorization for Court Activity Record Information Check  ", "to": "Petition for Appointment of Guardian of a Minor ", "weight": 1}, {"from": "Authorization for Court Activity Record Information Check  ", "to": "Report of the Guardian of the Minor ", "weight": 1}, {"from": "Bond of Guardianship of a Minor ", "to": "Nomination by Minor of Person to be Appointed as Guardian ", "weight": 1}, {"from": "Bond of Guardianship of a Minor ", "to": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "weight": 1}, {"from": "Bond of Guardianship of a Minor ", "to": "Petition to Remove Guardian ", "weight": 1}, {"from": "Bond of Guardianship of a Minor ", "to": "Petition to Resign Appointment as Guardian of a Minor ", "weight": 1}, {"from": "Bond of Guardianship of a Minor ", "to": "Petition for Appointment of Guardian of a Minor ", "weight": 1}, {"from": "Bond of Guardianship of a Minor ", "to": "Report of the Guardian of the Minor ", "weight": 1}, {"from": "Nomination by Minor of Person to be Appointed as Guardian ", "to": "Motion for Temporary Guardianship ", "weight": 1}, {"from": "Nomination by Minor of Person to be Appointed as Guardian ", "to": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "weight": 1}, {"from": "Nomination by Minor of Person to be Appointed as Guardian ", "to": "Petition to Remove Guardian ", "weight": 1}, {"from": "Nomination by Minor of Person to be Appointed as Guardian ", "to": "Petition to Resign Appointment as Guardian of a Minor ", "weight": 1}, {"from": "Nomination by Minor of Person to be Appointed as Guardian ", "to": "Petition for Appointment of Guardian of a Minor ", "weight": 1}, {"from": "Nomination by Minor of Person to be Appointed as Guardian ", "to": "Report of the Guardian of the Minor ", "weight": 1}, {"from": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "to": "Motion for Temporary Guardianship ", "weight": 1}, {"from": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "to": "Petition to Remove Guardian ", "weight": 1}, {"from": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "to": "Petition to Resign Appointment as Guardian of a Minor ", "weight": 1}, {"from": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "to": "Petition for Appointment of Guardian of a Minor ", "weight": 1}, {"from": "Parent\u0027 Consent to Petition for Guardianship of Minor ", "to": "Report of the Guardian of the Minor ", "weight": 1}, {"from": "Petition to Remove Guardian ", "to": "Motion for Temporary Guardianship ", "weight": 1}, {"from": "Petition to Remove Guardian ", "to": "Petition for Appointment of Guardian of a Minor ", "weight": 1}, {"from": "Petition to Remove Guardian ", "to": "Petition to Resign Appointment as Guardian of a Minor ", "weight": 1}, {"from": "Petition to Remove Guardian ", "to": "Report of the Guardian of the Minor ", "weight": 1}, {"from": "Petition to Resign Appointment as Guardian of a Minor ", "to": "Motion for Temporary Guardianship ", "weight": 1}, {"from": "Petition to Resign Appointment as Guardian of a Minor ", "to": "Petition for Appointment of Guardian of a Minor ", "weight": 1}, {"from": "Petition to Resign Appointment as Guardian of a Minor ", "to": "Report of the Guardian of the Minor ", "weight": 1}, {"from": "Motion for Temporary Guardianship ", "to": "Petition for Appointment of Guardian of a Minor ", "weight": 1}, {"from": "Motion for Temporary Guardianship ", "to": "Report of the Guardian of the Minor ", "weight": 1}, {"from": "Petition for Appointment of Guardian of a Minor ", "to": "Report of the Guardian of the Minor ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

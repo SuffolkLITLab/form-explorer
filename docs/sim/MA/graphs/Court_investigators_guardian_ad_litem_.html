@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Application for Court Investigators ", "label": "Application for Court Investigators ", "shape": "dot", "size": 10}, {"id": "Court Investigator Certificate of Services/Itemization ", "label": "Court Investigator Certificate of Services/Itemization ", "shape": "dot", "size": 10}, {"id": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "label": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "shape": "dot", "size": 10}, {"id": "Court Investigator Motion ", "label": "Court Investigator Motion ", "shape": "dot", "size": 10}, {"id": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "label": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "shape": "dot", "size": 10}, {"id": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "label": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "shape": "dot", "size": 10}, {"id": "Court Investigator Itemization of Services Additional Page ", "label": "Court Investigator Itemization of Services Additional Page ", "shape": "dot", "size": 10}, {"id": "Court Investigator\u0027s Oath ", "label": "Court Investigator\u0027s Oath ", "shape": "dot", "size": 10}, {"id": "Court Investigator Interpreter Request Form", "label": "Court Investigator Interpreter Request Form", "shape": "dot", "size": 10}, {"id": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "label": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Application for Court Investigators ", "to": "Court Investigator Certificate of Services/Itemization ", "weight": 1}, {"from": "Application for Court Investigators ", "to": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "weight": 1}, {"from": "Application for Court Investigators ", "to": "Court Investigator Motion ", "weight": 1}, {"from": "Application for Court Investigators ", "to": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "weight": 1}, {"from": "Application for Court Investigators ", "to": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Court Investigator Motion ", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Court Investigator Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Court Investigator\u0027s Oath ", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Court Investigator Interpreter Request Form", "weight": 1}, {"from": "Court Investigator Certificate of Services/Itemization ", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "to": "Court Investigator Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "to": "Court Investigator Motion ", "weight": 1}, {"from": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "to": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "weight": 1}, {"from": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "to": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "weight": 1}, {"from": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "to": "Court Investigator\u0027s Oath ", "weight": 1}, {"from": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "to": "Court Investigator Interpreter Request Form", "weight": 1}, {"from": "Court Investigator\u0027s Certificate of Services/Itemization of Services ", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator Motion ", "to": "Court Investigator Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator Motion ", "to": "Court Investigator\u0027s Oath ", "weight": 1}, {"from": "Court Investigator Motion ", "to": "Court Investigator Interpreter Request Form", "weight": 1}, {"from": "Court Investigator Motion ", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator Motion ", "to": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "weight": 1}, {"from": "Court Investigator Motion ", "to": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "weight": 1}, {"from": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "to": "Court Investigator Itemization of Services Additional Page ", "weight": 1}, {"from": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "to": "Court Investigator\u0027s Oath ", "weight": 1}, {"from": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "to": "Court Investigator Interpreter Request Form", "weight": 1}, {"from": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "to": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "weight": 1}, {"from": "Guardian Ad Litem\u0027s Certificate of Services/Itemization of Services   ", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}, {"from": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "to": "Court Investigator Itemization of Services Additional Page ", "weight": 1}, {"from": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "to": "Court Investigator\u0027s Oath ", "weight": 1}, {"from": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "to": "Court Investigator Interpreter Request Form", "weight": 1}, {"from": "Guardian Ad Litem Motion for Additional Hours/Extension of Time ", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator Itemization of Services Additional Page ", "to": "Court Investigator\u0027s Oath ", "weight": 1}, {"from": "Court Investigator Itemization of Services Additional Page ", "to": "Court Investigator Interpreter Request Form", "weight": 1}, {"from": "Court Investigator Itemization of Services Additional Page ", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator\u0027s Oath ", "to": "Court Investigator Interpreter Request Form", "weight": 1}, {"from": "Court Investigator\u0027s Oath ", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}, {"from": "Court Investigator Interpreter Request Form", "to": "Guardian Ad Litem\u0027s Itemization of Services Additional Page ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
