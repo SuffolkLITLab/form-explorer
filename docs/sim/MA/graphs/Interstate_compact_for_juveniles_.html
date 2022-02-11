@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "ICJ Petition for Requisition-Runaway  ", "label": "ICJ Petition for Requisition-Runaway  ", "shape": "dot", "size": 10}, {"id": "ICJ Requisition-Runaway  ", "label": "ICJ Requisition-Runaway  ", "shape": "dot", "size": 10}, {"id": "ICJ Requisition-Escapee Absconder", "label": "ICJ Requisition-Escapee Absconder", "shape": "dot", "size": 10}, {"id": "ICJ Parole or Probation Investigation Request 2016 ", "label": "ICJ Parole or Probation Investigation Request 2016 ", "shape": "dot", "size": 10}, {"id": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "label": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "shape": "dot", "size": 10}, {"id": "ICJ Out of State Travel Permit and Agreement to Return ", "label": "ICJ Out of State Travel Permit and Agreement to Return ", "shape": "dot", "size": 10}, {"id": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "label": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "shape": "dot", "size": 10}, {"id": "ICJ Voluntary Return  ", "label": "ICJ Voluntary Return  ", "shape": "dot", "size": 10}, {"id": "ICJ Home Evaluation Report Form ", "label": "ICJ Home Evaluation Report Form ", "shape": "dot", "size": 10}, {"id": "ICJ Quarterly Progress", "label": "ICJ Quarterly Progress", "shape": "dot", "size": 10}, {"id": "ICJ Case Closure Notification ", "label": "ICJ Case Closure Notification ", "shape": "dot", "size": 10}, {"id": "ICJ Application for Services and Waiver ", "label": "ICJ Application for Services and Waiver ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Requisition-Runaway  ", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Requisition-Escapee Absconder", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Parole or Probation Investigation Request 2016 ", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Out of State Travel Permit and Agreement to Return ", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Voluntary Return  ", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Home Evaluation Report Form ", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Petition for Requisition-Runaway  ", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Requisition-Escapee Absconder", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Voluntary Return  ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Parole or Probation Investigation Request 2016 ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Out of State Travel Permit and Agreement to Return ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Home Evaluation Report Form ", "weight": 1}, {"from": "ICJ Requisition-Runaway  ", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Voluntary Return  ", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Parole or Probation Investigation Request 2016 ", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Home Evaluation Report Form ", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Requisition-Escapee Absconder", "to": "ICJ Out of State Travel Permit and Agreement to Return ", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Voluntary Return  ", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Out of State Travel Permit and Agreement to Return ", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Home Evaluation Report Form ", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Parole or Probation Investigation Request 2016 ", "to": "ICJ Application for Services and Waiver ", "weight": 1}, {"from": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "to": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "weight": 1}, {"from": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "to": "ICJ Voluntary Return  ", "weight": 1}, {"from": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "to": "ICJ Application for Services and Waiver ", "weight": 1}, {"from": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "to": "ICJ Out of State Travel Permit and Agreement to Return ", "weight": 1}, {"from": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "to": "ICJ Home Evaluation Report Form ", "weight": 1}, {"from": "ICJ Report of Sending State Upon Parolee or Probationer Being Sent to the Receiving State ", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Out of State Travel Permit and Agreement to Return ", "to": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "weight": 1}, {"from": "ICJ Out of State Travel Permit and Agreement to Return ", "to": "ICJ Voluntary Return  ", "weight": 1}, {"from": "ICJ Out of State Travel Permit and Agreement to Return ", "to": "ICJ Application for Services and Waiver ", "weight": 1}, {"from": "ICJ Out of State Travel Permit and Agreement to Return ", "to": "ICJ Home Evaluation Report Form ", "weight": 1}, {"from": "ICJ Out of State Travel Permit and Agreement to Return ", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Out of State Travel Permit and Agreement to Return ", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "to": "ICJ Home Evaluation Report Form ", "weight": 1}, {"from": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "to": "ICJ Voluntary Return  ", "weight": 1}, {"from": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "to": "ICJ Application for Services and Waiver ", "weight": 1}, {"from": "ICJ Consent for Voluntary Return of Out of State Juvenile ", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Voluntary Return  ", "to": "ICJ Application for Services and Waiver ", "weight": 1}, {"from": "ICJ Home Evaluation Report Form ", "to": "ICJ Application for Services and Waiver ", "weight": 1}, {"from": "ICJ Home Evaluation Report Form ", "to": "ICJ Quarterly Progress", "weight": 1}, {"from": "ICJ Home Evaluation Report Form ", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Quarterly Progress", "to": "ICJ Application for Services and Waiver ", "weight": 1}, {"from": "ICJ Quarterly Progress", "to": "ICJ Case Closure Notification ", "weight": 1}, {"from": "ICJ Case Closure Notification ", "to": "ICJ Application for Services and Waiver ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Sale of Real Estate Administrator/Executor Debts", "label": "Sale of Real Estate Administrator/Executor Debts", "shape": "dot", "size": 10}, {"id": "Sale of Trust Estate ", "label": "Sale of Trust Estate ", "shape": "dot", "size": 10}, {"id": "Sale Of Real Estate Foreign ", "label": "Sale Of Real Estate Foreign ", "shape": "dot", "size": 10}, {"id": "Decree of Sale of Real Estate Debts", "label": "Decree of Sale of Real Estate Debts", "shape": "dot", "size": 10}, {"id": "Decree of Trust Estate ", "label": "Decree of Trust Estate ", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Sale of Real Estate Administrator/Executor Debts", "to": "Sale of Trust Estate ", "weight": 1}, {"from": "Sale of Real Estate Administrator/Executor Debts", "to": "Sale Of Real Estate Foreign ", "weight": 1}, {"from": "Sale of Trust Estate ", "to": "Sale Of Real Estate Foreign ", "weight": 1}, {"from": "Decree of Sale of Real Estate Debts", "to": "Decree of Trust Estate ", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

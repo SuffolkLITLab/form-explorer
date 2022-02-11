@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Affidavit of indigency", "label": "Affidavit of indigency", "shape": "dot", "size": 10}, {"id": "Civil Contempt Summons", "label": "Civil Contempt Summons", "shape": "dot", "size": 10}, {"id": "Supplement to the Affidavit of Indigency", "label": "Supplement to the Affidavit of Indigency", "shape": "dot", "size": 10}, {"id": "Writ of Attachment - Housing Court", "label": "Writ of Attachment - Housing Court", "shape": "dot", "size": 10}, {"id": "Civil Contempt Complaint", "label": "Civil Contempt Complaint", "shape": "dot", "size": 10}, {"id": "Civil Agreement", "label": "Civil Agreement", "shape": "dot", "size": 10}, {"id": "Financial Statement - Housing Court", "label": "Financial Statement - Housing Court", "shape": "dot", "size": 10}, {"id": "Order of Notice", "label": "Order of Notice", "shape": "dot", "size": 10}, {"id": "Request for Default Under Rule 55 ", "label": "Request for Default Under Rule 55 ", "shape": "dot", "size": 10}, {"id": "Referral to Housing Specialist Department", "label": "Referral to Housing Specialist Department", "shape": "dot", "size": 10}, {"id": "Statement of Material Facts", "label": "Statement of Material Facts", "shape": "dot", "size": 10}, {"id": "Summons and Order of Notice", "label": "Summons and Order of Notice", "shape": "dot", "size": 10}, {"id": "Summons to Trustee", "label": "Summons to Trustee", "shape": "dot", "size": 10}, {"id": "Temporary Restraining Order", "label": "Temporary Restraining Order", "shape": "dot", "size": 10}, {"id": "Third Party Summons", "label": "Third Party Summons", "shape": "dot", "size": 10}, {"id": "Verified Complaint", "label": "Verified Complaint", "shape": "dot", "size": 10}, {"id": "Waiver of Jury Trial", "label": "Waiver of Jury Trial", "shape": "dot", "size": 10}, {"id": "Notice of Transfer to Housing Court - Housing Court", "label": "Notice of Transfer to Housing Court - Housing Court", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Affidavit of indigency", "to": "Civil Contempt Summons", "weight": 1}, {"from": "Affidavit of indigency", "to": "Supplement to the Affidavit of Indigency", "weight": 1}, {"from": "Affidavit of indigency", "to": "Writ of Attachment - Housing Court", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Civil Contempt Complaint", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Civil Agreement", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Order of Notice", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Request for Default Under Rule 55 ", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Referral to Housing Specialist Department", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Statement of Material Facts", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Summons to Trustee", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Third Party Summons", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Verified Complaint", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Writ of Attachment - Housing Court", "weight": 1}, {"from": "Civil Contempt Summons", "to": "Supplement to the Affidavit of Indigency", "weight": 1}, {"from": "Supplement to the Affidavit of Indigency", "to": "Order of Notice", "weight": 1}, {"from": "Supplement to the Affidavit of Indigency", "to": "Writ of Attachment - Housing Court", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Civil Contempt Complaint", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Civil Agreement", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Order of Notice", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Request for Default Under Rule 55 ", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Referral to Housing Specialist Department", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Statement of Material Facts", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Summons to Trustee", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Third Party Summons", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Verified Complaint", "weight": 1}, {"from": "Writ of Attachment - Housing Court", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Civil Agreement", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Order of Notice", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Request for Default Under Rule 55 ", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Referral to Housing Specialist Department", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Statement of Material Facts", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Summons to Trustee", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Third Party Summons", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Verified Complaint", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Civil Contempt Complaint", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Civil Agreement", "to": "Order of Notice", "weight": 1}, {"from": "Civil Agreement", "to": "Request for Default Under Rule 55 ", "weight": 1}, {"from": "Civil Agreement", "to": "Referral to Housing Specialist Department", "weight": 1}, {"from": "Civil Agreement", "to": "Statement of Material Facts", "weight": 1}, {"from": "Civil Agreement", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Civil Agreement", "to": "Summons to Trustee", "weight": 1}, {"from": "Civil Agreement", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Civil Agreement", "to": "Third Party Summons", "weight": 1}, {"from": "Civil Agreement", "to": "Verified Complaint", "weight": 1}, {"from": "Civil Agreement", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Civil Agreement", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Order of Notice", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Order of Notice", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Order of Notice", "to": "Summons to Trustee", "weight": 1}, {"from": "Order of Notice", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Order of Notice", "to": "Third Party Summons", "weight": 1}, {"from": "Order of Notice", "to": "Statement of Material Facts", "weight": 1}, {"from": "Order of Notice", "to": "Verified Complaint", "weight": 1}, {"from": "Order of Notice", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Order of Notice", "to": "Request for Default Under Rule 55 ", "weight": 1}, {"from": "Order of Notice", "to": "Referral to Housing Specialist Department", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Referral to Housing Specialist Department", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Statement of Material Facts", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Summons to Trustee", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Third Party Summons", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Verified Complaint", "weight": 1}, {"from": "Request for Default Under Rule 55 ", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Statement of Material Facts", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Summons to Trustee", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Third Party Summons", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Verified Complaint", "weight": 1}, {"from": "Referral to Housing Specialist Department", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Statement of Material Facts", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Statement of Material Facts", "to": "Summons and Order of Notice", "weight": 1}, {"from": "Statement of Material Facts", "to": "Summons to Trustee", "weight": 1}, {"from": "Statement of Material Facts", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Statement of Material Facts", "to": "Third Party Summons", "weight": 1}, {"from": "Statement of Material Facts", "to": "Verified Complaint", "weight": 1}, {"from": "Statement of Material Facts", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Summons and Order of Notice", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Summons and Order of Notice", "to": "Notice of Transfer to Housing Court - Housing Court", "weight": 1}, {"from": "Summons and Order of Notice", "to": "Summons to Trustee", "weight": 1}, {"from": "Summons and Order of Notice", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Summons and Order of Notice", "to": "Third Party Summons", "weight": 1}, {"from": "Summons and Order of Notice", "to": "Verified Complaint", "weight": 1}, {"from": "Summons and Order of Notice", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Summons to Trustee", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Summons to Trustee", "to": "Temporary Restraining Order", "weight": 1}, {"from": "Summons to Trustee", "to": "Third Party Summons", "weight": 1}, {"from": "Summons to Trustee", "to": "Verified Complaint", "weight": 1}, {"from": "Summons to Trustee", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Temporary Restraining Order", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Temporary Restraining Order", "to": "Third Party Summons", "weight": 1}, {"from": "Temporary Restraining Order", "to": "Verified Complaint", "weight": 1}, {"from": "Temporary Restraining Order", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Third Party Summons", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Third Party Summons", "to": "Verified Complaint", "weight": 1}, {"from": "Third Party Summons", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Verified Complaint", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Verified Complaint", "to": "Waiver of Jury Trial", "weight": 1}, {"from": "Waiver of Jury Trial", "to": "Financial Statement - Housing Court", "weight": 1}, {"from": "Financial Statement - Housing Court", "to": "Notice of Transfer to Housing Court - Housing Court", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"nodes": {"font": {"strokeWidth": 3}}, "edges": {"color": {"inherit": true}, "physics": false, "smooth": {"type": "continuous", "forceDirection": "none", "roundness": 1}}, "physics": {"minVelocity": 0.75, "solver": "repulsion"}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
