@@ -215,7 +215,7 @@ function norm(a) {
 
     function compareforms(){
       var output = ""
-      var selected = $("#compare_me :selected").map((_, e) => e.value).get();
+      var selected = $("#compare_me option").map(function() {return $(this).val();}).get() 
       if (selected.length < 2) {
         alert('You need at least two forms in this list before we can make a comparison.')
       } else {
