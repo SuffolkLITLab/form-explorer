@@ -46,9 +46,9 @@
       }
     </script>
     <script>
-      preload(['../images/Ajax-loader.gif','../images/alice.webp','../images/bean.gif','../images/jimmy.gif','../images/little_r.webp','../images/patience.gif','../images/pbride.webp','../images/seinfeld.gif','../images/ted.gif','../images/twinpeaks.gif']);
+      preload(['../images/alice.webp','../images/bean.gif','../images/jimmy.gif','../images/little_r.webp','../images/patience.gif','../images/pbride.webp','../images/seinfeld.gif','../images/ted.gif','../images/twinpeaks.gif']);
     </script>
-    <script src="../js/formsinfo.js?v=2022-08-22"></script>
+    <script src="../js/formsinfo.js?v=2022-08-22b"></script>
     <script src="../js/scripts.js"></script>
     <script src="../js/spin.min.js"></script>
 
@@ -148,7 +148,7 @@
      </table>
      <br>
       <table border=0 cellpadding=3 width="100%"><tr><td>
-        Search Results (including forms w/ similar content)
+        <span id="resultN">0</span> Result(s) (including forms w/ similar content)
       </td><td>
 
       </td><td>
@@ -185,6 +185,11 @@
 <font size=-1><a href="mailto:litlab@suffolk.edu">Email</a> | <a href="https://github.com/SuffolkLITLab" target="_blank">GitHub</a> | <a href="/terms">Terms &amp; Privacy</a> | <a href="/credits">Credits</a></font>
 </div>
 </form>
-
+<script>
+  if (localStorage.cutoff) {
+    document.getElementById('cutoff').value = localStorage.cutoff;
+    $('#cutoffv').html(localStorage.cutoff);
+  }
+</script>
 </BODY>
 </HTML>

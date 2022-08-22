@@ -162,7 +162,8 @@ function norm(a) {
     }
 
     function getFormID(title) {
-      x = FormsInfo.filter((item)=>{
+      FormsFiltered = filterStates();
+      x = FormsFiltered.filter((item)=>{
         return Object.keys(item).some((key)=>item["name"].toLowerCase().trim()==title.toLowerCase().trim())
       })[0];
       if (x===undefined){
@@ -284,7 +285,7 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-22" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-22b" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
 
@@ -318,12 +319,15 @@ function norm(a) {
           answers.sort(function(a, b) {
             return b[0] - a[0];
           });
-          return answers.slice(0, n);
+          $('#resultN').html(answers.length)
+          return answers
+          //return answers.slice(0, n);
         } else {
-          alert("No form with that name found! Please try again.")
+          alert("No form with that name found for the selected jurisdictions. Please try again.")
         }
+      } else {
+        return answers
       }
-      return answers
     }
 
     function test_understanding(string) {
