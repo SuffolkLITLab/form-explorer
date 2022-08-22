@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+<HEAD>
+    <title>Find and Compare Forms</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108858221-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108858221-1');
+    </script>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <link rel="apple-touch-icon" href="./images/icon_300.png"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="About the Form Explorer?"/>
+    <meta property="og:description" content="We're collecting existing pdf forms from multiple jurisdictions and making it possible for folks (e.g., courts and non-profits) to turn them into beautiful webapps with ease. Eventually, you will be able to go from form to prototype webapp in a few clicks. As time goes by, we'll grow the number of jurisdictions and improve our tools' performance. They'll never do all of the work, but they help plot a course for what otherwise might seem an "impossible" task. They'll help make things concrete, allowing for stakeholders and developers to edit their way to a production-ready solution built on suggestions rooted in years of form building experience."/>
+    <meta property="og:image" content="./images/bigdata.png"/>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SuffolkLITLab">
+    <meta name="twitter:creator" content="@SuffolkLITLab">
+    <meta name="twitter:title" content="About the Form Explorer?">
+    <meta name="twitter:description" content="We're collecting existing pdf forms from multiple jurisdictions and making it possible for folks (e.g., courts and non-profits) to turn them into beautiful webapps with ease. Eventually, you will be able to go from form to prototype webapp in a few clicks. As time goes by, we'll grow the number of jurisdictions and improve our tools' performance. They'll never do all of the work, but they help plot a course for what otherwise might seem an "impossible" task. They'll help make things concrete, allowing for stakeholders and developers to edit their way to a production-ready solution built on suggestions rooted in years of form building experience.">
+    <meta name="twitter:image" content="http://www.davidcolarusso.com/images/bigdata.png"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../images/icon.png"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css?v=2022-05-13">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/spin.min.js"></script>
+    <!--<script src="../js/formsinfo.js"></script>-->
+    <script>
+      preload(['../images/Ajax-loader.gif','../images/alice.webp','../images/bean.gif','../images/jimmy.gif','../images/little_r.webp','../images/patience.gif','../images/pbride.webp','../images/seinfeld.gif','../images/ted.gif','../images/twinpeaks.gif']);
+    </script>
+
+</HEAD>
+<BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0" onLoad="load_list();updateDB();">
+<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
+<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div class="content">
+    <form autocomplete="off">
+    <div id="icon" style="background-size: 100px 100px;background-image: url('../images/seal.jpg');"><a href="./" alt="home"><img src="../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
+    <h1 style="text-align:center;">
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        <center style="margin-top:5px;">
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-05-13</font></span>
+        </center>
+    </h1>
+
+
+    <div class="menu_bar">
+        <p style="text-align:center;">
+          <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+          <a href="../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+          &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore:</span>&nbsp;&nbsp;
+          <a href="." class="menu" style="color:black;">Comparisons&nbsp;</a>
+          <a href="../list/" class="menu">&nbsp;Lists&nbsp;</a>
+      <!--<a href="sim/" class="menu">&nbsp;Similar Forms&nbsp;</a>
+      <a href="flow/" class="menu">&nbsp;Flows&nbsp;</a>-->
+
+        </p>
+    </div>
+
+  <h2><a name="title" href="#title" class="anchor"></a>Find and Compare</h2>
+
+  <p>
+    Find a form based on its title or keywords. Then choose a set of forms from the results to compare. Note: you can run multiple searches and add forms from each to the <i>Form(s) to compare</i> list before making a comparison.
+  </p>
+  <div id="msg" style="display:none;top:0;z-index:100;width:100%;margin:0;">
+    <div style="margin:15px auto 0 auto;max-width:400px;text-align:center;background:#fff;padding:0px 15px 0 15px;">
+    <p><img id="patience" src="../images/patience.gif" style="width:100%"/></p>
+    <b> This may take some time. I am currently:</b>
+    <p id="output">Thinking...</p>
+    </div>
+  </div>
+  <div id="content" style="display:none;margin:30px auto 0 auto;max-width:900px;">
+
+    <div style="float:left;width:100%;margin:0px 0 20px 0;">
+      <table border=0 cellpadding=3><tr><td>
+        Name of Form <!--(or keyword)-->
+      </td></tr><tr><td>
+        <div class="autocomplete" style="width:100%;">
+          <input id="q" type="text" name="q" placeholder="" style="width:100%;border:1px solid #aaa;padding:5px;box-sizing: border-box; font-size:15px;">
+        </div>
+      </td><td style="width:1%;">
+        <input type="button" value='Find Form(s)' style="width:100%;background:#eee;padding:5px;margin-left:5px;" onclick="test_understanding(document.getElementById('q').value)"/>
+      </td></tr>
+      <tr><td colspan=1>
+        <p style="text-align:center;">
+          <a href="javascript:void('')" onClick="$(':checkbox').each(function() {this.checked = true;});updateDB();">select all</a> -
+          <a href="javascript:void('')" onClick="$(':checkbox').each(function() {this.checked = false;});updateDB();">deselect all</a>
+        </p>
+        <p id="checkboxes" style="text-align:center">
+          <label><input type="checkbox" onClick="updateDB();" id="AK" name="state" checked="checked">Alaska</label>
+          <label><input type="checkbox" onClick="updateDB();" id="AL" name="state" checked="checked">Alabama</label>
+          <label><input type="checkbox" onClick="updateDB();" id="CA" name="state" checked="checked">California</label>
+          <label><input type="checkbox" onClick="updateDB();" id="CO" name="state" checked="checked">Colorado</label>
+          <label><input type="checkbox" onClick="updateDB();" id="CT" name="state" checked="checked">Connecticut</label>
+          <br>
+          <label><input type="checkbox" onClick="updateDB();" id="DE" name="state" checked="checked">Delaware</label>
+          <label><input type="checkbox" onClick="updateDB();" id="HI" name="state" checked="checked">Hawaii</label>
+          <label><input type="checkbox" onClick="updateDB();" id="ID" name="state" checked="checked">Idaho</label>
+          <label><input type="checkbox" onClick="updateDB();" id="IL" name="state" checked="checked">Illinois</label>
+          <label><input type="checkbox" onClick="updateDB();" id="KS" name="state" checked="checked">Kansas</label>
+          <label><input type="checkbox" onClick="updateDB();" id="MA" name="state" checked="checked">Massachusetts</label>
+          <label><input type="checkbox" onClick="updateDB();" id="ME" name="state" checked="checked">Maine</label>
+          <br>
+          <label><input type="checkbox" onClick="updateDB();" id="MD" name="state" checked="checked">Maryland</label>
+          <label><input type="checkbox" onClick="updateDB();" id="MI" name="state" checked="checked">Michigan</label>
+          <label><input type="checkbox" onClick="updateDB();" id="MN" name="state" checked="checked">Minnesota</label>
+          <label><input type="checkbox" onClick="updateDB();" id="NC" name="state" checked="checked">North Carolina</label>
+          <label><input type="checkbox" onClick="updateDB();" id="NE" name="state" checked="checked">Nebraska</label>
+          <label><input type="checkbox" onClick="updateDB();" id="NV" name="state" checked="checked">Nevada</label>
+          <br>
+          <label><input type="checkbox" onClick="updateDB();" id="SD" name="state" checked="checked">South Dakota</label>
+          <label><input type="checkbox" onClick="updateDB();" id="UT" name="state" checked="checked">Utah</label>
+          <label><input type="checkbox" onClick="updateDB();" id="VA" name="state" checked="checked">Virginia</label>
+          <label><input type="checkbox" onClick="updateDB();" id="VT" name="state" checked="checked">Vermont</label>
+          <label><input type="checkbox" onClick="updateDB();" id="WA" name="state" checked="checked">Washington</label>
+          <label><input type="checkbox" onClick="updateDB();" id="WI" name="state" checked="checked">Wisconsin</label>
+          <label><input type="checkbox" onClick="updateDB();" id="WY" name="state" checked="checked">Wyoming</label>
+        </p>
+
+      </td><td>
+        <font size=-1><p>Search is based on form name. Similarity compares the results of that search with the text of forms.</p></font>
+          Similarity Cutoff: <span id="cutoffv">70</span>%</br>
+          <input type="range" min="50" max="100" value="70" id="cutoff" oninput="$('#cutoffv').html(this.value);" style="width:200px;">
+      </td></tr>
+     </table>
+     <br>
+      <table border=0 cellpadding=3 width="100%"><tr><td>
+        Search Results (including forms w/ similar content)
+      </td><td>
+
+      </td><td>
+        Form(s) to compare
+        <span style="float:right;">
+          <input type="button" value="See comparison" onClick="compareforms();">
+        </span>
+      </td></tr>
+      <tr><td width="60%">
+        <div id="loading" style="position:relative;z-index:100;top:140px;">
+        </div>
+        <div id="results">
+          <select id="search_results" multiple multiple style="width:100%;height:300px;">
+          </select>
+        </div>
+      </td><td width="1%" valign="top">
+        <br>
+        <input type="button" value="Add >" style="text-align:center;width:100px" onClick="addforms();">
+        </br></br>
+        <input type="button" value="< Remove" style="text-align:center;width:100px" onClick="removeforms();">
+      </td><td width="40%">
+        <select id="compare_me" multiple style="width:100%;height:300px;">
+        </select>
+      </td></tr>
+      <tr><td>
+          <input type="button" value="Open selected form(s) in new window(s)" style="text-align:center;width:100%" onClick="openforms();">
+      </td><td>
+      </td></tr></table>
+
+    </div>
+</div>
+<div class="footer">
+    <a href="/" alt="home"><img src="../images/blue_logo.png" width="50px" align="left" border="0" alt="LIT Logo"/></a>
+<font size=-1><a href="mailto:litlab@suffolk.edu">Email</a> | <a href="https://github.com/SuffolkLITLab" target="_blank">GitHub</a> | <a href="/terms">Terms &amp; Privacy</a> | <a href="/credits">Credits</a></font>
+</div>
+</form>
+
+</BODY>
+</HTML>
