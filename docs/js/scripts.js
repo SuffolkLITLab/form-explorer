@@ -49,34 +49,36 @@ function norm(a) {
         /*append the DIV element as a child of the autocomplete container:*/
         this.parentNode.appendChild(a);
 
-        var nresults = 0;
-        /*for each item in the array...*/
-        for (i = 0; i < arr.length; i++) {
-          /*check if the item starts with the same letters as the text field value:*/
-          if (arr[i].toUpperCase().match(val.toUpperCase())) {
-            /*create a DIV element for each matching element:*/
-            b = document.createElement("DIV");
-            /*make the matching letters bold:*/
-            var pos = arr[i].toUpperCase().match(val.toUpperCase()).index
-            b.innerHTML = arr[i].substr(0,pos);
-            b.innerHTML += "<strong>" + arr[i].substr(pos, val.length) + "</strong>";
-            b.innerHTML += arr[i].substr(pos + val.length);
-            /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-            /*execute a function when someone clicks on the item value (DIV element):*/
-            b.addEventListener("click", function(e) {
-                /*insert the value for the autocomplete text field:*/
-                // OLD inp.value = this.getElementsByTagName("input")[0].value;
-                inp.value = this.innerText;
-                /*close the list of autocompleted values,
-                (or any other open lists of autocompleted values:*/
-                closeAllLists();
-            });
-            a.appendChild(b);
-            nresults++;
-          }
-          if (nresults > 10){
-            break;
+        if ($("#mode_1").is(":checked")) {
+          var nresults = 0;
+          /*for each item in the array...*/
+          for (i = 0; i < arr.length; i++) {
+            /*check if the item starts with the same letters as the text field value:*/
+            if (arr[i].toUpperCase().match(val.toUpperCase())) {
+              /*create a DIV element for each matching element:*/
+              b = document.createElement("DIV");
+              /*make the matching letters bold:*/
+              var pos = arr[i].toUpperCase().match(val.toUpperCase()).index
+              b.innerHTML = arr[i].substr(0,pos);
+              b.innerHTML += "<strong>" + arr[i].substr(pos, val.length) + "</strong>";
+              b.innerHTML += arr[i].substr(pos + val.length);
+              /*insert a input field that will hold the current array item's value:*/
+              b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+              /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function(e) {
+                  /*insert the value for the autocomplete text field:*/
+                  // OLD inp.value = this.getElementsByTagName("input")[0].value;
+                  inp.value = this.innerText;
+                  /*close the list of autocompleted values,
+                  (or any other open lists of autocompleted values:*/
+                  closeAllLists();
+              });
+              a.appendChild(b);
+              nresults++;
+            }
+            if (nresults > 10){
+              break;
+            }
           }
         }
 
@@ -215,7 +217,7 @@ function norm(a) {
 
     function compareforms(){
       var output = ""
-      var selected = $("#compare_me option").map(function() {return $(this).val();}).get() 
+      var selected = $("#compare_me option").map(function() {return $(this).val();}).get()
       if (selected.length < 2) {
         alert('You need at least two forms in this list before we can make a comparison.')
       } else {
@@ -285,8 +287,8 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-22b" ).done(function( script, textStatus ) {
-      //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
+      //$.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
 
         $('#content').show();
@@ -303,34 +305,54 @@ function norm(a) {
       answers = [];
       if (val.trim().length> 0) {
 
-        var fvec = getFormID(val)["vec"]
-        //console.log("fvec",fvec)
-        if (fvec != undefined) {
-          var nresults = 0;
-          var FormsFiltered = filterStates();
-          for (var ans in FormsFiltered) {
-            var sim = getCosSim(fvec, FormsFiltered[ans]["vec"]);
-            //console.log(sim)
-            if (sim>=$('#cutoff').val()/100) {
-              answers.push([sim,FormsFiltered[ans]["fid"],FormsFiltered[ans]["jur"],FormsFiltered[ans]["name"]]);
-              nresults++;
+        var nresults = 0;
+        var FormsFiltered = filterStates();
+        if ($("#mode_1").is(":checked")) {
+          var fvec = getFormID(val)["vec"]
+          //console.log("fvec",fvec)
+          if (fvec != undefined) {
+            for (var ans in FormsFiltered) {
+              var sim = getCosSim(fvec, FormsFiltered[ans]["vec"]);
+              //console.log(sim)
+              if (sim>=$('#cutoff').val()/100) {
+                answers.push([sim,FormsFiltered[ans]["fid"],FormsFiltered[ans]["jur"],FormsFiltered[ans]["name"]]);
+                nresults++;
+              }
             }
+            answers.sort(function(a, b) {
+              return b[0] - a[0];
+            });
+            $('#resultN').html(answers.length)
+            return answers
+            //return answers.slice(0, n);
+          } else {
+            alert("No form with that name found for the selected jurisdictions. Consider trying a free text search.")
           }
-          answers.sort(function(a, b) {
-            return b[0] - a[0];
-          });
+        } else if ($("#mode_2").is(":checked")) {
+          if (val.replace(/\s{2,}/g,' ').trim().length >= 3) {
+            for (var ans in FormsFiltered) {
+              //console.log(FormsFiltered[ans]["text"])
+              if (FormsFiltered[ans]["text"].trim().toUpperCase().includes(val.trim().toUpperCase())) {
+                //console.log(ans)
+                answers.push([1,FormsFiltered[ans]["fid"],FormsFiltered[ans]["jur"],FormsFiltered[ans]["name"]]);
+                nresults++;
+              }
+            }
+          } else {
+            alert("Your text search must be at least 3 characters long.")
+          }
           $('#resultN').html(answers.length)
           return answers
-          //return answers.slice(0, n);
-        } else {
-          alert("No form with that name found for the selected jurisdictions. Please try again.")
         }
+
       } else {
+        $('#resultN').html(answers.length)
         return answers
       }
     }
 
     function test_understanding(string) {
+      $("#loading").empty();
       $('#loading').show();
       $("#search_results").empty();
       start_spinner('loading');
@@ -350,7 +372,7 @@ function norm(a) {
           //console.log(answers[result][0])
           $('#search_results').append($('<option>', {
               value: answers[result][1],
-              text: answers[result][3] + " ("+answers[result][2]+")"
+              text: answers[result][3]
           }));
         }
 

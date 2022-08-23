@@ -48,7 +48,7 @@
     <script>
       preload(['../images/alice.webp','../images/bean.gif','../images/jimmy.gif','../images/little_r.webp','../images/patience.gif','../images/pbride.webp','../images/seinfeld.gif','../images/ted.gif','../images/twinpeaks.gif']);
     </script>
-    <script src="../js/formsinfo.js?v=2022-08-22b"></script>
+    <script src="../js/formsinfo.js?v=2022-08-23"></script>
     <script src="../js/scripts.js"></script>
     <script src="../js/spin.min.js"></script>
 
@@ -83,7 +83,7 @@
   <h2><a name="title" href="#title" class="anchor"></a>Find and Compare</h2>
 
   <p>
-    Find a form based on its title and jurisdiction. Then choose a set of forms from the results to compare. Note: you can run multiple searches and add forms from each to the <i>Form(s) to compare</i> list before making a comparison.
+    Search for forms based on jurisdiction title and keywords. Then choose a set of forms from the results to compare. You can run multiple searches and add forms from each to the <i>Form(s) to compare</i> list before making a comparison. If you make use of the <i>Name of Form</i> option we will return not only the form with that name but forms with similar content. Using <i>free text</i> will search the text of forms. The <i>Name of Form</i> option is good for finding similar forms that use slightly different language.
   </p>
   <div id="msg" style="display:none;top:0;z-index:100;width:100%;margin:0;">
     <div style="margin:15px auto 0 auto;max-width:400px;text-align:center;background:#fff;padding:0px 15px 0 15px;">
@@ -96,13 +96,14 @@
 
     <div style="float:left;width:100%;margin:0px 0 20px 0;">
       <table border=0 cellpadding=3><tr><td>
-        Name of Form <!--(or keyword)-->
+        <label><input type="radio" name="mode" id="mode_1" value="form" checked="checked" onClick="$('#slider').show()">Name of Form (will find similar forms)</lable>
+        <label><input type="radio" name="mode" id="mode_2" value="text" onClick="$('#slider').hide()">Free Text (exact match across all text)</lable>
       </td></tr><tr><td>
         <div class="autocomplete" style="width:100%;">
           <input id="q" type="text" name="q" placeholder="" style="width:100%;border:1px solid #aaa;padding:5px;box-sizing: border-box; font-size:15px;">
         </div>
       </td><td style="width:1%;">
-        <input type="button" value='Find Form(s)' style="width:100%;background:#eee;padding:5px;margin-left:5px;" onclick="test_understanding(document.getElementById('q').value)"/>
+        <input type="button" value='Find Form(s)' style="width:205px;background:#eee;padding:5px;margin-left:5px;" onclick="test_understanding(document.getElementById('q').value)"/>
       </td></tr>
       <tr><td colspan=1>
         <p style="text-align:center;">
@@ -141,14 +142,17 @@
         </p>
 
       </td><td>
-        <font size=-1><p>Search is based on form name. Similarity compares the results of that search with the text of forms.</p></font>
+        <span id="slider">
+          <font size=-1><p>Search is based on form name. Similarity compares the results of that search with the text of forms.</p></font>
           Similarity Cutoff: <span id="cutoffv">70</span>%</br>
           <input type="range" min="50" max="100" value="70" id="cutoff" oninput="$('#cutoffv').html(this.value);" style="width:200px;">
+        </span>
       </td></tr>
      </table>
      <br>
       <table border=0 cellpadding=3 width="100%"><tr><td>
-        <span id="resultN">0</span> Result(s) (including forms w/ similar content)
+        <span id="resultN">0</span> Result(s) (including forms w/ similar content)<br>
+        <font size=-1>Browser limits those shown to a few hundred.</font>
       </td><td>
 
       </td><td>
