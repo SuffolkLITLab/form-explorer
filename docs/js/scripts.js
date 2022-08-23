@@ -287,7 +287,7 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23b" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
 
