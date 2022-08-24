@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+<HEAD>
+    <title>Find and Compare Forms</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108858221-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108858221-1');
+    </script>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <link rel="apple-touch-icon" href="./images/icon_300.png"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="About the Form Explorer?"/>
+    <meta property="og:description" content="We're collecting existing pdf forms from multiple jurisdictions and making it possible for folks (e.g., courts and non-profits) to turn them into beautiful webapps with ease. Eventually, you will be able to go from form to prototype webapp in a few clicks. As time goes by, we'll grow the number of jurisdictions and improve our tools' performance. They'll never do all of the work, but they help plot a course for what otherwise might seem an "impossible" task. They'll help make things concrete, allowing for stakeholders and developers to edit their way to a production-ready solution built on suggestions rooted in years of form building experience."/>
+    <meta property="og:image" content="./images/bigdata.png"/>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SuffolkLITLab">
+    <meta name="twitter:creator" content="@SuffolkLITLab">
+    <meta name="twitter:title" content="About the Form Explorer?">
+    <meta name="twitter:description" content="We're collecting existing pdf forms from multiple jurisdictions and making it possible for folks (e.g., courts and non-profits) to turn them into beautiful webapps with ease. Eventually, you will be able to go from form to prototype webapp in a few clicks. As time goes by, we'll grow the number of jurisdictions and improve our tools' performance. They'll never do all of the work, but they help plot a course for what otherwise might seem an "impossible" task. They'll help make things concrete, allowing for stakeholders and developers to edit their way to a production-ready solution built on suggestions rooted in years of form building experience.">
+    <meta name="twitter:image" content="http://www.davidcolarusso.com/images/bigdata.png"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" href="../../images/icon.png"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-05-13">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script>
+      function preload(arrayOfImages) {
+          $(arrayOfImages).each(function () {
+              console.log("Loading: "+this)
+              $('<img />').attr('src',this).appendTo('body').css('display','none');
+          });
+      }
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+
+
+      function build_table() {
+        var ids = params.ids.split(",");
+        console.log("load ids",ids)
+        var html = "<table border='1' width='100%'>"
+
+        html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>General Info.</b></td>"
+
+        html += "<tr><td width='1%'>Title</td>"
+        // names
+        for (id in ids) {
+          html += "<td><a href='../../form/"+filterbyID(ids[id])["jur"]+"/"+filterbyID(ids[id])["fid"]+".html' target='_blank'>"+filterbyID(ids[id])["name"]+"</a></td>"
+        }
+
+        html += "</tr><tr><td>Reading Level</td>"
+        for (id in ids) {
+          html += "<td>"+filterbyID(ids[id])["reading"]+"</td>"
+        }
+
+        html += "</tr><tr><td>Pages</td>"
+        for (id in ids) {
+          html += "<td>"+filterbyID(ids[id])["pages"]+"</td>"
+        }
+
+        html += "</tr><tr><td>Fields</td>"
+        for (id in ids) {
+          html += "<td>"+filterbyID(ids[id])["fields"].length+"</td>"
+        }
+
+        html += "</tr><tr><td>Fields per Page</td>"
+        for (id in ids) {
+          html += "<td>"+filterbyID(ids[id])["f_per_p"]+"</td>"
+        }
+
+        html += "</tr><tr><td>Court Label</td>"
+        for (id in ids) {
+          html += "<td><a href='../../list/"+filterbyID(ids[id])["jur"]+"/#"+filterbyID(ids[id])["label"].replace(" ","_")+"' target='_blank'>"+filterbyID(ids[id])["label"]+"</a></td>"
+        }
+
+        var all_list = []
+        for (id in ids) {
+          all_list = all_list.concat(filterbyID(ids[id])["list"]);
+        }
+        all_list = [...new Set(all_list)]
+        html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>List Codes ("+all_list.length+")</b></td>"
+
+        if (all_list.length==0){
+          html += "</tr><tr><td colspan='"+(ids.length+1)+"'><i>None Found</i></td>"
+        }
+
+        for (field in all_list) {
+          html += "</tr><tr><td><a href='https://taxonomy.legal/term/"+all_list[field]+"' target='_blank'>"+all_list[field]+"</a>"
+          for (id in ids) {
+            if (filterbyID(ids[id])["list"].includes(all_list[field])) {
+              html += "<td bgcolor='green'> &check;"
+            } else {
+              html += "<td bgcolor='red'> ✖"
+            }
+            html += "</td>"
+          }
+        }
+
+        var all_fields = []
+        for (id in ids) {
+          all_fields = all_fields.concat(filterbyID(ids[id])["fields"]);
+        }
+        all_fields = [...new Set(all_fields)]
+        html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>Unique Fields ("+all_fields.length+")</b></td>"
+
+        for (field in all_fields) {
+          html += "</tr><tr><td>"+all_fields[field]
+          for (id in ids) {
+            if (filterbyID(ids[id])["fields"].includes(all_fields[field])) {
+              html += "<td bgcolor='green'> &check;"
+            } else {
+              html += "<td bgcolor='red'> ✖"
+            }
+            html += "</td>"
+          }
+        }
+
+
+        html += "</tr></table>"
+        $('#data').html(html)
+      }
+    </script>
+    <script>
+      preload(['../../images/alice.webp','../../images/bean.gif','../../images/jimmy.gif','../../images/little_r.webp','../../images/patience.gif','../../images/pbride.webp','../../images/seinfeld.gif','../../images/ted.gif','../../images/twinpeaks.gif']);
+    </script>
+    <script src="../../js/formsinfo.js?v=2022-08-23b"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="../../js/spin.min.js"></script>
+
+</HEAD>
+<BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0" onLoad="load_list('../../');build_table();">
+<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
+<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div class="content" style="max-width:none;">
+    <form autocomplete="off">
+    <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="./" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
+    <h1 style="text-align:center;">
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        <center style="margin-top:5px;">
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-08-24</font></span>
+        </center>
+    </h1>
+
+
+    <div class="menu_bar">
+        <p style="text-align:center;">
+          <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+          <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+          <a href="../" class="menu">Comparisons&nbsp;</a>|</font>&nbsp;
+          &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore:</span>&nbsp;&nbsp;
+          <a href="../../list/" class="menu">&nbsp;Lists&nbsp;</a>
+      <!--<a href="sim/" class="menu">&nbsp;Similar Forms&nbsp;</a>
+      <a href="flow/" class="menu">&nbsp;Flows&nbsp;</a>-->
+
+        </p>
+    </div>
+
+  <h2><a name="title" href="#title" class="anchor"></a>Side-by-side Comparison</h2>
+
+  <p>
+    A comparison of froms chosen using the <a href="../">Find and Compare Tool</a>.
+  </p>
+  <div id="msg" style="display:none;top:0;z-index:100;width:100%;margin:0;">
+    <div style="margin:15px auto 0 auto;max-width:400px;text-align:center;background:#fff;padding:0px 15px 0 15px;">
+    <p><img id="patience" src="../../../images/patience.gif" style="width:100%"/></p>
+    <b> This may take some time. I am currently:</b>
+    <p id="output">Thinking...</p>
+    </div>
+  </div>
+  <div id="content" style="display:none;margin:30px auto 0 auto;overflow:hidden;overflow-x:auto;">
+    <div id="data" style="float:left;width:100%;min-width:900px;margin:0px 0 20px 0;text-align:center;"></div>
+</div>
+<div class="footer">
+    <a href="/" alt="home"><img src="../../images/blue_logo.png" width="50px" align="left" border="0" alt="LIT Logo"/></a>
+<font size=-1><a href="mailto:litlab@suffolk.edu">Email</a> | <a href="https://github.com/SuffolkLITLab" target="_blank">GitHub</a> | <a href="/terms">Terms &amp; Privacy</a> | <a href="/credits">Credits</a></font>
+</div>
+</form>
+<script>
+  if (localStorage.cutoff) {
+    document.getElementById('cutoff').value = localStorage.cutoff;
+    $('#cutoffv').html(localStorage.cutoff);
+  }
+</script>
+</BODY>
+</HTML>

@@ -215,6 +215,7 @@ function norm(a) {
       }
     }
 
+
     function compareforms(){
       var output = ""
       var selected = $("#compare_me option").map(function() {return $(this).val();}).get()
@@ -225,13 +226,13 @@ function norm(a) {
         for (item in selected) {
           output += selected[item];
           if (i<selected.length) {
-            output += ", ";
+            output += ",";
           } else {
-            output += ". ";
+            output += "";
           }
           i +=1;
         }
-        alert('Coming Soon! Compare form(s): '+output)
+        window.open("side-by-side/index.html?ids="+output, "_blank");
       }
     }
 
@@ -242,26 +243,26 @@ function norm(a) {
         });
     }
 
-    function pick_image() {
+    function pick_image(path="../") {
       var i = Math.floor(Math.random() * 9) + 1;
       if (i==1) {
-        $("#patience").attr("src","../images/alice.webp");
+        $("#patience").attr("src",path+"images/alice.webp");
       } else if (i==2) {
-        $("#patience").attr("src","../images/bean.gif");
+        $("#patience").attr("src",path+"images/bean.gif");
       } else if (i==3) {
-        $("#patience").attr("src","../images/jimmy.gif");
+        $("#patience").attr("src",path+"images/jimmy.gif");
       } else if (i==4) {
-        $("#patience").attr("src","../images/little_r.webp");
+        $("#patience").attr("src",path+"images/little_r.webp");
       } else if (i==5) {
-        $("#patience").attr("src","../images/patience.gif");
+        $("#patience").attr("src",path+"images/patience.gif");
       } else if (i==6) {
-        $("#patience").attr("src","../images/pbride.webp");
+        $("#patience").attr("src",path+"images/pbride.webp");
       } else if (i==7) {
-        $("#patience").attr("src","../images/seinfeld.gif");
+        $("#patience").attr("src",path+"images/seinfeld.gif");
       } else if (i==8) {
-        $("#patience").attr("src","../images/ted.gif");
+        $("#patience").attr("src",path+"images/ted.gif");
       } else if (i==9) {
-        $("#patience").attr("src","../images/twinpeaks.gif");
+        $("#patience").attr("src",path+"images/twinpeaks.gif");
       }
     }
 
@@ -279,8 +280,8 @@ function norm(a) {
       return jQuery.ajax( options );
     };
 
-    function load_list () {
-      pick_image();
+    function load_list (path="../") {
+      pick_image(path);
       $('#msg').show();
       $('#content').hide();
       $('#output').html("Loading tens of thousands of forms...");
