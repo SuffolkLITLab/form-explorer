@@ -37,23 +37,16 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-    <script>
-      function preload(arrayOfImages) {
-          $(arrayOfImages).each(function () {
-              console.log("Loading: "+this)
-              $('<img />').attr('src',this).appendTo('body').css('display','none');
-          });
-      }
-    </script>
+    <!--<script src="../js/loading.js"></script>-->
+    <!--<script src="../js/formsinfo.js?v=2022-08-23b"></script>-->
+    <script src="../js/spin.min.js"></script>
+    <script src="../js/scripts.js"></script>
     <script>
       preload(['../images/alice.webp','../images/bean.gif','../images/jimmy.gif','../images/little_r.webp','../images/patience.gif','../images/pbride.webp','../images/seinfeld.gif','../images/ted.gif','../images/twinpeaks.gif']);
     </script>
-    <script src="../js/formsinfo.js?v=2022-08-23b"></script>
-    <script src="../js/scripts.js"></script>
-    <script src="../js/spin.min.js"></script>
 
 </HEAD>
-<BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0" onLoad="load_list();updateDB();">
+<BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0" onLoad="load_list_find();">
 <div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
 <b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
 <div class="content">
@@ -62,7 +55,7 @@
     <h1 style="text-align:center;">
         The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-08-23</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-08-25</font></span>
         </center>
     </h1>
 

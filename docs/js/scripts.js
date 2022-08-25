@@ -236,69 +236,6 @@ function norm(a) {
       }
     }
 
-    function preload(arrayOfImages) {
-        $(arrayOfImages).each(function () {
-            console.log("Loading: "+this)
-            $('<img />').attr('src',this).appendTo('body').css('display','none');
-        });
-    }
-
-    function pick_image(path="../") {
-      var i = Math.floor(Math.random() * 9) + 1;
-      if (i==1) {
-        $("#patience").attr("src",path+"images/alice.webp");
-      } else if (i==2) {
-        $("#patience").attr("src",path+"images/bean.gif");
-      } else if (i==3) {
-        $("#patience").attr("src",path+"images/jimmy.gif");
-      } else if (i==4) {
-        $("#patience").attr("src",path+"images/little_r.webp");
-      } else if (i==5) {
-        $("#patience").attr("src",path+"images/patience.gif");
-      } else if (i==6) {
-        $("#patience").attr("src",path+"images/pbride.webp");
-      } else if (i==7) {
-        $("#patience").attr("src",path+"images/seinfeld.gif");
-      } else if (i==8) {
-        $("#patience").attr("src",path+"images/ted.gif");
-      } else if (i==9) {
-        $("#patience").attr("src",path+"images/twinpeaks.gif");
-      }
-    }
-
-    jQuery.cachedScript = function( url, options ) {
-
-      // Allow user to set any option except for dataType, cache, and url
-      options = $.extend( options || {}, {
-        dataType: "script",
-        cache: true,
-        url: url
-      });
-
-      // Use $.ajax() since it is more flexible than $.getScript
-      // Return the jqXHR object so we can chain callbacks
-      return jQuery.ajax( options );
-    };
-
-    function load_list (path="../") {
-      pick_image(path);
-      $('#msg').show();
-      $('#content').hide();
-      $('#output').html("Loading tens of thousands of forms...");
-
-      // Usage
-
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23b" ).done(function( script, textStatus ) {
-      //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
-        console.log( textStatus );
-
-        $('#content').show();
-        $('#zotero').show();
-        $('#msg').hide();
-        $('#output').html("Thinking...")
-      });
-    }
-
     function run_search(val) {
 
       var n = 1000;
@@ -401,4 +338,256 @@ function norm(a) {
       };
       var target = document.getElementById(target_id);
       var spinner = new Spinner(opts).spin(target);
+    }
+
+    function preload(arrayOfImages) {
+        $(arrayOfImages).each(function () {
+            console.log("Loading: "+this)
+            $('<img />').attr('src',this).appendTo('body').css('display','none');
+        });
+    }
+
+    function pick_image(path="../") {
+      var i = Math.floor(Math.random() * 9) + 1;
+      if (i==1) {
+        $("#patience").attr("src",path+"images/alice.webp");
+      } else if (i==2) {
+        $("#patience").attr("src",path+"images/bean.gif");
+      } else if (i==3) {
+        $("#patience").attr("src",path+"images/jimmy.gif");
+      } else if (i==4) {
+        $("#patience").attr("src",path+"images/little_r.webp");
+      } else if (i==5) {
+        $("#patience").attr("src",path+"images/patience.gif");
+      } else if (i==6) {
+        $("#patience").attr("src",path+"images/pbride.webp");
+      } else if (i==7) {
+        $("#patience").attr("src",path+"images/seinfeld.gif");
+      } else if (i==8) {
+        $("#patience").attr("src",path+"images/ted.gif");
+      } else if (i==9) {
+        $("#patience").attr("src",path+"images/twinpeaks.gif");
+      }
+    }
+
+    jQuery.cachedScript = function( url, options ) {
+
+      // Allow user to set any option except for dataType, cache, and url
+      options = $.extend( options || {}, {
+        dataType: "script",
+        cache: true,
+        url: url
+      });
+
+      // Use $.ajax() since it is more flexible than $.getScript
+      // Return the jqXHR object so we can chain callbacks
+      return jQuery.ajax( options );
+    };
+
+    function load_list_find (path="../") {
+      console.log("loading DB...");
+      pick_image(path);
+      $('#msg').show();
+
+      $('#content').hide();
+      $('#output').html("Loading tens of thousands of forms...");
+
+      // Usage
+
+      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23b" ).done(function( script, textStatus ) {
+      //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
+        console.log( textStatus );
+
+        $('#content').show();
+        $('#msg').hide();
+        $('#output').html("Thinking...")
+
+        updateDB();
+
+      });
+    }
+
+
+    function load_list_compare (path="../../") {
+      console.log("loading DB...");
+      $('#msg').show();
+      start_spinner('msg');
+
+      $('#content').hide();
+
+      // Usage
+
+      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23b" ).done(function( script, textStatus ) {
+      //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
+        console.log( textStatus );
+
+        $('#content').show();
+        $('#msg').hide();
+
+        build_table();
+
+      });
+    }
+
+
+
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+
+    function getStandardDeviation (array) {
+      const n = array.length
+      const mean = array.reduce((a, b) => a + b) / n
+      return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n)
+    }
+
+    function build_table() {
+      var ids = params.ids.split(",");
+      //console.log("load ids",ids)
+      var html = "<table border='1' width='100%'>"
+
+      html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>General Info.</b></td>"
+
+      html += "<tr><td width='1%'>Title</td>"
+      // names
+      for (id in ids) {
+        html += "<td><a href='../../form/"+filterbyID(ids[id])["jur"]+"/"+filterbyID(ids[id])["fid"]+".html' target='_blank'>"+filterbyID(ids[id])["name"]+"</a></td>"
+      }
+
+      var array = []
+      for (id in ids) {
+        array = array.concat(filterbyID(ids[id])["reading"]);
+      }
+      mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
+      std = getStandardDeviation(array).toFixed(2)
+      html += "</tr><tr><td>Reading Level<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      for (id in ids) {
+        var metric = filterbyID(ids[id])["reading"]
+        if (metric<=(1*mean-1*std)){
+          html += "<td bgcolor='#66ff66'>"
+        } else if (metric>=(1*mean+2*std)) {
+          html += "<td bgcolor='#ef6161'>"
+        } else if (metric>=(1*mean+1*std)) {
+          html += "<td bgcolor='#fdfd66'>"
+        } else {
+          html += "<td>"
+        }
+        html += metric+"</td>"
+      }
+
+
+      var array = []
+      for (id in ids) {
+        array = array.concat(filterbyID(ids[id])["pages"]);
+      }
+      mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
+      std = getStandardDeviation(array).toFixed(2)
+      html += "</tr><tr><td>Pages<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      for (id in ids) {
+        var metric = filterbyID(ids[id])["pages"]
+        if (metric<=(1*mean-1*std)){
+          html += "<td bgcolor='#66ff66'>"
+        } else if (metric>=(1*mean+2*std)) {
+          html += "<td bgcolor='#ef6161'>"
+        } else if (metric>=(1*mean+1*std)) {
+          html += "<td bgcolor='#fdfd66'>"
+        } else {
+          html += "<td>"
+        }
+        html += metric+"</td>"
+      }
+
+      var array = []
+      for (id in ids) {
+        array = array.concat(filterbyID(ids[id])["fields"].length);
+      }
+      mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
+      std = getStandardDeviation(array).toFixed(2)
+      html += "</tr><tr><td>Fields<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      for (id in ids) {
+        var metric = filterbyID(ids[id])["fields"].length
+        if (metric<=(1*mean-1*std)){
+          html += "<td bgcolor='#66ff66'>"
+        } else if (metric>=(1*mean+2*std)) {
+          html += "<td bgcolor='#ef6161'>"
+        } else if (metric>=(1*mean+1*std)) {
+          html += "<td bgcolor='#fdfd66'>"
+        } else {
+          html += "<td>"
+        }
+        html += metric+"</td>"
+      }
+
+      var array = []
+      for (id in ids) {
+        array = array.concat(filterbyID(ids[id])["f_per_p"]);
+      }
+      mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
+      std = getStandardDeviation(array).toFixed(2)
+      html += "</tr><tr><td>Fields per Page<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      for (id in ids) {
+        var metric = filterbyID(ids[id])["f_per_p"].toFixed(2)
+        if (metric<=(1*mean-1*std)){
+          html += "<td bgcolor='#66ff66'>"
+        } else if (metric>=(1*mean+2*std)) {
+          html += "<td bgcolor='#ef6161'>"
+        } else if (metric>=(1*mean+1*std)) {
+          html += "<td bgcolor='#fdfd66'>"
+        } else {
+          html += "<td>"
+        }
+        html += metric+"</td>"
+      }
+
+      html += "</tr><tr><td>Court Label</td>"
+      for (id in ids) {
+        html += "<td><a href='../../list/"+filterbyID(ids[id])["jur"]+"/#"+filterbyID(ids[id])["label"].replace(" ","_")+"' target='_blank'>"+filterbyID(ids[id])["label"]+"</a></td>"
+      }
+
+      var all_list = []
+      for (id in ids) {
+        all_list = all_list.concat(filterbyID(ids[id])["list"]);
+      }
+      all_list = [...new Set(all_list)]
+      html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>List Codes ("+all_list.length+")</b></td>"
+
+      if (all_list.length==0){
+        html += "</tr><tr><td colspan='"+(ids.length+1)+"'><i>None Found</i></td>"
+      }
+
+      for (field in all_list) {
+        html += "</tr><tr><td><a href='https://taxonomy.legal/term/"+all_list[field]+"' target='_blank'>"+all_list[field]+"</a>"
+        for (id in ids) {
+          if (filterbyID(ids[id])["list"].includes(all_list[field])) {
+            html += "<td bgcolor='#66ff66'> &check;"
+          } else {
+            html += "<td> "
+          }
+          html += "</td>"
+        }
+      }
+
+      var all_fields = []
+      for (id in ids) {
+        all_fields = all_fields.concat(filterbyID(ids[id])["fields"]);
+      }
+      all_fields = [...new Set(all_fields)]
+      html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>Unique Fields ("+all_fields.length+")</b></td>"
+
+      for (field in all_fields) {
+        html += "</tr><tr><td>"+all_fields[field]
+        for (id in ids) {
+          if (filterbyID(ids[id])["fields"].includes(all_fields[field])) {
+            html += "<td bgcolor='#66ff66'> &check;"
+          } else {
+            html += "<td> "
+          }
+          html += "</td>"
+        }
+      }
+
+
+      html += "</tr></table>"
+      $('#data').html(html)
     }

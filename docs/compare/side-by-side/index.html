@@ -37,113 +37,12 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-    <script>
-      function preload(arrayOfImages) {
-          $(arrayOfImages).each(function () {
-              console.log("Loading: "+this)
-              $('<img />').attr('src',this).appendTo('body').css('display','none');
-          });
-      }
-      const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-      });
-      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
 
-
-      function build_table() {
-        var ids = params.ids.split(",");
-        console.log("load ids",ids)
-        var html = "<table border='1' width='100%'>"
-
-        html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>General Info.</b></td>"
-
-        html += "<tr><td width='1%'>Title</td>"
-        // names
-        for (id in ids) {
-          html += "<td><a href='../../form/"+filterbyID(ids[id])["jur"]+"/"+filterbyID(ids[id])["fid"]+".html' target='_blank'>"+filterbyID(ids[id])["name"]+"</a></td>"
-        }
-
-        html += "</tr><tr><td>Reading Level</td>"
-        for (id in ids) {
-          html += "<td>"+filterbyID(ids[id])["reading"]+"</td>"
-        }
-
-        html += "</tr><tr><td>Pages</td>"
-        for (id in ids) {
-          html += "<td>"+filterbyID(ids[id])["pages"]+"</td>"
-        }
-
-        html += "</tr><tr><td>Fields</td>"
-        for (id in ids) {
-          html += "<td>"+filterbyID(ids[id])["fields"].length+"</td>"
-        }
-
-        html += "</tr><tr><td>Fields per Page</td>"
-        for (id in ids) {
-          html += "<td>"+filterbyID(ids[id])["f_per_p"]+"</td>"
-        }
-
-        html += "</tr><tr><td>Court Label</td>"
-        for (id in ids) {
-          html += "<td><a href='../../list/"+filterbyID(ids[id])["jur"]+"/#"+filterbyID(ids[id])["label"].replace(" ","_")+"' target='_blank'>"+filterbyID(ids[id])["label"]+"</a></td>"
-        }
-
-        var all_list = []
-        for (id in ids) {
-          all_list = all_list.concat(filterbyID(ids[id])["list"]);
-        }
-        all_list = [...new Set(all_list)]
-        html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>List Codes ("+all_list.length+")</b></td>"
-
-        if (all_list.length==0){
-          html += "</tr><tr><td colspan='"+(ids.length+1)+"'><i>None Found</i></td>"
-        }
-
-        for (field in all_list) {
-          html += "</tr><tr><td><a href='https://taxonomy.legal/term/"+all_list[field]+"' target='_blank'>"+all_list[field]+"</a>"
-          for (id in ids) {
-            if (filterbyID(ids[id])["list"].includes(all_list[field])) {
-              html += "<td bgcolor='green'> &check;"
-            } else {
-              html += "<td bgcolor='red'> ✖"
-            }
-            html += "</td>"
-          }
-        }
-
-        var all_fields = []
-        for (id in ids) {
-          all_fields = all_fields.concat(filterbyID(ids[id])["fields"]);
-        }
-        all_fields = [...new Set(all_fields)]
-        html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>Unique Fields ("+all_fields.length+")</b></td>"
-
-        for (field in all_fields) {
-          html += "</tr><tr><td>"+all_fields[field]
-          for (id in ids) {
-            if (filterbyID(ids[id])["fields"].includes(all_fields[field])) {
-              html += "<td bgcolor='green'> &check;"
-            } else {
-              html += "<td bgcolor='red'> ✖"
-            }
-            html += "</td>"
-          }
-        }
-
-
-        html += "</tr></table>"
-        $('#data').html(html)
-      }
-    </script>
-    <script>
-      preload(['../../images/alice.webp','../../images/bean.gif','../../images/jimmy.gif','../../images/little_r.webp','../../images/patience.gif','../../images/pbride.webp','../../images/seinfeld.gif','../../images/ted.gif','../../images/twinpeaks.gif']);
-    </script>
-    <script src="../../js/formsinfo.js?v=2022-08-23b"></script>
-    <script src="../../js/scripts.js"></script>
     <script src="../../js/spin.min.js"></script>
+    <script src="../../js/scripts.js"></script>
 
 </HEAD>
-<BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0" onLoad="load_list('../../');build_table();">
+<BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0" onLoad="load_list_compare('../../');">
 <div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
 <b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
 <div class="content" style="max-width:none;">
@@ -152,7 +51,7 @@
     <h1 style="text-align:center;">
         The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-08-24</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-08-25</font></span>
         </center>
     </h1>
 
@@ -173,13 +72,10 @@
   <h2><a name="title" href="#title" class="anchor"></a>Side-by-side Comparison</h2>
 
   <p>
-    A comparison of froms chosen using the <a href="../">Find and Compare Tool</a>.
+    A comparison of froms chosen using the <a href="../">Find and Compare Tool</a>. The cells under <i>General Info.</i> are color coded such that values less than one standard deviation below the mean appear as green, more than one, appear as yellow, and more than two as red.
   </p>
   <div id="msg" style="display:none;top:0;z-index:100;width:100%;margin:0;">
-    <div style="margin:15px auto 0 auto;max-width:400px;text-align:center;background:#fff;padding:0px 15px 0 15px;">
-    <p><img id="patience" src="../../../images/patience.gif" style="width:100%"/></p>
-    <b> This may take some time. I am currently:</b>
-    <p id="output">Thinking...</p>
+    <div style="margin:15px auto 0 auto;max-width:400px;height:100px;text-align:center;background:#fff;padding:0px 15px 0 15px;">
     </div>
   </div>
   <div id="content" style="display:none;margin:30px auto 0 auto;overflow:hidden;overflow-x:auto;">
@@ -190,11 +86,5 @@
 <font size=-1><a href="mailto:litlab@suffolk.edu">Email</a> | <a href="https://github.com/SuffolkLITLab" target="_blank">GitHub</a> | <a href="/terms">Terms &amp; Privacy</a> | <a href="/credits">Credits</a></font>
 </div>
 </form>
-<script>
-  if (localStorage.cutoff) {
-    document.getElementById('cutoff').value = localStorage.cutoff;
-    $('#cutoffv').html(localStorage.cutoff);
-  }
-</script>
 </BODY>
 </HTML>
