@@ -449,7 +449,7 @@ function norm(a) {
 
       html += "</tr><tr><td colspan='"+(ids.length+1)+"' bgcolor='#eee'><b>General Info.</b></td>"
 
-      html += "<tr><td width='1%'>Title</td>"
+      html += "<tr><td>Title</td>"
       // names
       for (id in ids) {
         html += "<td><a href='../../form/"+filterbyID(ids[id])["jur"]+"/"+filterbyID(ids[id])["fid"]+".html' target='_blank'>"+filterbyID(ids[id])["name"]+"</a></td>"
