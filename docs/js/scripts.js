@@ -394,7 +394,7 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23b" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
 
@@ -417,7 +417,7 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js?v=2022-08-23b" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
 
@@ -461,7 +461,7 @@ function norm(a) {
       }
       mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
       std = getStandardDeviation(array).toFixed(2)
-      html += "</tr><tr><td>Reading Level<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      html += "</tr><tr><td>Reading Level<br><font size=-1>Mean "+mean+", Std. " +std+"</font></td>"
       for (id in ids) {
         var metric = filterbyID(ids[id])["reading"]
         if (metric<=(1*mean-1*std)){
@@ -483,7 +483,7 @@ function norm(a) {
       }
       mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
       std = getStandardDeviation(array).toFixed(2)
-      html += "</tr><tr><td>Pages<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      html += "</tr><tr><td>Pages<br><font size=-1>Mean "+mean+", Std. " +std+"</font></td>"
       for (id in ids) {
         var metric = filterbyID(ids[id])["pages"]
         if (metric<=(1*mean-1*std)){
@@ -504,7 +504,7 @@ function norm(a) {
       }
       mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
       std = getStandardDeviation(array).toFixed(2)
-      html += "</tr><tr><td>Fields<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      html += "</tr><tr><td>Fields<br><font size=-1>Mean "+mean+", Std. " +std+"</font></td>"
       for (id in ids) {
         var metric = filterbyID(ids[id])["fields"].length
         if (metric<=(1*mean-1*std)){
@@ -525,7 +525,7 @@ function norm(a) {
       }
       mean = (array.reduce((a, b) => a + b) / array.length).toFixed(2);
       std = getStandardDeviation(array).toFixed(2)
-      html += "</tr><tr><td>Fields per Page<br><font size=-1>Avg. "+mean+", Std. " +std+"</font></td>"
+      html += "</tr><tr><td>Fields per Page<br><font size=-1>Mean "+mean+", Std. " +std+"</font></td>"
       for (id in ids) {
         var metric = filterbyID(ids[id])["f_per_p"].toFixed(2)
         if (metric<=(1*mean-1*std)){
@@ -540,9 +540,9 @@ function norm(a) {
         html += metric+"</td>"
       }
 
-      html += "</tr><tr><td>Court Label</td>"
+      html += "</tr><tr><td>Court Applied Label</td>"
       for (id in ids) {
-        html += "<td><a href='../../list/"+filterbyID(ids[id])["jur"]+"/#"+filterbyID(ids[id])["label"].replace(" ","_")+"' target='_blank'>"+filterbyID(ids[id])["label"]+"</a></td>"
+        html += "<td><a href='../../list/"+filterbyID(ids[id])["jur"]+"/#"+filterbyID(ids[id])["label"].replaceAll(/[^a-z0-9]+/gi,"_")+"' target='_blank'>"+filterbyID(ids[id])["label"]+"</a></td>"
       }
 
       var all_list = []
