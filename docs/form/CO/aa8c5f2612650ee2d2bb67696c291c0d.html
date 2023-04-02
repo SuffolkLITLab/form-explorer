@@ -33,22 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-05-13">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2023-04-02">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
-<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#f6d91b;color:black;padding:15px;text-align:center;">
+<b>This tool is in beta.</b> <b>CONTENT IS SUBJECT TO CHANGE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
-        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-05-13</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2023-04-02</font></span>
         </center>
     </h1>
 
@@ -56,6 +56,7 @@
         <p style="text-align:center;">
       <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
       <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      <a href="../../compare" class="menu">Find&nbsp;&amp;&nbsp;Compare&nbsp;</a><font style="color:#888;">|</font>&nbsp;
       &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore: Colorado
       </span>&nbsp;&nbsp;
       <a href="../../list/CO" class="menu">&nbsp;Lists&nbsp;</a>
@@ -68,7 +69,80 @@
   <div class="content_wide" style="padding-left:0px;">
     <div class="pdf">
       <iframe src="https://courtformsonline.org/forms/aa8c5f2612650ee2d2bb67696c291c0d.pdf" width="100%" height="1100px;"></iframe>
-      <div id="form_text" style="display:none;">Here is the form text we found: JDF 414 R 7/04 CONTEMPT CITATION AND ORDER TO SHOW CAUSE. Municipal Court County Court. District Court. Denver Juvenile. Denver Probate County, Colorado. Court Address: . Plaintiff/Petitioner: Address: . . v. Defendant/Respondent: . . Address: . . The address of the protected party may be omitted from the written order of the Court, . including the Register of actions. . COURT USE ONLY. Case Number: . Division Courtroom. CONTEMPT CITATION AND ORDER TO SHOW CAUSE. To: , Restrained P. It appears to the Court, based upon the attached Verified . Motion for Contempt Citation, that you may have. violated this Court™s . rotection . rder issued on . (date) , and that you may be in Contempt of Court. . You are cited and ordered to appear before . (Court) at . the above stated address, . on (date) , at (time) , to show caus. e, if any exists, why you should not be held in. Contempt of Court and punished according to law. . You are hereby informed that you have t. he following rights at the contempt hearing: . 1. The right to an attorney. If you cannot afford an a. ttorney and if a jail sentence will be considered, you. may apply for Court Appointed Counsel. . There is a required application fee. . 2. The right to either a trial to the Court or a tria. l to a jury (if the contempt sanction exceeds 180 days) . . 3. The right to have this contempt matter heard by a different judge. . 4. The right to plead either guilty or not guilty to the charge of contempt. . 5. You are presumed innocent unless proven guilty. . 6. The right to have each and every allegation in the . contempt complaint proven by a preponderance of the. evidence. . 7. The right to confront and cross examine all witnesses against you. . . 8. The right to present all relevant witnesses and evidence you wish at trial or hearing. . . 9. The right to request the Court to issue subpoenas to compel witnesses to appear and give testimony. . 10. The right to remain silent. . 11. The right to testify on your own behalf. If you testif. y, you waive your right against self incrimination and. the prosecutor may cross examine you. . If you fail to appear in Court at the time. , date and place specified on this citation, abench warrant will be issued for your a. rrest without further notice and you may be. . further punished according to law for failure to appear. . Date: . . Judge . Magistrate</div>
+      <div id="form_text" style="display:none;overflow:hidden;padding:20px;">Here is the text we could read: 
+      <pre>               _________________________________________
+
+COURT USE ONLY
+
+Case Number:
+
+Plaintiff/Petitioner: _________________________________
+Address: _________________________________________
+
+v.
+Defendant/Respondent: _____________________________
+Address: _________________________________________
+
+               _________________________________________
+
+The address of the protected party may be omitted from the written order of the Court,
+including the Register of actions.
+
+CONTEMPT CITATION AND ORDER TO SHOW CAUSE
+
+Division               Courtroom
+
+t  appears  to  the  Court,  based  upon  the  attached  Verified  Motion  for  Contempt  Citation,  that  you  may  have
+violated this Court’s Protection Order issued on _____________ (date), and that you may be in Contempt of Court.
+
+ I
+
+To:  _________________________________________________, Restrained Person
+
+You are cited and ordered to appear before ________________________ (Court) at the above stated address,
+
+on  _______________(date),  at  _________(time),  to  show  cause,  if  any  exists,  why  you  should  not  be  held  in
+
+Contempt of Court and punished according to law.
+
+You are hereby informed that you have the following rights at the contempt hearing:
+
+1.  The right to an attorney.  If you cannot afford an attorney and if a jail sentence will be considered, you
+
+may apply for Court Appointed Counsel.  There is a required application fee.
+
+2.  The right to either a trial to the Court or a trial to a jury (if the contempt sanction exceeds 180 days).
+3.  The right to have this contempt matter heard by a different judge.
+4.  The right to plead either guilty or not guilty to the charge of contempt.
+5.  You are presumed innocent unless proven guilty.
+6.  The right to have each and every allegation in the contempt complaint proven by a preponderance of the
+
+evidence.
+
+7.  The right to confront and cross-examine all witnesses against you.
+8.  The right to present all relevant witnesses and evidence you wish at trial or hearing.
+9.  The right to request the Court to issue subpoenas to compel witnesses to appear and give testimony.
+10.  The right to remain silent.
+11.  The right to testify on your own behalf. If you testify, you waive your right against self-incrimination and
+
+the prosecutor may cross-examine you.
+
+If  you  fail  to  appear  in  Court  at  the  time,  date  and  place  specified  on  this  citation,  a
+bench  warrant  will  be  issued  for  your  arrest  without  further  notice  and  you  may  be
+further punished according to law for failure to appear.
+
+Date: _____________________________________
+
+___________________________________________
+(cid:137) Judge (cid:137) Magistrate
+
+JDF 414    R7/04     CONTEMPT CITATION AND ORDER TO SHOW CAUSE
+
+(cid:137)Municipal Court (cid:137)County Court (cid:137)District Court (cid:137)Denver Juvenile (cid:137)Denver Probate
+__________________________________ County, Colorado
+Court Address:
+
+</pre></div>
     </div>
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a> Contempt Citation & Order to Show Cause</h1>
@@ -77,42 +151,34 @@
         To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.state.co.us/Forms/renderForm1.cfm?Form=229" target="_blank" class="exlink">original form</a> (last checked on nan) 
+        <b>Downloads:</b> You can download both the <a href="https://www.courts.state.co.us/Forms/renderForm1.cfm?Form=229" target="_blank" class="exlink">original form</a> (last checked 2023-03) 
         and the <a href="https://courtformsonline.org/forms/aa8c5f2612650ee2d2bb67696c291c0d.pdf">machine-processed form</a> with normalized data fields.
       </p>
 
         <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
-        <li>Sourced from <a href="http://www.courts.state.co.us" target="_blank" class="exlink">www.courts.state.co.us</a> on nan</li>
-        <li>Court Grouping: <a href="../../list/CO/#Protection_Orders">Protection Orders</a></li>
+        <li>Sourced from <a href="http://www.courts.state.co.us" target="_blank" class="exlink">www.courts.state.co.us</a> (2023-03)</li>
         <li>Page(s): 1 </li>
         <li>Fields(s): 21 </li>
         <li>Average fields per page: 21</li>
-        <li>Reading Level: Grade 8</li>
+        <li>Reading Level: Grade 9</li>
         <li><a href="https://taxonomy.legal/" target="_blank" class="exlink">LIST</a> Grouping(s): 
-    <a href="https://taxonomy.legal/term/CR-13-00-00-00" target="_blank">CR-13-00-00-00</a>, <a href="https://taxonomy.legal/term/CO-07-00-00-00" target="_blank">CO-07-00-00-00</a>, <a href="https://taxonomy.legal/term/CO-00-00-00-00" target="_blank">CO-00-00-00-00</a>, <a href="https://taxonomy.legal/term/FA-07-00-00-00" target="_blank">FA-07-00-00-00</a>, <a href="https://taxonomy.legal/term/FA-07-01-00-00" target="_blank">FA-07-01-00-00</a>, <a href="https://taxonomy.legal/term/CR-00-00-00-00" target="_blank">CR-00-00-00-00</a>.         
+    GO-00-00-00-00.         
         </li>
       </ul>
-      
+      <p>
+      <i>Use our <a href="https://ratemypdf.com" target="_blank">Rate My PDF</a> tool to learn more.</i> 
+      Go beyond the above insights and learn more about this or any pdf form at 
+      <a href="https://ratemypdf.com" target="_blank">RateMyPDF.com</a>, includes: counts of difficult words used, 
+      passive voice decetion, and suggestions for how to make the form more usable.
+      </p>
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
-      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
-      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields:</h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
-      If we think we've found a match to a question in our library, it is highlighted in green. New names are auto generated. So, you will probably need to edit some of them.
+      If we think we've found a match to a question in our library, it is highlighted in green. Novel names are auto generated. So, you will probably need to edit some of them if you're trying to stick to the convention.
       </p>
-      
-      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
-      (e.g., <b>X%</b> of the time this field is left blank...). 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
       
       <div style="float:left;width:100%;margin-bottom:25px;">
           <div class="tab" style="border: 1px solid #fff;border-bottom: 1px solid #555;width:15px;padding:10px 0px;">&nbsp;</div>
@@ -147,39 +213,7 @@
           }
       </script>
       
-      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>unknown__1</code> was <i>1</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__2</code> was <i>5</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__3</code> was <i>10</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__4</code> was <i>15</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__5</code> was <i>20</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__6</code> was <i>25</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__7</code> was <i>30</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__8</code> was <i>35</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__9</code> was <i>40</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__10</code> was <i>45</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__11</code> was <i>50</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__12</code> was <i>55</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__13</code> was <i>60</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__14</code> was <i>65</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__15</code> was <i>70</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__16</code> was <i>75</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__17</code> was <i>80</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__18</code> was <i>85</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__19</code> was <i>90</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__20</code> was <i>95</i> (0.47 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__21</code> was <i>100</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>unknown__1</code></li><li><code>unknown__2</code></li><li><code>unknown__3</code></li><li><code>unknown__4</code></li><li><code>unknown__5</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>unknown__6</code></li><li><code>unknown__7</code></li><li><code>unknown__8</code></li><li><code>unknown__9</code></li></ul><p>Suggested Screen 2:</p><ul><li><code>unknown__11</code></li><li><code>unknown__12</code></li><li><code>unknown__13</code></li><li><code>unknown__14</code></li><li><code>unknown__16</code></li><li><code>unknown__17</code></li><li><code>unknown__18</code></li><li><code>unknown__19</code></li><li><code>unknown__21</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>unknown__10</code></li><li><code>unknown__15</code></li><li><code>unknown__20</code></li></ul></div></div>
-        <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-        <!--<li><a href="../form/">show more</a></li>-->
-        
-
-      </ul>      <h3><a name="similar" href="#similar" class="anchor"></a>Similar Forms:</h3>
-      <p>For more context, visit the <a href="../../sim/CO">Similar Forms View</a>.</p>
-      <ul><li>No matches found</li></ul>
-      <!--
-      <li><a href="../form/">show more</a></li>-->
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CO">Flows View</a>.</p>
-       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
-       what forms a user used before this one. 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CO">Flows View</a>.</p>
-      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
-      what forms a user used after this one. 
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
-      <p>Using the Document Assembly Line Linter you can...</p>
-      <p>
-        <a href="javascript:alert('Coming Soon!');">Run this form through the Linter</a>
-      </p>
+      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>unknown__1</code> was <i>1</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__2</code> was <i>5</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__3</code> was <i>10</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__4</code> was <i>15</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__5</code> was <i>20</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__6</code> was <i>25</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__7</code> was <i>30</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__8</code> was <i>35</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__9</code> was <i>40</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__10</code> was <i>45</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__11</code> was <i>50</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__12</code> was <i>55</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__13</code> was <i>60</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__14</code> was <i>65</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__15</code> was <i>70</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__16</code> was <i>75</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__17</code> was <i>80</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__18</code> was <i>85</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__19</code> was <i>90</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__20</code> was <i>95</i> (0.29 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__21</code> was <i>100</i> (0.32 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>unknown__1</code></li><li><code>unknown__2</code></li><li><code>unknown__3</code></li><li><code>unknown__4</code></li><li><code>unknown__5</code></li><li><code>unknown__6</code></li><li><code>unknown__7</code></li><li><code>unknown__8</code></li><li><code>unknown__9</code></li><li><code>unknown__10</code></li><li><code>unknown__11</code></li><li><code>unknown__12</code></li><li><code>unknown__13</code></li><li><code>unknown__14</code></li><li><code>unknown__15</code></li><li><code>unknown__16</code></li><li><code>unknown__17</code></li><li><code>unknown__18</code></li><li><code>unknown__19</code></li><li><code>unknown__20</code></li><li><code>unknown__21</code></li></ul></div></div>
       
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="weaver" href="#weaver" class="anchor"></a>Create an Interactive Version of this Form:</h3>
@@ -188,7 +222,7 @@
       To learn more, read <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/generating_code/">"Weaving" your form into a draft interview</a>.
       </p>
       <p>
-        <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/aa8c5f2612650ee2d2bb67696c291c0d.pdf&title=Contempt+Citation+%26+Order+to+Show+Cause&jur=CO&nsmi=['CR-13-00-00-00', 'CO-07-00-00-00', 'CO-00-00-00-00', 'FA-07-00-00-00', 'FA-07-01-00-00', 'CR-00-00-00-00']" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
+        <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/aa8c5f2612650ee2d2bb67696c291c0d.pdf&title=Contempt+Citation+%26+Order+to+Show+Cause&jur=CO&nsmi=['GO-00-00-00-00']" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
       </p>
       
     </div>

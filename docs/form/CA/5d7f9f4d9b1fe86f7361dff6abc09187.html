@@ -33,22 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-05-13">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2023-04-02">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
-<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#f6d91b;color:black;padding:15px;text-align:center;">
+<b>This tool is in beta.</b> <b>CONTENT IS SUBJECT TO CHANGE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
-        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-05-13</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2023-04-02</font></span>
         </center>
     </h1>
 
@@ -56,6 +56,7 @@
         <p style="text-align:center;">
       <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
       <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      <a href="../../compare" class="menu">Find&nbsp;&amp;&nbsp;Compare&nbsp;</a><font style="color:#888;">|</font>&nbsp;
       &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore: California
       </span>&nbsp;&nbsp;
       <a href="../../list/CA" class="menu">&nbsp;Lists&nbsp;</a>
@@ -68,44 +69,78 @@
   <div class="content_wide" style="padding-left:0px;">
     <div class="pdf">
       <iframe src="https://courtformsonline.org/forms/5d7f9f4d9b1fe86f7361dff6abc09187.pdf" width="100%" height="1100px;"></iframe>
-      <div id="form_text" style="display:none;">Here is the form text we found: FL 321
- Request for Order
- (FL 300) 
- Respondent 
- Petitioner
- Family Code, § 217 (c) ; 
- Cal. Rules of Court, rule 5. 113
- www. courts. ca. gov
- WITNESS LISTAttachment to
- Responsive Declaration (FL 320) 
- hearing or
- trial scheduled on 
- (date) : Other (specify) : 
- Form Approved for Optional Use 
- Judicial Council of California 
- FL 321 [New July 1, 2012] 
- FOR COURT USE ONLY
- SUPERIOR COURT OF CAL
- IFORNIA, COUNTY OFSTREET ADDRESS: 
- MAILING ADDRESS: 
- CITY AND ZIP CODE: 
- BRANCH NAME: 
- PETITIONER/PLAINTIFF: 
- OTHER PARENT/PARTY: CASE NUMBER (S) : 
- WITNESS LIST
- ATTORNEY OR PARTY WITHOUT ATTORNEY 
- (Name, State Bar number, and address) : 
- TELEPHONE NO. 
- : FAX NO. 
- (Optional) : 
- E MAIL ADDRESS 
- (Optional) : 
- ATTORNEY FOR 
- (Name) : 
- RESPONDENT/DEFENDANT: 
- Name Subject and Brief Description of Testimony
- intends to call the following witnesses to testify 
- Otherat the time of</div>
+      <div id="form_text" style="display:none;overflow:hidden;padding:20px;">Here is the text we could read: 
+      <pre>ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and address):
+
+FOR COURT USE ONLY
+
+FL-321
+
+FAX NO. (Optional):
+
+SUPERIOR COURT OF CALIFORNIA, COUNTY OF
+
+TELEPHONE NO.:
+
+E-MAIL ADDRESS (Optional):
+
+ATTORNEY FOR (Name):
+
+STREET ADDRESS:
+
+MAILING ADDRESS:
+
+CITY AND ZIP CODE:
+
+BRANCH NAME:
+
+PETITIONER/PLAINTIFF:
+
+RESPONDENT/DEFENDANT:
+
+OTHER PARENT/PARTY:
+
+WITNESS LIST
+
+CASE NUMBER(S):
+
+Attachment to
+
+Request for Order (FL-300)
+
+Responsive Declaration (FL-320)
+
+Other (specify):
+
+Petitioner
+
+Respondent    
+
+Other
+
+  intends to call the following witnesses to testify 
+
+at the time of 
+
+hearing or
+
+trial      scheduled on (date):
+
+Name
+
+Subject and Brief Description of Testimony
+
+Form Approved for Optional Use 
+Judicial Council of California 
+FL-321 [New July 1, 2012]
+
+WITNESS LIST
+
+Family Code, § 217(c);
+Cal.Rules of Court, rule 5.113
+www.courts.ca.gov
+
+</pre></div>
     </div>
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Witness List</h1>
@@ -114,42 +149,34 @@
         To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.ca.gov/documents/fl321.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-17) 
+        <b>Downloads:</b> You can download both the <a href="https://www.courts.ca.gov/documents/fl321.pdf" target="_blank" class="exlink">original form</a> (last checked 2023-03) 
         and the <a href="javascript:alert('Califonia machine-processed forms are not yet available.')">machine-processed form</a> with normalized data fields.
       </p>
 
         <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
-        <li>Sourced from <a href="http://www.courts.ca.gov" target="_blank" class="exlink">www.courts.ca.gov</a> on 2021-11-17</li>
-        <li>Court Grouping: <a href="../../list/CA/#FL">FL</a></li>
+        <li>Sourced from <a href="http://selfhelp.courts.ca.gov" target="_blank" class="exlink">selfhelp.courts.ca.gov</a> (2023-03)</li>
         <li>Page(s): 1 </li>
-        <li>Fields(s): 43 </li>
-        <li>Average fields per page: 43</li>
-        <li>Reading Level: Grade 9</li>
+        <li>Fields(s): 34 </li>
+        <li>Average fields per page: 34</li>
+        <li>Reading Level: Grade 10</li>
         <li><a href="https://taxonomy.legal/" target="_blank" class="exlink">LIST</a> Grouping(s): 
-    <a href="https://taxonomy.legal/term/CO-07-00-00-00" target="_blank">CO-07-00-00-00</a>, <a href="https://taxonomy.legal/term/CO-00-00-00-00" target="_blank">CO-00-00-00-00</a>.         
+    CO-07-00-00-00, CO-00-00-00-00.         
         </li>
       </ul>
-      
+      <p>
+      <i>Use our <a href="https://ratemypdf.com" target="_blank">Rate My PDF</a> tool to learn more.</i> 
+      Go beyond the above insights and learn more about this or any pdf form at 
+      <a href="https://ratemypdf.com" target="_blank">RateMyPDF.com</a>, includes: counts of difficult words used, 
+      passive voice decetion, and suggestions for how to make the form more usable.
+      </p>
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
-      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
-      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields:</h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
-      If we think we've found a match to a question in our library, it is highlighted in green. New names are auto generated. So, you will probably need to edit some of them.
+      If we think we've found a match to a question in our library, it is highlighted in green. Novel names are auto generated. So, you will probably need to edit some of them if you're trying to stick to the convention.
       </p>
-      
-      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
-      (e.g., <b>X%</b> of the time this field is left blank...). 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
       
       <div style="float:left;width:100%;margin-bottom:25px;">
           <div class="tab" style="border: 1px solid #fff;border-bottom: 1px solid #555;width:15px;padding:10px 0px;">&nbsp;</div>
@@ -184,39 +211,7 @@
           }
       </script>
       
-      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_address_zip.html">users1_address_zip</a></code> was <i>zip</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_address_city.html">users1_address_city</a></code> was <i>city</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>street</code> was <i>street</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>mailing</code> was <i>mailing</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>branch</code> was <i>branch</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court</code> was <i>Court</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__1</code> was <i>00</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__2</code> was <i>01</i> (0.76 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__3</code> was <i>02</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__4</code> was <i>03</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>info</code> was <i>info</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty</code> was <i>Atty</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_phone_number.html">users1_phone_number</a></code> was <i>Telephone</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fax</code> was <i>Fax</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>email</code> was <i>email</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>for</code> was <i>for</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>attorney</code> was <i>attorney</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_county</code> was <i>CourtCounty</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>party</code> was <i>party</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>other</code> was <i>other</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fl__1</code> was <i>fl320</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fl__2</code> was <i>fl300</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>choice__1</code> was <i>choice1</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>choice__2</code> was <i>choice2</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>specify</code> was <i>specify</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/signature_date.html">signature_date</a></code> was <i>date</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__5</code> was <i>0</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__6</code> was <i>1</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__7</code> was <i>2</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__8</code> was <i>3</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__9</code> was <i>4</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>unknown__10</code> was <i>5</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_name.html">users1_name</a></code> was <i>name</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>description</code> was <i>description</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>subject</code> was <i>subject</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>privacy_notice_header</code> was <i>Privacy Notice header</i> (0.73 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/petitioners1_name.html">petitioners1_name</a></code> was <i>petitioner</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/respondents1_name.html">respondents1_name</a></code> was <i>respondent</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code> was <i>Casenumber</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>notice_footer</code> was <i>NoticeFooter1</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>save</code> was <i>Save</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>print</code> was <i>Print</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>reset_form</code> was <i>ResetForm</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_address_zip.html">users1_address_zip</a></code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_address_city.html">users1_address_city</a></code></li><li><code>info</code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_phone_number.html">users1_phone_number</a></code></li><li><code>for</code></li><li><code>other</code></li><li><code>specify</code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/signature_date.html">signature_date</a></code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_name.html">users1_name</a></code></li><li><code>description</code></li><li><code>subject</code></li><li><code>privacy_notice_header</code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/petitioners1_name.html">petitioners1_name</a></code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/respondents1_name.html">respondents1_name</a></code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code></li><li><code>notice_footer</code></li><li><code>save</code></li><li><code>reset_form</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>street</code></li></ul><p>Suggested Screen 2:</p><ul><li><code>branch</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>unknown__1</code></li><li><code>unknown__2</code></li><li><code>unknown__3</code></li><li><code>unknown__4</code></li><li><code>fl__1</code></li><li><code>fl__2</code></li><li><code>choice__1</code></li><li><code>choice__2</code></li><li><code>unknown__5</code></li><li><code>unknown__6</code></li><li><code>unknown__7</code></li><li><code>unknown__8</code></li><li><code>unknown__9</code></li><li><code>unknown__10</code></li></ul><p>Suggested Screen 4:</p><ul><li><code>atty</code></li></ul><p>Suggested Screen 5:</p><ul><li><code>fax</code></li></ul><p>Suggested Screen 6:</p><ul><li><code>mailing</code></li><li><code>email</code></li></ul><p>Suggested Screen 7:</p><ul><li><code>court</code></li><li><code>attorney</code></li><li><code>court_county</code></li></ul><p>Suggested Screen 8:</p><ul><li><code>party</code></li></ul><p>Suggested Screen 9:</p><ul><li><code>print</code></li></ul></div></div>
-        <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-        <!--<li><a href="../form/">show more</a></li>-->
-        
-
-      </ul>      <h3><a name="similar" href="#similar" class="anchor"></a>Similar Forms:</h3>
-      <p>For more context, visit the <a href="../../sim/CA">Similar Forms View</a>.</p>
-      <ul><li><a href="f6e6a422e5f8ee03468277ce8a19055b.html">Order on Petition for Relief From Financial Obligations During Military Service</a> (shares 42% of data fields)</li><li><a href="8bdb6a3b46e4dc5a0574c591caa7634f.html">Declaration Regarding Address Verification—Postjudgment Request to Modify a Child Custody, Visitation, or Child Support Order</a> (shares 36% of data fields)</li><li><a href="654e1a78bb28b88edc856e8747ad8ab6.html">Notice of Petition and Petition for Relief From Financial Obligation During Military Service</a> (shares 36% of data fields)</li><li><a href="3668cf2d065e45e474f58702a76f1f77.html">Request for Orders Regarding Noncompliance With Disclosure Requirements</a> (shares 34% of data fields)</li><li><a href="6e7fd94b1ce66903ee18ede9c4e43914.html">Attachment: Hearing for Dismissal—Additional Findings and Orders—Foster Care Placement—Delinquency</a> (shares 33% of data fields)</li></ul>
-      <!--
-      <li><a href="../form/">show more</a></li>-->
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
-       what forms a user used before this one. 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
-      what forms a user used after this one. 
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
-      <p>Using the Document Assembly Line Linter you can...</p>
-      <p>
-        <a href="javascript:alert('Coming Soon!');">Run this form through the Linter</a>
-      </p>
+      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>court_city_zip</code> was <i>Court.city.zip</i> (0.97 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_street</code> was <i>Court.street</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_mailing</code> was <i>Court.mailing</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_branch</code> was <i>Court.branch</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_info__1</code> was <i>Atty.info.00</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_info__2</code> was <i>Atty.info.01</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_info__3</code> was <i>Atty.info.02</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_info__4</code> was <i>Atty.info.03</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_phone_number.html">users1_phone_number</a></code> was <i>Telephone</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fax</code> was <i>Fax</i> (0.28 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>email</code> was <i>email</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>attorney</code> was <i>attorney.for</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_county</code> was <i>CourtCounty</i> (0.45 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>party</code> was <i>other.party</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fl__1</code> was <i>00.fl320</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>00.other</code> was <i>00.other</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fl__2</code> was <i>00.fl300</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>specify</code> was <i>00.specify</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>date</code> was <i>00.date</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name__1</code> was <i>name.0</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name__2</code> was <i>name.1</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name__3</code> was <i>name.2</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name__4</code> was <i>name.3</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name__5</code> was <i>name.4</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>name__6</code> was <i>name.5</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>subject_description__1</code> was <i>subject.description.0</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>subject_description__2</code> was <i>subject.description.1</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>subject_description__3</code> was <i>subject.description.2</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>subject_description__4</code> was <i>subject.description.3</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>subject_description__5</code> was <i>subject.description.4</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>subject_description__6</code> was <i>subject.description.5</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/petitioners1_name.html">petitioners1_name</a></code> was <i>petitioner</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/respondents1_name.html">respondents1_name</a></code> was <i>respondent</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code> was <i>Casenumber</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>court_street</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>court_mailing</code></li></ul><p>Suggested Screen 2:</p><ul><li><code>court_branch</code></li><li><code>attorney</code></li><li><code>court_county</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>court_city_zip</code></li><li><code>atty_info__1</code></li><li><code>atty_info__2</code></li><li><code>atty_info__3</code></li><li><code>atty_info__4</code></li><li><code>00.other</code></li></ul><p>Suggested Screen 4:</p><ul><li><code style="background:#a2e874"><a href="../../list/CA/fields/users1_phone_number.html">users1_phone_number</a></code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code></li></ul><p>Suggested Screen 5:</p><ul><li><code>fax</code></li></ul><p>Suggested Screen 6:</p><ul><li><code>email</code></li></ul><p>Suggested Screen 7:</p><ul><li><code>party</code></li></ul><p>Suggested Screen 8:</p><ul><li><code>fl__1</code></li><li><code>fl__2</code></li></ul><p>Suggested Screen 9:</p><ul><li><code>specify</code></li></ul><p>Suggested Screen 10:</p><ul><li><code>date</code></li></ul><p>Suggested Screen 11:</p><ul><li><code>name__1</code></li><li><code>name__2</code></li><li><code>name__3</code></li><li><code>name__4</code></li><li><code>name__5</code></li><li><code>name__6</code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/petitioners1_name.html">petitioners1_name</a></code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/respondents1_name.html">respondents1_name</a></code></li></ul><p>Suggested Screen 12:</p><ul><li><code>subject_description__1</code></li><li><code>subject_description__2</code></li><li><code>subject_description__3</code></li><li><code>subject_description__4</code></li><li><code>subject_description__5</code></li><li><code>subject_description__6</code></li></ul></div></div>
       
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="weaver" href="#weaver" class="anchor"></a>Create an Interactive Version of this Form:</h3>

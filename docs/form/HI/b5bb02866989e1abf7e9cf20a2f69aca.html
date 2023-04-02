@@ -33,22 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-05-13">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2023-04-02">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
-<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#f6d91b;color:black;padding:15px;text-align:center;">
+<b>This tool is in beta.</b> <b>CONTENT IS SUBJECT TO CHANGE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
-        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-05-13</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2023-04-02</font></span>
         </center>
     </h1>
 
@@ -56,6 +56,7 @@
         <p style="text-align:center;">
       <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
       <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      <a href="../../compare" class="menu">Find&nbsp;&amp;&nbsp;Compare&nbsp;</a><font style="color:#888;">|</font>&nbsp;
       &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore: Hawaii
       </span>&nbsp;&nbsp;
       <a href="../../list/HI" class="menu">&nbsp;Lists&nbsp;</a>
@@ -68,7 +69,163 @@
   <div class="content_wide" style="padding-left:0px;">
     <div class="pdf">
       <iframe src="https://courtformsonline.org/forms/b5bb02866989e1abf7e9cf20a2f69aca.pdf" width="100%" height="1100px;"></iframe>
-      <div id="form_text" style="display:none;">Here is the form text we found: Name . Address . . City, State, Zip Code . . Telephone Number. [ ] Plaintiff/Petitioner Pro Se . [ ] . Attorney for Plaintiff/Petitioner . [ ] Defendant/Respondent Pro Se . [ ] . Attorney for Defendant/Respondent . [ ] Other: IN THE FAMILY COURT OF THE FIRST CIRCUIT . STATE OF HAWAI‚I . ) FC. No. ) ) EX PARTE MOTION AND DECLARATION . ) TO [ ] ADVANCE [ ] EXPEDITE . HEARING . ) AND ORDER ) ) . ) . ) EX PARTE MOTION AND DECLARATION TO. [ ] ADVANCE [ ] EXPEDITE. HEARING . , Movant, moves this Court, pursuant to Hawai‚i Family Court . ] advancing [ ] expediting the hearing now set on . Rule 10 for an order [ (Hearing Date) . at before the Honorable . (Time, a. m/p. m. ) . (Judge™s Name) . In support of this motion, Movant states as follows: . Ex Parte Motion and Declaration . FC Adm 11/24/15 . Page 1 of 2 Pages . to Advance / Expedite Hearing . Section 508 Certified . . I declare, under penalty of perjury, that the foregoing is true and correct. . DATED: . , Hawai‚i, . (City) . (Date) (Movant™s signature) . [ [ ORDER ] This Ex Parte Motion is DENIED. . ] This Ex Parte Motion is APPROVED AND SO ORDERED. . ( ) . The Motion/Petition shall be heard on at (Date) (Time, a. m/p. m. ) . before a Presiding Judge of the Family Court of the First Circuit, Ronald T. Y. Moon . Kapolei Courthouse, 4675 Kapolei Parkway, Kapolei, Hawai‚i. . ( ) . Dated: Kapolei, Hawai‚i: . Judge of the Above Entitled Court . PRINT NAME: . In accordance with the Americans with Disabilities Act, as amended, and other applicable state and federal laws, . if you require accommodation for a disability, please contact the ADA Coordinator at the First Circuit Family . Court office by telephone at 954 8200, fax 954 8308, or via email at . adarequest@courts. hawaii. gov . at least ten . (10) . days prior to your hearing or appointment date. . Please call the Family Court Service Center at . 954 8290 . if you have any questions about forms or . procedures. Ex Parte Motion and Declaration . FC Adm 11/24/15 . Page 2 of 2 Pages . to Advance / Expedite Hearing</div>
+      <div id="form_text" style="display:none;overflow:hidden;padding:20px;">Here is the text we could read: 
+      <pre>Name 
+
+Address 
+
+City, State, Zip Code 
+
+Telephone Number
+[  ]  Plaintiff/Petitioner Pro Se 
+[  ]  Defendant/Respondent Pro Se  [  ] Attorney for Defendant/Respondent 
+[  ]  Other: 
+
+[  ] Attorney for Plaintiff/Petitioner 
+
+IN THE FAMILY COURT OF THE FIRST CIRCUIT 
+
+ 
+STATE OF HAWAI‘I 
+
+No. 
+
+)  FC­
+) 
+)  EX PARTE MOTION AND DECLARATION 
+)  TO [  ]ADVANCE [  ]EXPEDITE HEARING 
+)  AND ORDER 
+) 
+) 
+) 
+) 
+
+ 
+
+EX PARTE MOTION AND DECLARATION TO[  ]ADVANCE [  ] EXPEDITE HEARING 
+
+, Movant, moves this Court, pursuant to Hawai‘i Family Court 
+
+ 
+
+Rule 10 for an order [ 
+
+]advancing  [  ]expediting the hearing now set on 
+
+(Hearing Date) 
+
+at 
+
+(Time, a.m/p.m.) 
+
+before the Honorable 
+
+(Judge’s Name) 
+
+. 
+
+In support of this motion, Movant states as follows: 
+
+FC Adm 11/24/15 
+Reprographics (12/2015) 
+
+Section 508 Certified 
+
+Page  1  of  2  Pages 
+
+Ex Parte Motion and Declaration 
+to Advance / Expedite Hearing 
+
+1F-P-1029 
+
+I declare, under penalty of perjury, that the foregoing is true and correct. 
+
+DATED: 
+
+, Hawai‘i, 
+
+(City) 
+
+(Date) 
+
+. 
+
+(Movant’s signature) 
+
+[ 
+
+[ 
+
+]  This Ex Parte Motion is DENIED. 
+]  This Ex Parte Motion is APPROVED AND SO ORDERED. 
+
+ORDER 
+
+(  )  The Motion/Petition shall be heard on 
+
+(Time, a.m/p.m.) 
+before a  Presiding  Judge  of  the  Family Court  of  the  First  Circuit,  Ronald  T.Y.  Moon 
+Kapolei Courthouse, 4675 Kapolei Parkway, Kapolei, Hawai‘i.  
+
+(Date) 
+
+ 
+
+(  ) 
+
+Dated:  Kapolei, Hawai‘i: 
+
+Judge of the Above-Entitled Court 
+
+  
+
+PRINT NAME: 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+In accordance with the Americans with Disabilities Act, as amended, and other applicable state and federal laws, 
+if you require accommodation for a disability, please contact the ADA Coordinator at the First Circuit Family 
+Court office by telephone at 954-8200, fax 954-8308, or via email at adarequest@courts.hawaii.gov at least ten 
+(10) days prior to your hearing or appointment date. 
+ 
+
+Please  call  the  Family  Court  Service  Center  at  954-8290  if  you  have  any  questions  about  forms  or 
+ 
+procedures. 
+
+  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+FC Adm 11/24/15 
+
+Page  2  of  2  Pages 
+
+Ex Parte Motion and Declaration 
+to Advance / Expedite Hearing 
+
+at 
+
+. 
+
+</pre></div>
     </div>
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Ex Parte Motion Form</h1>
@@ -77,42 +234,34 @@
         To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.state.hi.us/docs/form/oahu/1FP1029.pdf" target="_blank" class="exlink">original form</a> (last checked on nan) 
+        <b>Downloads:</b> You can download both the <a href="https://www.courts.state.hi.us/docs/form/oahu/1FP1029.pdf" target="_blank" class="exlink">original form</a> (last checked 2023-03) 
         and the <a href="https://courtformsonline.org/forms/b5bb02866989e1abf7e9cf20a2f69aca.pdf">machine-processed form</a> with normalized data fields.
       </p>
 
         <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
-        <li>Sourced from <a href="http://www.courts.state.hi.us" target="_blank" class="exlink">www.courts.state.hi.us</a> on nan</li>
-        <li>Court Grouping: <a href="../../list/HI/#Family_Court">Family Court</a></li>
+        <li>Sourced from <a href="http://www.courts.state.hi.us" target="_blank" class="exlink">www.courts.state.hi.us</a> (2023-03)</li>
         <li>Page(s): 2 </li>
-        <li>Fields(s): 37 </li>
-        <li>Average fields per page: 18</li>
-        <li>Reading Level: Grade 10</li>
+        <li>Fields(s): 34 </li>
+        <li>Average fields per page: 17</li>
+        <li>Reading Level: Grade 8</li>
         <li><a href="https://taxonomy.legal/" target="_blank" class="exlink">LIST</a> Grouping(s): 
-    <a href="https://taxonomy.legal/term/CO-07-00-00-00" target="_blank">CO-07-00-00-00</a>, <a href="https://taxonomy.legal/term/CO-00-00-00-00" target="_blank">CO-00-00-00-00</a>.         
+    CO-00-00-00-00, CO-07-00-00-00.         
         </li>
       </ul>
-      
+      <p>
+      <i>Use our <a href="https://ratemypdf.com" target="_blank">Rate My PDF</a> tool to learn more.</i> 
+      Go beyond the above insights and learn more about this or any pdf form at 
+      <a href="https://ratemypdf.com" target="_blank">RateMyPDF.com</a>, includes: counts of difficult words used, 
+      passive voice decetion, and suggestions for how to make the form more usable.
+      </p>
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
-      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
-      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields:</h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
-      If we think we've found a match to a question in our library, it is highlighted in green. New names are auto generated. So, you will probably need to edit some of them.
+      If we think we've found a match to a question in our library, it is highlighted in green. Novel names are auto generated. So, you will probably need to edit some of them if you're trying to stick to the convention.
       </p>
-      
-      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
-      (e.g., <b>X%</b> of the time this field is left blank...). 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
       
       <div style="float:left;width:100%;margin-bottom:25px;">
           <div class="tab" style="border: 1px solid #fff;border-bottom: 1px solid #555;width:15px;padding:10px 0px;">&nbsp;</div>
@@ -147,39 +296,7 @@
           }
       </script>
       
-      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>text__1</code> was <i>Text1a</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_b__1</code> was <i>Text1b</i> (0.50 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_c__1</code> was <i>Text1c</i> (0.50 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__2</code> was <i>Text1d</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_aa</code> was <i>Text1aa</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_e__1</code> was <i>Text1e</i> (0.47 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_f__1</code> was <i>Text1f</i> (0.50 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_g__1</code> was <i>Text1g</i> (0.46 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_h__1</code> was <i>Text1h</i> (0.48 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_j</code> was <i>Text1j</i> (0.47 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_k</code> was <i>Text1k</i> (0.43 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_l</code> was <i>Text1l</i> (0.49 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__3</code> was <i>Text1m</i> (0.49 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_n</code> was <i>Text1n</i> (0.48 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__4</code> was <i>Text1o</i> (0.45 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_p</code> was <i>Text1p</i> (0.46 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_q</code> was <i>Text1q</i> (0.50 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_r</code> was <i>Text1r</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__5</code> was <i>Text1s</i> (0.45 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__6</code> was <i>Text1t</i> (0.46 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>reset_form</code> was <i>RESET FORM</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__7</code> was <i>Text2a</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_b__2</code> was <i>Text2b</i> (0.49 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_c__2</code> was <i>Text2c</i> (0.50 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__8</code> was <i>Text2d</i> (0.49 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_e__2</code> was <i>Text2e</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_f__2</code> was <i>Text2f</i> (0.48 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_g__2</code> was <i>Text2g</i> (0.46 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__9</code> was <i>Text1i</i> (0.52 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_h__2</code> was <i>Text2h</i> (0.49 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__1</code> was <i>Check Box1a</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_b</code> was <i>Check Box1b</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_c</code> was <i>Check Box1c</i> (0.54 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__2</code> was <i>Check Box1d</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_e</code> was <i>Check Box1e</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_advance</code> was <i>Check Box Advance</i> (0.52 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_expedite</code> was <i>Check Box Expedite</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>text_aa</code></li><li><code>text_k</code></li><li><code>text_q</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>text_j</code></li><li><code>text_l</code></li><li><code>text_n</code></li><li><code>text_p</code></li><li><code>text_r</code></li></ul><p>Suggested Screen 2:</p><ul><li><code>text__1</code></li><li><code>text__2</code></li><li><code>text__3</code></li><li><code>text__4</code></li><li><code>text__5</code></li><li><code>text__6</code></li><li><code>text__7</code></li><li><code>text__8</code></li><li><code>text__9</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>reset_form</code></li></ul><p>Suggested Screen 4:</p><ul><li><code>text_b__1</code></li><li><code>text_c__1</code></li><li><code>text_e__1</code></li><li><code>text_f__1</code></li><li><code>text_g__1</code></li><li><code>text_h__1</code></li><li><code>text_b__2</code></li><li><code>text_c__2</code></li><li><code>text_e__2</code></li><li><code>text_f__2</code></li><li><code>text_g__2</code></li><li><code>text_h__2</code></li></ul><p>Suggested Screen 5:</p><ul><li><code>check_box__1</code></li><li><code>check_box_b</code></li><li><code>check_box_c</code></li><li><code>check_box__2</code></li><li><code>check_box_e</code></li><li><code>check_box_advance</code></li><li><code>check_box_expedite</code></li></ul></div></div>
-        <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-        <!--<li><a href="../form/">show more</a></li>-->
-        
-
-      </ul>      <h3><a name="similar" href="#similar" class="anchor"></a>Similar Forms:</h3>
-      <p>For more context, visit the <a href="../../sim/HI">Similar Forms View</a>.</p>
-      <ul><li>No matches found</li></ul>
-      <!--
-      <li><a href="../form/">show more</a></li>-->
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
-      <p>For more context, visit the <a href="../../flow/HI">Flows View</a>.</p>
-       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
-       what forms a user used before this one. 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
-      <p>For more context, visit the <a href="../../flow/HI">Flows View</a>.</p>
-      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
-      what forms a user used after this one. 
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
-      <p>Using the Document Assembly Line Linter you can...</p>
-      <p>
-        <a href="javascript:alert('Coming Soon!');">Run this form through the Linter</a>
-      </p>
+      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>text__1</code> was <i>Text1a</i> (0.97 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_b__1</code> was <i>Text1b</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_c__1</code> was <i>Text1c</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__2</code> was <i>Text1d</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_aa</code> was <i>Text1aa</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_e__1</code> was <i>Text1e</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_f__1</code> was <i>Text1f</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_g__1</code> was <i>Text1g</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_h__1</code> was <i>Text1h</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_j</code> was <i>Text1j</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_k</code> was <i>Text1k</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_l</code> was <i>Text1l</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__3</code> was <i>Text1m</i> (0.30 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_n</code> was <i>Text1n</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__4</code> was <i>Text1o</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_p</code> was <i>Text1p</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_q</code> was <i>Text1q</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_r</code> was <i>Text1r</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__5</code> was <i>Text1s</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__6</code> was <i>Text1t</i> (0.41 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__7</code> was <i>Text1i</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__1</code> was <i>Check Box1a</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_b</code> was <i>Check Box1b</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_c</code> was <i>Check Box1c</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__2</code> was <i>Check Box1d</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box_e</code> was <i>Check Box1e</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__8</code> was <i>Text2a</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_b__2</code> was <i>Text2b</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_c__2</code> was <i>Text2c</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text__9</code> was <i>Text2d</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_e__2</code> was <i>Text2e</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_f__2</code> was <i>Text2f</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_g__2</code> was <i>Text2g</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_h__2</code> was <i>Text2h</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>text__1</code></li><li><code>text__2</code></li><li><code>text_e__1</code></li><li><code>text_g__1</code></li><li><code>text__3</code></li><li><code>text__4</code></li><li><code>text__5</code></li><li><code>text__6</code></li><li><code>text__7</code></li><li><code>text__8</code></li><li><code>text__9</code></li><li><code>text_e__2</code></li><li><code>text_g__2</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>text_aa</code></li><li><code>text_k</code></li></ul><p>Suggested Screen 2:</p><ul><li><code>text_b__1</code></li><li><code>text_c__1</code></li><li><code>text_f__1</code></li><li><code>text_h__1</code></li><li><code>text_b__2</code></li><li><code>text_c__2</code></li><li><code>text_f__2</code></li><li><code>text_h__2</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>text_l</code></li></ul><p>Suggested Screen 4:</p><ul><li><code>text_j</code></li><li><code>text_n</code></li><li><code>text_r</code></li></ul><p>Suggested Screen 5:</p><ul><li><code>text_p</code></li><li><code>text_q</code></li></ul><p>Suggested Screen 6:</p><ul><li><code>check_box__1</code></li><li><code>check_box_b</code></li><li><code>check_box_c</code></li><li><code>check_box__2</code></li><li><code>check_box_e</code></li></ul></div></div>
       
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="weaver" href="#weaver" class="anchor"></a>Create an Interactive Version of this Form:</h3>
@@ -188,7 +305,7 @@
       To learn more, read <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/generating_code/">"Weaving" your form into a draft interview</a>.
       </p>
       <p>
-        <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/b5bb02866989e1abf7e9cf20a2f69aca.pdf&title=Ex+Parte+Motion+Form&jur=HI&nsmi=['CO-07-00-00-00', 'CO-00-00-00-00']" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
+        <a href="https://apps-dev.suffolklitlab.org/start/ALWeaver/assembly_line?new_session=1&form_to_use=https://courtformsonline.org/forms/b5bb02866989e1abf7e9cf20a2f69aca.pdf&title=Ex+Parte+Motion+Form&jur=HI&nsmi=['CO-00-00-00-00', 'CO-07-00-00-00']" target="_blank" class="launch"><div class="launch">Launch Form in Weaver</div></a>
       </p>
       
     </div>

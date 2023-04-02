@@ -33,22 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-05-13">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2023-04-02">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
-<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#f6d91b;color:black;padding:15px;text-align:center;">
+<b>This tool is in beta.</b> <b>CONTENT IS SUBJECT TO CHANGE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
-        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-05-13</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2023-04-02</font></span>
         </center>
     </h1>
 
@@ -56,6 +56,7 @@
         <p style="text-align:center;">
       <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
       <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      <a href="../../compare" class="menu">Find&nbsp;&amp;&nbsp;Compare&nbsp;</a><font style="color:#888;">|</font>&nbsp;
       &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore: California
       </span>&nbsp;&nbsp;
       <a href="../../list/CA" class="menu">&nbsp;Lists&nbsp;</a>
@@ -68,80 +69,121 @@
   <div class="content_wide" style="padding-left:0px;">
     <div class="pdf">
       <iframe src="https://courtformsonline.org/forms/2c7e10b90d8f43c509cc83dc571cd990.pdf" width="100%" height="1100px;"></iframe>
-      <div id="form_text" style="display:none;">Here is the form text we found: SC 225
- Judicial Council of California, 
- www. courts. ca. gov
- New July 1, 2013, Optional Form
- 
- Code of Civil Procedure, § 116. 620
- SC 225 Order on Declaration of Default in Payments Order on Declaration of Default in Payments
- (Small Claims) 
- The payment order referred to in 
- (check one) : Date: 
- Judicial officer 
- 
- Clerk stamps here when form is filed. 
- Case Number: 
- Fill in your case number and case name: 
- Fill in the court name and street address: 
- Superior Court of California, County of
- Case Name: Other orders are stated on Form SC 225 A, item 
- . The court orders: 
- Need help? 
- For free help, contact your county™s small claims advisor: 
- [local info here] 
- Or go to 
- www. courts. ca. gov/smallclaims/advisor A judgment was entered in this case on 
- (date) : 
- against (name of judgment debtor) : 
- On (date) : 
- , the court ordered that the judgment 
- debtor named in 
- may pay the judgment as follows: 
- On (date) : the judgment creditor 
- (name) : 
- informed the court that the judgment
- debtor had not made one or more 
- payments as provided in and asked the court to order that the 
- remaining balance of the judg
- ment is due and collectible. 
- On (date) : 
- the judgment debtor filed a 
- response to the judgment creditor™s request. 
- is terminated and the balance of
- the judgment is collectible. 
- remains in effect, without modification. 
- is modified as stated 
- on Form SC 225 A, item 
- . The following amounts are owing on the judgment as of 
- (date) : 
- Principal balance of judgment an
- d costs included in judgment 
- (amount) : $Interest (amount) : $b. Payments of $ , on the day
- of each (month, week, other) : 
- starting (date) : until 
- (date of final payment) : 
- , 
- amount of final payment: $
- a. The payment schedule is stated on Form SC 225 A, item 
- . a. b. c. a. b. 3 The court will make orders on the matter
- after a hearing, 
- which will take place on: 
- Time: 
- Dept. : Name and address of court if different than address above: 
- Hearing Date Hearing Date Request for Accommodations 
- Assistive listening systems, 
- computer assisted real time 
- captioning, or sign language interpreter services ar
- e available if you ask at least five days before 
- the hearing. Contact the 
- clerk™s office or go to 
- www. courts. ca. gov/forms
- for 
- Request for 
- Accommodations by Persons W
- ith Disabilities and Response 
- (Form MC 410) . (Civil Code, § 54. 8) </div>
+      <div id="form_text" style="display:none;overflow:hidden;padding:20px;">Here is the text we could read: 
+      <pre>SC-225
+
+Order on Declaration of Default in 
+Payments
+
+Clerk stamps here when form is filed.
+
+A judgment was entered in this case on (date): 
+against (name of judgment debtor): 
+
+On (date):                                        , the court ordered that the judgment 
+debtor named in  may pay the judgment as follows: 
+a.
+
+Payments of $                                , on the                                day
+of each (month, week, other):   
+starting (date): 
+until (date of final payment):                                                          ,
+amount of final payment: $
+The payment schedule is stated on Form SC-225A, item . 
+
+b.
+
+On (date):                                         the judgment creditor (name): 
+                                                                  
+informed the court that the judgment debtor had not made one or more 
+payments as provided in  and asked the court to order that the 
+remaining balance of the judgment is due and collectible. 
+
+Fill in the court name and street address:
+Superior Court of California, County of
+
+Fill in your case number and case name:
+Case Number:
+
+ On (date):                                           the judgment debtor filed a 
+
+response to the judgment creditor’s request.
+
+Case Name:
+
+The court orders:
+
+
+The payment order referred to in  (check one): 
+a.
+b.
+c.
+
+is terminated and the balance of the judgment is collectible. 
+remains in effect, without modification. 
+is modified as stated on Form SC-225A, item . 
+
+The following amounts are owing on the judgment as of (date):
+a.
+b.
+
+Principal balance of judgment and costs included in judgment (amount): $
+Interest (amount): $
+
+Other orders are stated on Form SC-225A, item .
+
+The court will make orders on the matter after a hearing, which will take place on:
+
+3
+
+
+
+
+Hearing 
+Hearing 
+Date
+Date
+
+Name and address of court if different than address above:
+
+Time:
+
+Dept.
+:
+
+ 
+
+
+
+ 
+
+
+
+Request for Accommodations Assistive listening systems, computer-assisted real-time 
+captioning, or sign language interpreter services are available if you ask at least five days before 
+the hearing. Contact the clerk’s office or go to www.courts.ca.gov/forms for Request for 
+Accommodations by Persons With Disabilities and Response (Form MC-410). (Civil Code, § 54.8)
+
+Date:      
+
+Judicial officer                                            
+
+Need help?
+For free help, contact your county’s small claims advisor:   
+[local info here]
+
+Or go to www.courts.ca.gov/smallclaims/advisor
+
+Judicial Council of California, www.courts.ca.gov
+New July 1, 2013, Optional Form
+Code of Civil Procedure, § 116.620
+
+Order on Declaration of Default in Payments
+(Small Claims)
+
+SC-225
+
+</pre></div>
     </div>
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Order on Declaration of Default in Payments</h1>
@@ -150,42 +192,34 @@
         To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.ca.gov/documents/sc225.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-17) 
+        <b>Downloads:</b> You can download both the <a href="https://www.courts.ca.gov/documents/sc225.pdf" target="_blank" class="exlink">original form</a> (last checked 2023-03) 
         and the <a href="javascript:alert('Califonia machine-processed forms are not yet available.')">machine-processed form</a> with normalized data fields.
       </p>
 
         <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
-        <li>Sourced from <a href="http://www.courts.ca.gov" target="_blank" class="exlink">www.courts.ca.gov</a> on 2021-11-17</li>
-        <li>Court Grouping: <a href="../../list/CA/#SC">SC</a></li>
+        <li>Sourced from <a href="http://selfhelp.courts.ca.gov" target="_blank" class="exlink">selfhelp.courts.ca.gov</a> (2023-03)</li>
         <li>Page(s): 1 </li>
-        <li>Fields(s): 40 </li>
-        <li>Average fields per page: 40</li>
-        <li>Reading Level: Grade 8</li>
+        <li>Fields(s): 34 </li>
+        <li>Average fields per page: 34</li>
+        <li>Reading Level: Grade 10</li>
         <li><a href="https://taxonomy.legal/" target="_blank" class="exlink">LIST</a> Grouping(s): 
-    <a href="https://taxonomy.legal/term/CO-07-00-00-00" target="_blank">CO-07-00-00-00</a>, <a href="https://taxonomy.legal/term/CO-00-00-00-00" target="_blank">CO-00-00-00-00</a>.         
+    CO-00-00-00-00, CO-07-00-00-00.         
         </li>
       </ul>
-      
+      <p>
+      <i>Use our <a href="https://ratemypdf.com" target="_blank">Rate My PDF</a> tool to learn more.</i> 
+      Go beyond the above insights and learn more about this or any pdf form at 
+      <a href="https://ratemypdf.com" target="_blank">RateMyPDF.com</a>, includes: counts of difficult words used, 
+      passive voice decetion, and suggestions for how to make the form more usable.
+      </p>
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
-      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
-      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields:</h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
-      If we think we've found a match to a question in our library, it is highlighted in green. New names are auto generated. So, you will probably need to edit some of them.
+      If we think we've found a match to a question in our library, it is highlighted in green. Novel names are auto generated. So, you will probably need to edit some of them if you're trying to stick to the convention.
       </p>
-      
-      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
-      (e.g., <b>X%</b> of the time this field is left blank...). 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
       
       <div style="float:left;width:100%;margin-bottom:25px;">
           <div class="tab" style="border: 1px solid #fff;border-bottom: 1px solid #555;width:15px;padding:10px 0px;">&nbsp;</div>
@@ -220,39 +254,7 @@
           }
       </script>
       
-      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>notice_header</code> was <i>NoticeHeader1</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__1</code> was <i>FillText01</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__2</code> was <i>FillText02</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__3</code> was <i>FillText03</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__4</code> was <i>FillText04</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__5</code> was <i>FillText05</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__6</code> was <i>FillText06</i> (0.71 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__7</code> was <i>FillText07</i> (0.72 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__8</code> was <i>FillText11</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__9</code> was <i>FillText12</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__10</code> was <i>FillText13</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__1</code> was <i>CheckBox01</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__11</code> was <i>FillText15</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__12</code> was <i>FillText16</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__13</code> was <i>FillText17</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__14</code> was <i>FillText18</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__15</code> was <i>FillText19</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__16</code> was <i>FillText20</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__2</code> was <i>CheckBox02</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__17</code> was <i>FillText21</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__18</code> was <i>FillText22</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>notice_footer</code> was <i>NoticeFooter1</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>save</code> was <i>Save</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>print</code> was <i>Print</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>reset_form</code> was <i>ResetForm</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__19</code> was <i>FillText24</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__20</code> was <i>FillText23</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__21</code> was <i>FillText25</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__22</code> was <i>FillText26</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__3</code> was <i>CheckBox03</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cbpay_ord_option</code> was <i>CBPayOrdOption</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cbpay_order</code> was <i>CBPayOrder</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cbjudgments_int</code> was <i>CBJudgmentsInt</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cbjudgments_princ</code> was <i>CBJudgmentsPrinc</i> (0.93 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cbjudgments_owed</code> was <i>CBJudgmentsOwed</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cbother_orders</code> was <i>CBOtherOrders</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cbmake_orders</code> was <i>CBMakeOrders</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code> was <i>CaseNumber</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>case_name</code> was <i>CaseName</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_info</code> was <i>CourtInfo</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>notice_header</code></li><li><code>notice_footer</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>fill_text__1</code></li><li><code>fill_text__2</code></li><li><code>fill_text__3</code></li><li><code>fill_text__4</code></li><li><code>fill_text__5</code></li><li><code>fill_text__6</code></li><li><code>fill_text__7</code></li><li><code>fill_text__8</code></li><li><code>fill_text__9</code></li><li><code>fill_text__10</code></li><li><code>fill_text__11</code></li><li><code>fill_text__12</code></li><li><code>fill_text__13</code></li><li><code>fill_text__14</code></li><li><code>fill_text__15</code></li><li><code>fill_text__16</code></li><li><code>fill_text__17</code></li><li><code>fill_text__18</code></li><li><code>fill_text__19</code></li><li><code>fill_text__20</code></li><li><code>fill_text__21</code></li><li><code>fill_text__22</code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code></li></ul><p>Suggested Screen 2:</p><ul><li><code>check_box__1</code></li><li><code>check_box__2</code></li><li><code>check_box__3</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>save</code></li></ul><p>Suggested Screen 4:</p><ul><li><code>print</code></li></ul><p>Suggested Screen 5:</p><ul><li><code>reset_form</code></li></ul><p>Suggested Screen 6:</p><ul><li><code>cbpay_ord_option</code></li><li><code>cbjudgments_int</code></li></ul><p>Suggested Screen 7:</p><ul><li><code>cbjudgments_princ</code></li></ul><p>Suggested Screen 8:</p><ul><li><code>cbjudgments_owed</code></li></ul><p>Suggested Screen 9:</p><ul><li><code>cbpay_order</code></li><li><code>cbother_orders</code></li><li><code>cbmake_orders</code></li></ul><p>Suggested Screen 10:</p><ul><li><code>case_name</code></li></ul><p>Suggested Screen 11:</p><ul><li><code>court_info</code></li></ul></div></div>
-        <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-        <!--<li><a href="../form/">show more</a></li>-->
-        
-
-      </ul>      <h3><a name="similar" href="#similar" class="anchor"></a>Similar Forms:</h3>
-      <p>For more context, visit the <a href="../../sim/CA">Similar Forms View</a>.</p>
-      <ul><li><a href="b55bc386e9ed47eda2d732b1ea734548.html">Citation and Written Notification for Deferred Entry of Judgment—Juvenile</a> (shares 72% of data fields)</li><li><a href="38a13988d5204cb82bf0554cdc5455b3.html">Request to Postpone Trial (Small Claims) (For Information for the Plaintiff, see SC-100-INFO)</a> (shares 71% of data fields)</li><li><a href="c2ba8bb959ff1eae793686233ede1b16.html">De Facto Parent Statement</a> (shares 71% of data fields)</li><li><a href="43ac54897d52c1c4691efe6e0fea0668.html">Notice to Child and Parent/Guardian RE: Release of Juvenile Police Records and Objection</a> (shares 70% of data fields)</li><li><a href="5517b695b71c95a966f9df3ba3b7092a.html">Application for Earnings Withholding Order for Taxes (State Tax Liability)</a> (shares 69% of data fields)</li></ul>
-      <!--
-      <li><a href="../form/">show more</a></li>-->
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
-       what forms a user used before this one. 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
-      what forms a user used after this one. 
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
-      <p>Using the Document Assembly Line Linter you can...</p>
-      <p>
-        <a href="javascript:alert('Coming Soon!');">Run this form through the Linter</a>
-      </p>
+      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>fill_text__1</code> was <i>FillText01</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__2</code> was <i>FillText02</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__3</code> was <i>FillText03</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__4</code> was <i>FillText04</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__5</code> was <i>FillText05</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__6</code> was <i>FillText06</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__7</code> was <i>FillText07</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__8</code> was <i>FillText11</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__9</code> was <i>FillText12</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__10</code> was <i>FillText13</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__1</code> was <i>CheckBox01</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__11</code> was <i>FillText15</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__12</code> was <i>FillText16</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__13</code> was <i>FillText17</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__14</code> was <i>FillText18</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__15</code> was <i>FillText19</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__16</code> was <i>FillText20</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__2</code> was <i>CheckBox02</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__17</code> was <i>FillText21</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__18</code> was <i>FillText22</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__19</code> was <i>FillText24</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__20</code> was <i>FillText23</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__21</code> was <i>FillText25</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__22</code> was <i>FillText26</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>check_box__3</code> was <i>CheckBox03</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cb_pay_order</code> was <i>CBPayOrder</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cb_judgments_int</code> was <i>CBJudgmentsInt</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cb_judgments_princ</code> was <i>CBJudgmentsPrinc</i> (0.49 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cb_judgments_owed</code> was <i>CBJudgmentsOwed</i> (0.50 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cb_orders</code> was <i>CBOtherOrders</i> (0.40 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>cb_make_orders</code> was <i>CBMakeOrders</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code> was <i>CaseNumber</i> (1.00 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>case_name</code> was <i>CaseName</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_info</code> was <i>CourtInfo</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>fill_text__1</code></li><li><code>fill_text__2</code></li><li><code>fill_text__3</code></li><li><code>fill_text__4</code></li><li><code>fill_text__5</code></li><li><code>fill_text__6</code></li><li><code>fill_text__7</code></li><li><code>fill_text__8</code></li><li><code>fill_text__9</code></li><li><code>fill_text__10</code></li><li><code>check_box__1</code></li><li><code>fill_text__11</code></li><li><code>fill_text__12</code></li><li><code>fill_text__13</code></li><li><code>fill_text__14</code></li><li><code>fill_text__15</code></li><li><code>fill_text__16</code></li><li><code>check_box__2</code></li><li><code>fill_text__17</code></li><li><code>fill_text__18</code></li><li><code>fill_text__19</code></li><li><code>fill_text__20</code></li><li><code>fill_text__21</code></li><li><code>fill_text__22</code></li><li><code>check_box__3</code></li><li><code>cb_pay_order</code></li><li><code>cb_judgments_int</code></li><li><code>cb_judgments_princ</code></li><li><code>cb_judgments_owed</code></li><li><code>cb_orders</code></li><li><code>cb_make_orders</code></li><li><code style="background:#a2e874"><a href="../../list/CA/fields/docket_number.html">docket_number</a></code></li><li><code>case_name</code></li><li><code>court_info</code></li></ul></div></div>
       
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="weaver" href="#weaver" class="anchor"></a>Create an Interactive Version of this Form:</h3>

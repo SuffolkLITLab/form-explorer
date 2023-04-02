@@ -33,22 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-05-13">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2023-04-02">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
-<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#f6d91b;color:black;padding:15px;text-align:center;">
+<b>This tool is in beta.</b> <b>CONTENT IS SUBJECT TO CHANGE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
-        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-05-13</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2023-04-02</font></span>
         </center>
     </h1>
 
@@ -56,6 +56,7 @@
         <p style="text-align:center;">
       <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
       <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      <a href="../../compare" class="menu">Find&nbsp;&amp;&nbsp;Compare&nbsp;</a><font style="color:#888;">|</font>&nbsp;
       &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore: California
       </span>&nbsp;&nbsp;
       <a href="../../list/CA" class="menu">&nbsp;Lists&nbsp;</a>
@@ -68,15 +69,178 @@
   <div class="content_wide" style="padding-left:0px;">
     <div class="pdf">
       <iframe src="https://courtformsonline.org/forms/5ffb9ae66ad4df2fc16a8ddbfa07f0f8.pdf" width="100%" height="1100px;"></iframe>
-      <div id="form_text" style="display:none;">Here is the form text we found: Superior Court of California, County of Fill this out if a criminal complaint was filed or charged against the petitioner, and there is a case 
- number and case name for that criminal case. Do 
- not fill this out if an arrest happened but no 
- criminal complaint was filed or charged in court: Trial Court Case Number: Fill in the name and street address of the court 
- that you are filing the petition in: Clerk stamps date here when form is filed. CR 409 Petition to Seal Arrest and Related 
- Records (Pen. Code, § 851. 91) Judicial Council of California www. courts. ca. gov New January 1, 2019. Optional Form CR 409, Page 1 of 2 Petition to Seal Arrest and Related Records (Pen. Code, § 851. 91) v. Trial Court Case Name: People of the State of California Your Information Petitioner (the person who is filing this petition) : a. Name: 1 Date of birth: Street address: Street City State Zip E mail (if available) : City Phone: Mailing address (if you have a lawyer for this case, give your lawyer's information ) : Street State Zip State Bar number: Information About Your Case 3 Date of the arrest you are requesting to be sealed: a. Where did the arrest happen? Include the city and county: b. What law enforcement agency made the arrest? If it was a police department, include the city (for example, ABC City Police Department) . If it was a county sheriff, list the countyc. d. What is the arrest report number or police report number, if available? (for example, XYZ County Sheriff) : Last First MI (mm/dd/yyyy) (mm/dd/yyyy) 2 Notice of Court Hearing A court hearing is scheduled on this petition as follows: Name and address of court if different from above: Date: Time: Room: Dept. : Hearing Date If an interpreter is needed, please specify the language: Trial Court Case Number: Trial Court Case Name: CR 409, Page 2 of 2 New January 1, 2019 Petition to Seal Arrest and Related Records (Pen. Code, § 851. 91) I am entitled to have this arrest (the arrest described in item of this petition) sealed as a matter of right because the arrest did not result in a conviction, and I satisfy the requirements of Penal Code section 851. 91. h. Choose one: I am requesting to have the arrest sealed in the interests of justice (Pen. Code, § 851. 91 (c) (2) (B) ) . 
- (Describe below how this is in the interests of justice. In deciding whether to grant this request, the court may consider any important factors, including: hardship and difficulties caused by the arrest; statements or evidence regarding your good character; statements or evidence regarding the arrest; your record of 
- convictions; or any other important factors. You may provide statements or evidence from you, from others, or both. ) ORSignature of petitioner or attorney Date: I declare under penalty of perjury under the laws of the State of California that the foregoing statements are true and correct, except as to matters that are stated on my information and belief, and as to those matters, I believe them to be true. g. If the prosecutor filed a case against you, please include what the charges were (for example, Pen. Code, § 242, for battery) . Please attach any additional signed and dated statements with the petition. f. Add any information on offenses or charges based on the arrest. If you would like to explain the information provided, please do so below, or complete and attach the Attached Declaration (form MC 031) or submit other relevant documents. 2 Include any other information about the arrest that is available from the prosecutor (district attorney/city 
- attorney) or the court, including the case number that the prosecutor used to review the arrest or used to file a case against you. If you would like to explain the information provided, please do so below, or complete and attach the Attached Declaration (form MC 031) or submit other relevant documents. e. </div>
+      <div id="form_text" style="display:none;overflow:hidden;padding:20px;">Here is the text we could read: 
+      <pre>CR-409
+
+Petition to Seal Arrest and Related 
+Records (Pen. Code, § 851.91)
+
+Clerk stamps date here when form is filed.
+
+1
+
+Your Information
+a.
+
+Petitioner (the person who is filing this petition):                       
+Name:
+
+Last
+
+First
+
+MI
+
+(mm/dd/yyyy)
+
+Date of birth:
+
+Street address: 
+
+Street
+
+City
+
+State
+
+Zip
+
+Mailing address (if you have a lawyer for this case, give your lawyer's 
+information ): 
+
+Street
+
+City
+
+Phone: 
+
+E-mail (if available):
+
+State Bar number:
+
+State
+
+Zip
+
+2 Notice of Court Hearing
+
+A court hearing is scheduled on this petition as follows:
+
+Hearing 
+Date 
+
+Date:
+
+Dept.:
+
+Time:
+
+Room:
+
+Name and address of court if different from above:
+
+Fill in the name and street address of the court 
+that you are filing the petition in: 
+Superior Court of California, County of
+
+Fill this out if a criminal complaint was filed or 
+charged against the petitioner, and there is a case 
+number and case name for that criminal case. Do 
+not fill this out if an arrest happened but no 
+criminal complaint was filed or charged in court: 
+
+Trial Court Case Number:
+
+Trial Court Case Name: 
+People of the State of California
+v.
+
+If an interpreter is needed, please specify the language:
+
+3
+
+Information About Your Case
+a.
+
+Date of the arrest you are requesting to be sealed:
+
+Where did the arrest happen? Include the city and county:
+
+b.
+
+c.
+
+(mm/dd/yyyy)
+
+What law enforcement agency made the arrest? If it was a police department, include the city (for example, ABC 
+City Police Department). If it was a county sheriff, list the county
+
+(for example, XYZ County Sheriff):
+
+d. What is the arrest report number or police report number, if available?
+
+Judicial Council of California 
+www.courts.ca.gov 
+New January 1, 2019. Optional Form
+
+Petition to Seal Arrest and Related 
+Records (Pen. Code, § 851.91)
+
+CR-409, Page 1 of 2
+
+Trial Court Case Name:
+
+Trial Court Case Number:
+
+e.
+
+Include any other information about the arrest that is available from the prosecutor (district attorney/city 
+attorney) or the court, including the case number that the prosecutor used to review the arrest or used to file a 
+case against you. If you would like to explain the information provided, please do so below, or complete and 
+attach the Attached Declaration (form MC-031) or submit other relevant documents. 
+
+f. Add any information on offenses or charges based on the arrest. If you would like to explain the information 
+
+provided, please do so below, or complete and attach the Attached Declaration (form MC-031) or submit other 
+relevant documents.
+
+g. If the prosecutor filed a case against you, please include what the charges were (for example, Pen. Code, § 242, 
+
+for battery).
+
+h. Choose one:
+
+OR
+
+I am entitled to have this arrest (the arrest described in item       of this petition) sealed as a matter of right 
+because the arrest did not result in a conviction, and I satisfy the requirements of Penal Code section 851.91. 
+
+2
+
+I am requesting to have the arrest sealed in the interests of justice (Pen. Code, § 851.91(c)(2)(B)). 
+(Describe below how this is in the interests of justice. In deciding whether to grant this request, the court 
+may consider any important factors, including: hardship and difficulties caused by the arrest; statements 
+or evidence regarding your good character; statements or evidence regarding the arrest; your record of 
+convictions; or any other important factors. You may provide statements or evidence from you, from 
+others, or both.)
+
+Please attach any additional signed and dated statements with the petition. 
+
+I declare under penalty of perjury under the laws of the State of California that the foregoing statements are true and 
+correct, except as to matters that are stated on my information and belief, and as to those matters, I believe them to be true. 
+
+Date:
+
+New January 1, 2019
+
+Signature of petitioner or attorney
+
+Petition to Seal Arrest and Related 
+Records (Pen. Code, § 851.91)
+
+CR-409, Page 2 of 2
+
+</pre></div>
     </div>
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Petition to Seal Arrest and Related Records</h1>
@@ -85,42 +249,34 @@
         To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.ca.gov/documents/cr409.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-17) 
+        <b>Downloads:</b> You can download both the <a href="https://www.courts.ca.gov/documents/cr409.pdf" target="_blank" class="exlink">original form</a> (last checked 2023-03) 
         and the <a href="javascript:alert('Califonia machine-processed forms are not yet available.')">machine-processed form</a> with normalized data fields.
       </p>
 
         <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
-        <li>Sourced from <a href="http://www.courts.ca.gov" target="_blank" class="exlink">www.courts.ca.gov</a> on 2021-11-17</li>
-        <li>Court Grouping: <a href="../../list/CA/#CR">CR</a></li>
+        <li>Sourced from <a href="http://selfhelp.courts.ca.gov" target="_blank" class="exlink">selfhelp.courts.ca.gov</a> (2023-03)</li>
         <li>Page(s): 2 </li>
-        <li>Fields(s): 46 </li>
-        <li>Average fields per page: 23</li>
-        <li>Reading Level: Grade 14</li>
+        <li>Fields(s): 35 </li>
+        <li>Average fields per page: 17</li>
+        <li>Reading Level: Grade 8</li>
         <li><a href="https://taxonomy.legal/" target="_blank" class="exlink">LIST</a> Grouping(s): 
-    <a href="https://taxonomy.legal/term/CO-07-00-00-00" target="_blank">CO-07-00-00-00</a>, <a href="https://taxonomy.legal/term/CO-00-00-00-00" target="_blank">CO-00-00-00-00</a>, <a href="https://taxonomy.legal/term/CR-00-00-00-00" target="_blank">CR-00-00-00-00</a>.         
+    CR-00-00-00-00, CO-07-00-00-00, CO-00-00-00-00.         
         </li>
       </ul>
-      
+      <p>
+      <i>Use our <a href="https://ratemypdf.com" target="_blank">Rate My PDF</a> tool to learn more.</i> 
+      Go beyond the above insights and learn more about this or any pdf form at 
+      <a href="https://ratemypdf.com" target="_blank">RateMyPDF.com</a>, includes: counts of difficult words used, 
+      passive voice decetion, and suggestions for how to make the form more usable.
+      </p>
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
-      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
-      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields:</h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
-      If we think we've found a match to a question in our library, it is highlighted in green. New names are auto generated. So, you will probably need to edit some of them.
+      If we think we've found a match to a question in our library, it is highlighted in green. Novel names are auto generated. So, you will probably need to edit some of them if you're trying to stick to the convention.
       </p>
-      
-      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
-      (e.g., <b>X%</b> of the time this field is left blank...). 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
       
       <div style="float:left;width:100%;margin-bottom:25px;">
           <div class="tab" style="border: 1px solid #fff;border-bottom: 1px solid #555;width:15px;padding:10px 0px;">&nbsp;</div>
@@ -155,39 +311,7 @@
           }
       </script>
       
-      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>print_bt</code> was <i>Print_bt[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>save_bt</code> was <i>Save_bt[0]</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>reset_bt</code> was <i>Reset_bt[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_23[0]</code> was <i>T23[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>area__1</code> was <i>#area[0]</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page_area__1</code> was <i>PageArea1[0]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page_area__2</code> was <i>PageArea1[1]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page_set</code> was <i>#pageSet[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_info_ft</code> was <i>CourtInfo_ft[0]</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>case_number_ft</code> was <i>CaseNumber_ft[0]</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>right_caption_sf</code> was <i>RightCaption_sf[0]</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>tccase_name_ft</code> was <i>TCCaseName_ft[0]</i> (0.70 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_186[0]</code> was <i>T186[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_186[1]</code> was <i>T186[1]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>area__2</code> was <i>#area[1]</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__1</code> was <i>FillText38[0]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__2</code> was <i>FillText38[1]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__3</code> was <i>FillText37[0]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__4</code> was <i>FillText37[1]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_141[0]</code> was <i>T141[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__5</code> was <i>FillText38[2]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_140[0]</code> was <i>T140[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__6</code> was <i>FillText38[3]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__7</code> was <i>FillText37[2]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__8</code> was <i>FillText37[3]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_158[0]</code> was <i>T158[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_186[2]</code> was <i>T186[2]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_186[3]</code> was <i>T186[3]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_66[0]</code> was <i>T66[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_186[4]</code> was <i>T186[4]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_158[1]</code> was <i>T158[1]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_159[0]</code> was <i>T159[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_160[0]</code> was <i>T160[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_161[0]</code> was <i>T161[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_162[0]</code> was <i>T162[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_186[5]</code> was <i>T186[5]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__1</code> was <i>Page1[0]</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>px_capton_sf</code> was <i>PxCapton_sf[0]</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>dismiss_section_cb__1</code> was <i>DismissSection_cb[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>dismiss_section_cb__2</code> was <i>DismissSection_cb[1]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fill_text__9</code> was <i>FillText97[0]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_66[1]</code> was <i>T66[1]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_66[2]</code> was <i>T66[2]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>t_66[3]</code> was <i>T66[3]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page__2</code> was <i>Page3[0]</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform</code> was <i>topmostSubform[0]</i> (0.66 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>print_bt</code></li><li><code>save_bt</code></li><li><code>reset_bt</code></li><li><code>t_23[0]</code></li><li><code>area__1</code></li><li><code>page_area__1</code></li><li><code>page_area__2</code></li><li><code>page_set</code></li><li><code>court_info_ft</code></li><li><code>case_number_ft</code></li><li><code>right_caption_sf</code></li><li><code>tccase_name_ft</code></li><li><code>t_186[0]</code></li><li><code>t_186[1]</code></li><li><code>area__2</code></li><li><code>fill_text__1</code></li><li><code>fill_text__2</code></li><li><code>fill_text__3</code></li><li><code>fill_text__4</code></li><li><code>t_141[0]</code></li><li><code>fill_text__5</code></li><li><code>t_140[0]</code></li><li><code>fill_text__6</code></li><li><code>fill_text__7</code></li><li><code>fill_text__8</code></li><li><code>t_158[0]</code></li><li><code>t_186[2]</code></li><li><code>t_186[3]</code></li><li><code>t_66[0]</code></li><li><code>t_186[4]</code></li><li><code>t_158[1]</code></li><li><code>t_159[0]</code></li><li><code>t_160[0]</code></li><li><code>t_161[0]</code></li><li><code>t_162[0]</code></li><li><code>t_186[5]</code></li><li><code>page__1</code></li><li><code>px_capton_sf</code></li><li><code>dismiss_section_cb__1</code></li><li><code>dismiss_section_cb__2</code></li><li><code>fill_text__9</code></li><li><code>t_66[1]</code></li><li><code>t_66[2]</code></li><li><code>t_66[3]</code></li><li><code>page__2</code></li><li><code>topmost_subform</code></li></ul></div></div>
-        <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-        <!--<li><a href="../form/">show more</a></li>-->
-        
-
-      </ul>      <h3><a name="similar" href="#similar" class="anchor"></a>Similar Forms:</h3>
-      <p>For more context, visit the <a href="../../sim/CA">Similar Forms View</a>.</p>
-      <ul><li><a href="ed0382a916775a9a059892b953247283.html">Notice of Appeal (Misdemeanor)</a> (shares 29% of data fields)</li><li><a href="35f105801e4edad8d3c778dc578871a7.html">Order to Seal Arrest and Related Records (Pen. Code, Sections 851.91, 851.92)</a> (shares 28% of data fields)</li><li><a href="d7000230018b255bf0b0320656655f21.html">Order Concerning Appellant's Proposed Statement on Appeal (Misdemeanor)</a> (shares 27% of data fields)</li><li><a href="41037e65ddc624b7aab8b6f9e2045d82.html">Order Concerning Appellant's Proposed Statement on Appeal (Limited Civil Case)</a> (shares 25% of data fields)</li><li><a href="8a9dde03829ab2eab45c0cc70545232a.html">Request for Court-Appointed Lawyer in Misdemeanor Appeal</a> (shares 25% of data fields)</li></ul>
-      <!--
-      <li><a href="../form/">show more</a></li>-->
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
-       what forms a user used before this one. 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
-      what forms a user used after this one. 
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
-      <p>Using the Document Assembly Line Linter you can...</p>
-      <p>
-        <a href="javascript:alert('Coming Soon!');">Run this form through the Linter</a>
-      </p>
+      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>topmost_subform_page_right_caption_sf_court_info_ft</code> was <i>topmostSubform[0].Page1[0].RightCaption_sf[0].CourtInfo_ft[0]</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_page_right_case_number</code> was <i>topmostSubform[0].Page1[0].RightCaption_sf[0].CaseNumber_ft[0]</i> (0.40 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_page_case_name_ft</code> was <i>topmostSubform[0].Page1[0].TCCaseName_ft[0]</i> (0.39 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__1</code> was <i>topmostSubform[0].Page1[0].T186[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_area</code> was <i>topmostSubform[0].Page1[0].#area[1].T186[1]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__1</code> was <i>topmostSubform[0].Page1[0].FillText38[0]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__2</code> was <i>topmostSubform[0].Page1[0].FillText38[1]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__3</code> was <i>topmostSubform[0].Page1[0].FillText37[0]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__4</code> was <i>topmostSubform[0].Page1[0].FillText37[1]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__2</code> was <i>topmostSubform[0].Page1[0].T141[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__5</code> was <i>topmostSubform[0].Page1[0].FillText38[2]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__3</code> was <i>topmostSubform[0].Page1[0].T140[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__6</code> was <i>topmostSubform[0].Page1[0].FillText38[3]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__7</code> was <i>topmostSubform[0].Page1[0].FillText37[2]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__8</code> was <i>topmostSubform[0].Page1[0].FillText37[3]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__4</code> was <i>topmostSubform[0].Page1[0].T158[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__5</code> was <i>topmostSubform[0].Page1[0].T186[2]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__6</code> was <i>topmostSubform[0].Page1[0].T186[3]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__7</code> was <i>topmostSubform[0].Page1[0].T66[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__8</code> was <i>topmostSubform[0].Page1[0].T186[4]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__9</code> was <i>topmostSubform[0].Page1[0].T158[1]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__10</code> was <i>topmostSubform[0].Page1[0].T159[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__11</code> was <i>topmostSubform[0].Page1[0].T160[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__12</code> was <i>topmostSubform[0].Page1[0].T161[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__13</code> was <i>topmostSubform[0].Page1[0].T162[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__14</code> was <i>topmostSubform[0].Page1[0].T186[5]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_px_capton_sf_case_number_ft</code> was <i>topmostSubform[0].Page3[0].PxCapton_sf[0].CaseNumber_ft[0]</i> (0.39 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_px_capton_sf_tc_case_name_ft</code> was <i>topmostSubform[0].Page3[0].PxCapton_sf[0].TCCaseName_ft[0]</i> (0.39 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_page_dismiss_section__1</code> was <i>topmostSubform[0].Page3[0].DismissSection_cb[0]</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_page_dismiss_section__2</code> was <i>topmostSubform[0].Page3[0].DismissSection_cb[1]</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page_fill_text__9</code> was <i>topmostSubform[0].Page3[0].FillText97[0]</i> (0.44 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__15</code> was <i>topmostSubform[0].Page3[0].T66[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__16</code> was <i>topmostSubform[0].Page3[0].T66[1]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__17</code> was <i>topmostSubform[0].Page3[0].T66[2]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>topmost_subform_page__18</code> was <i>topmostSubform[0].Page3[0].T66[3]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>topmost_subform_page_right_caption_sf_court_info_ft</code></li><li><code>topmost_page_right_case_number</code></li><li><code>topmost_page_case_name_ft</code></li><li><code>topmost_subform_page__1</code></li><li><code>topmost_subform_page_area</code></li><li><code>topmost_subform_page_fill_text__1</code></li><li><code>topmost_subform_page_fill_text__2</code></li><li><code>topmost_subform_page_fill_text__3</code></li><li><code>topmost_subform_page_fill_text__4</code></li><li><code>topmost_subform_page__2</code></li><li><code>topmost_subform_page_fill_text__5</code></li><li><code>topmost_subform_page__3</code></li><li><code>topmost_subform_page_fill_text__6</code></li><li><code>topmost_subform_page_fill_text__7</code></li><li><code>topmost_subform_page_fill_text__8</code></li><li><code>topmost_subform_page__4</code></li><li><code>topmost_subform_page__5</code></li><li><code>topmost_subform_page__6</code></li><li><code>topmost_subform_page__7</code></li><li><code>topmost_subform_page__8</code></li><li><code>topmost_subform_page__9</code></li><li><code>topmost_subform_page__10</code></li><li><code>topmost_subform_page__11</code></li><li><code>topmost_subform_page__12</code></li><li><code>topmost_subform_page__13</code></li><li><code>topmost_subform_page__14</code></li><li><code>topmost_subform_page_px_capton_sf_case_number_ft</code></li><li><code>topmost_subform_page_px_capton_sf_tc_case_name_ft</code></li><li><code>topmost_page_dismiss_section__1</code></li><li><code>topmost_page_dismiss_section__2</code></li><li><code>topmost_subform_page_fill_text__9</code></li><li><code>topmost_subform_page__15</code></li><li><code>topmost_subform_page__16</code></li><li><code>topmost_subform_page__17</code></li><li><code>topmost_subform_page__18</code></li></ul></div></div>
       
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="weaver" href="#weaver" class="anchor"></a>Create an Interactive Version of this Form:</h3>

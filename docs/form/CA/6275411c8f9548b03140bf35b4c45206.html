@@ -33,22 +33,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="../../images/icon.png"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2022-05-13">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css?v=2023-04-02">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="" MARGINWIDTH="0" MARGINHEIGHT="0">
-<div style="box-sizing: border-box;width:100%;background:#d6392b;color:white;padding:15px;text-align:center;">
-<b>This tool is in alpha</b>, and this page is just for testing purposes. <b>DO NOT RELY ON THE CONTENT FOUND HERE!</b></div>
+<div style="box-sizing: border-box;width:100%;background:#f6d91b;color:black;padding:15px;text-align:center;">
+<b>This tool is in beta.</b> <b>CONTENT IS SUBJECT TO CHANGE!</b></div>
 <div class="content_wide">
 
     <div id="icon" style="background-size: 100px 100px;background-image: url('../../images/seal.jpg');"><a href="../../" alt="home"><img src="../../images/space.gif" width="100px" height="100px;" border="0" alt="LIT Logo"/></a></div>
     <h1 style="text-align:center;">
-        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Alpha</font></sup>
+        The Legal Innovation & Technology Lab's Form Explorer <sup><font size=+1>Beta</font></sup>
         <center style="margin-top:5px;">
-          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2022-05-13</font></span>
+          <span class="subtitle">@ Suffolk Law School&nbsp;<font style="font-weight:normal">Last updated 2023-04-02</font></span>
         </center>
     </h1>
 
@@ -56,6 +56,7 @@
         <p style="text-align:center;">
       <a href="https://suffolklitlab.org/" class="menu">&nbsp;LIT Lab Home&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
       <a href="../../" class="menu">&nbsp;About&nbsp;The&nbsp;Explorer&nbsp;</a>&nbsp;<font style="color:#888;">|</font>&nbsp;
+      <a href="../../compare" class="menu">Find&nbsp;&amp;&nbsp;Compare&nbsp;</a><font style="color:#888;">|</font>&nbsp;
       &nbsp;&nbsp;<span style="font-family: sans-serif;font-size: 12px;text-transform: uppercase;">Explore: California
       </span>&nbsp;&nbsp;
       <a href="../../list/CA" class="menu">&nbsp;Lists&nbsp;</a>
@@ -68,14 +69,113 @@
   <div class="content_wide" style="padding-left:0px;">
     <div class="pdf">
       <iframe src="https://courtformsonline.org/forms/6275411c8f9548b03140bf35b4c45206.pdf" width="100%" height="1100px;"></iframe>
-      <div id="form_text" style="display:none;">Here is the form text we found: Form Approved for Optional Use Judicial Council of California 
- FW 020 [New January 1, 2021] REQUEST FOR COURT REPORTER BY PARTY WITH FEE WAIVERCal. Rules of Court, rules 3. 55 and 2. 956 (c) www. courts. ca. gov FW 020 FOR COURT USE ONLYCASE NUMBER: ATTORNEY OR PARTY WITHOUT ATTORNEY: STATE BAR NO: NAME: FIRM NAME: STREET ADDRESS: CITY: STATE: ZIP CODE: TELEPHONE NO. : FAX NO. : EMAIL ADDRESS: ATTORNEY FOR (name) : SUPERIOR COURT OF CALIFORNIA, COUNTY OFSTREET ADDRESS: MAILING ADDRESS: CITY AND ZIP CODE: BRANCH NAME: Plaintiff/Petitioner: Defendant/Respondent: Other Party: REQUEST FOR COURT REPORTER BY PARTY WITH FEE WAIVERINSTRUCTIONSIf you have been granted, or are applying for, a waiver of court fees and costs, you may use this form to request the services of an official court reporter for a hearing or trial for which a court reporter is not otherwise provided 
- and for which electronic recording is not provided. Ł You should make a request 10 calendar days before any court date for which you want a reporter. If the court 
- date is scheduled with less than 10 days' notice, you should file the request as soon as you can. Ł If you do not file the request on time, the court may be unable to provide a court reporter on the date requested 
- and may have to reschedule the hearing or trial. Ł There will be no fee to you for the court reporter being at the hearing if you have a fee waiver. Ł Note: Having a court reporter does not guarantee the right to get a free transcript. To learn more about transcripts 
- and records for an appeal, read the Self Help webpages for civil appeals, particularly courts. ca. gov/designating-
- record. If you are eligible, the court will try to schedule a court reporter for the court proceeding but cannot guarantee 
- that one will be available at that time. REQUEST FOR COURT REPORTER 1. (Name of party making request) : a. has received a waiver of court fees and costs in this action. b. is filing a Request to Waive Court Fees (form FW 001 or FW 001 GC) with this form. 2. An official court reporter is requested fortrialhearing on (date) : . Date: (TYPE OR PRINT NAME OF ATTORNEY OR PARTY WITHOUT ATTORNEY) (SIGNATURE) Page 1 of 1</div>
+      <div id="form_text" style="display:none;overflow:hidden;padding:20px;">Here is the text we could read: 
+      <pre>ATTORNEY OR PARTY WITHOUT ATTORNEY:
+
+STATE BAR NO:
+
+FOR COURT USE ONLY
+
+FW-020
+
+STATE:
+
+FAX NO.:
+
+ZIP CODE:
+
+NAME:
+
+FIRM NAME:
+
+STREET ADDRESS:
+
+CITY:
+
+TELEPHONE NO.:
+
+EMAIL ADDRESS:
+
+ATTORNEY FOR (name):
+
+MAILING ADDRESS:
+
+CITY AND ZIP CODE:
+
+BRANCH NAME:
+
+Plaintiff/Petitioner:
+Defendant/Respondent:
+Other Party:
+
+SUPERIOR COURT OF CALIFORNIA, COUNTY OF
+STREET ADDRESS:
+
+REQUEST FOR COURT REPORTER BY PARTY WITH FEE WAIVER
+
+CASE NUMBER:
+
+INSTRUCTIONS
+If you have been granted, or are applying for, a waiver of court fees and costs, you may use this form to request 
+the services of an official court reporter for a hearing or trial for which a court reporter is not otherwise provided 
+and for which electronic recording is not provided. 
+
+•  You should make a request 10 calendar days before any court date for which you want a reporter. If the court 
+
+date is scheduled with less than 10-days' notice, you should file the request as soon as you can.
+
+•  If you do not file the request on time, the court may be unable to provide a court reporter on the date requested 
+
+and may have to reschedule the hearing or trial. 
+
+•  There will be no fee to you for the court reporter being at the hearing if you have a fee waiver. 
+
+•  Note: Having a court reporter does not guarantee the right to get a free transcript. To learn more about transcripts 
+and records for an appeal, read the Self Help webpages for civil appeals, particularly courts.ca.gov/designating-
+record. 
+
+If you are eligible, the court will try to schedule a court reporter for the court proceeding but cannot guarantee 
+that one will be available at that time. 
+
+1.  (Name of party making request):
+
+REQUEST FOR COURT REPORTER
+
+ a. has received a waiver of court fees and costs in this action.
+
+ b.
+
+is filing a Request to Waive Court Fees (form FW-001 or FW-001-GC) with this form.
+
+2.  An official court reporter is requested for
+
+trial
+
+hearing 
+
+on (date):
+
+.
+
+Date:
+
+(TYPE OR PRINT NAME OF ATTORNEY OR PARTY WITHOUT ATTORNEY)
+
+(SIGNATURE)
+
+Form Approved for Optional Use   
+Judicial Council of California  
+FW-020 [New January 1, 2021]
+
+REQUEST FOR COURT REPORTER  
+BY PARTY WITH FEE WAIVER
+
+Page 1 of 1
+
+Cal. Rules of Court, rules 3.55 and 2.956(c) 
+www.courts.ca.gov
+
+</pre></div>
     </div>
     <div class="pdfinfo">
       <h1><a name="title" href="#title" class="anchor"></a>Request for Court Reporter by Party with Fee Waiver</h1>
@@ -84,42 +184,34 @@
         To learn more about the project, check out our <a href="../../">about page</a>.
       </p>
       <p>
-        <b>Downloads:</b> In order to get the data on this page we scan forms for... You can download both the <a href="https://www.courts.ca.gov/documents/fw020.pdf" target="_blank" class="exlink">original form</a> (last checked on 2021-11-17) 
+        <b>Downloads:</b> You can download both the <a href="https://www.courts.ca.gov/documents/fw020.pdf" target="_blank" class="exlink">original form</a> (last checked 2023-03) 
         and the <a href="javascript:alert('Califonia machine-processed forms are not yet available.')">machine-processed form</a> with normalized data fields.
       </p>
 
         <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="about_form" href="#about_form" class="anchor"></a>About This Form:</h3>
       <ul>
-        <li>Sourced from <a href="http://www.courts.ca.gov" target="_blank" class="exlink">www.courts.ca.gov</a> on 2021-11-17</li>
-        <li>Court Grouping: <a href="../../list/CA/#FW">FW</a></li>
+        <li>Sourced from <a href="http://selfhelp.courts.ca.gov" target="_blank" class="exlink">selfhelp.courts.ca.gov</a> (2023-03)</li>
         <li>Page(s): 1 </li>
-        <li>Fields(s): 45 </li>
-        <li>Average fields per page: 45</li>
-        <li>Reading Level: Grade 9</li>
+        <li>Fields(s): 28 </li>
+        <li>Average fields per page: 28</li>
+        <li>Reading Level: Grade 8</li>
         <li><a href="https://taxonomy.legal/" target="_blank" class="exlink">LIST</a> Grouping(s): 
-    <a href="https://taxonomy.legal/term/CO-07-00-00-00" target="_blank">CO-07-00-00-00</a>, <a href="https://taxonomy.legal/term/CO-00-00-00-00" target="_blank">CO-00-00-00-00</a>.         
+    CO-00-00-00-00, CO-07-00-00-00.         
         </li>
       </ul>
-      
+      <p>
+      <i>Use our <a href="https://ratemypdf.com" target="_blank">Rate My PDF</a> tool to learn more.</i> 
+      Go beyond the above insights and learn more about this or any pdf form at 
+      <a href="https://ratemypdf.com" target="_blank">RateMyPDF.com</a>, includes: counts of difficult words used, 
+      passive voice decetion, and suggestions for how to make the form more usable.
+      </p>
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="about_users" href="#about_users" class="anchor"></a>About Users of This Form:<sup>&dagger;</sup></h3>
-      <p style="background:#fcf19d"><sup>&dagger;</sup> <i>With historical form data we could provde insights on users of this for  
-      (e.g., filers of this form file an average of <b>X</b> other forms. <b>Y%</b> of them identify as male...).  
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields and Utilization:<sup>*</sup></h3>
+      <h3><a name="fields" href="#fields" class="anchor"></a>Identified Data Fields:</h3>
       <p>We have done our best to automaticly identify and name form fields according to our <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/label_variables/">naming conventions</a>. 
       When possible, we've used names tied to our question library. See e.g., <a href="https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/question_library/names">user1_name</a>.
-      If we think we've found a match to a question in our library, it is highlighted in green. New names are auto generated. So, you will probably need to edit some of them.
+      If we think we've found a match to a question in our library, it is highlighted in green. Novel names are auto generated. So, you will probably need to edit some of them if you're trying to stick to the convention.
       </p>
-      
-      <p style="background:#fcf19d"><sup>*</sup><i> With historical form data we could provde insights on field utilization  
-      (e.g., <b>X%</b> of the time this field is left blank...). 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
       
       <div style="float:left;width:100%;margin-bottom:25px;">
           <div class="tab" style="border: 1px solid #fff;border-bottom: 1px solid #555;width:15px;padding:10px 0px;">&nbsp;</div>
@@ -154,39 +246,7 @@
           }
       </script>
       
-      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>print</code> was <i>Print[0]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>save</code> was <i>Save[0]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>reset</code> was <i>Reset[0]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>warning</code> was <i>Warning[0]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>footerbuttons</code> was <i>Footerbuttons[0]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page</code> was <i>Page1[0]</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>page_set</code> was <i>#pageSet[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>case_number_ft</code> was <i>CaseNumber_ft[0]</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>case_number</code> was <i>CaseNumber[0]</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_bar_dc</code> was <i>AttyBarNo_dc[0]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_name_ft</code> was <i>AttyName_ft[0]</i> (0.75 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_firm_ft</code> was <i>AttyFirm_ft[0]</i> (0.74 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_street_ft</code> was <i>AttyStreet_ft[0]</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_city_ft</code> was <i>AttyCity_ft[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_state_ft</code> was <i>AttyState_ft[0]</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_zip_ft</code> was <i>AttyZip_ft[0]</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>phone_ft</code> was <i>Phone_ft[0]</i> (0.51 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fax_ft</code> was <i>Fax_ft[0]</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>email_ft</code> was <i>Email_ft[0]</i> (0.65 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_ft</code> was <i>AttyFor_ft[0]</i> (0.61 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>atty_info</code> was <i>AttyInfo[0]</i> (0.63 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>crt_county_ft</code> was <i>CrtCounty_ft[0]</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>street_ft</code> was <i>Street_ft[0]</i> (0.68 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>mailing_add_ft</code> was <i>MailingAdd_ft[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>city_zip_ft</code> was <i>CityZip_ft[0]</i> (0.60 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>branch_ft</code> was <i>Branch_ft[0]</i> (0.53 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>court_info</code> was <i>CourtInfo[0]</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>party_ft__1</code> was <i>Party1_ft[0]</i> (0.56 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>party_ft__2</code> was <i>Party2_ft[0]</i> (0.59 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>party_ft__3</code> was <i>Party3_ft[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>title_party_name</code> was <i>TitlePartyName[0]</i> (0.57 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>p_caption_sf</code> was <i>P1Caption_sf[0]</i> (0.67 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>text_field</code> was <i>TextField1[0]</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>checkbox__1</code> was <i>Checkbox1[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>li__1</code> was <i>LI1[0]</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>li__2</code> was <i>LI2[0]</i> (0.69 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>list__1</code> was <i>List1[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>checkbox__2</code> was <i>Checkbox3[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>checkbox__3</code> was <i>Checkbox3[1]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>date_field__1</code> was <i>DateField1[0]</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>list__2</code> was <i>List2[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>date_field__2</code> was <i>DateField2[0]</i> (0.62 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>print_name</code> was <i>PrintName[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>sign_sub</code> was <i>SignSub[0]</i> (0.55 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>fw</code> was <i>FW-020[0]</i> (0.64 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>save</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>reset</code></li></ul><p>Suggested Screen 2:</p><ul><li><code>warning</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>atty_bar_dc</code></li><li><code>atty_name_ft</code></li><li><code>atty_firm_ft</code></li><li><code>atty_street_ft</code></li><li><code>atty_city_ft</code></li><li><code>atty_state_ft</code></li><li><code>atty_zip_ft</code></li><li><code>atty_ft</code></li><li><code>atty_info</code></li><li><code>crt_county_ft</code></li><li><code>street_ft</code></li><li><code>city_zip_ft</code></li><li><code>branch_ft</code></li></ul><p>Suggested Screen 4:</p><ul><li><code>phone_ft</code></li><li><code>fax_ft</code></li><li><code>email_ft</code></li><li><code>mailing_add_ft</code></li></ul><p>Suggested Screen 5:</p><ul><li><code>case_number_ft</code></li><li><code>party_ft__1</code></li><li><code>party_ft__2</code></li><li><code>party_ft__3</code></li></ul><p>Suggested Screen 6:</p><ul><li><code>footerbuttons</code></li><li><code>page_set</code></li><li><code>case_number</code></li><li><code>court_info</code></li><li><code>p_caption_sf</code></li><li><code>text_field</code></li><li><code>checkbox__1</code></li><li><code>li__1</code></li><li><code>li__2</code></li><li><code>list__1</code></li><li><code>checkbox__2</code></li><li><code>checkbox__3</code></li><li><code>date_field__1</code></li><li><code>list__2</code></li><li><code>date_field__2</code></li><li><code>sign_sub</code></li></ul><p>Suggested Screen 7:</p><ul><li><code>print</code></li><li><code>page</code></li><li><code>title_party_name</code></li><li><code>print_name</code></li></ul><p>Suggested Screen 8:</p><ul><li><code>fw</code></li></ul></div></div>
-        <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-        <!--<li><a href="../form/">show more</a></li>-->
-        
-
-      </ul>      <h3><a name="similar" href="#similar" class="anchor"></a>Similar Forms:</h3>
-      <p>For more context, visit the <a href="../../sim/CA">Similar Forms View</a>.</p>
-      <ul><li><a href="3bb245b4ee9b6e53e4e676cdffbb2f1b.html">Acknowledgment of Receipt of Order and Funds for Deposit in Blocked Account</a> (shares 52% of data fields)</li><li><a href="7498a26936bc83a693f2d1893ef8b94c.html">Notice and Acknowledgment of Receipt—Civil</a> (shares 50% of data fields)</li><li><a href="5ee9de3da8c8e69d63b2646c3acac2af.html">Order to Deposit Funds Into Blocked Account</a> (shares 46% of data fields)</li><li><a href="bda55b6063d83010f5de29e6a39e8493.html">Order on Unlawful Use of Personal Identifying Information</a> (shares 43% of data fields)</li><li><a href="0778d5f63099f7fd5c4d402e2234c45b.html">Proof of Service—Short-Term Residential Therapeutic Program Placement</a> (shares 43% of data fields)</li></ul>
-      <!--
-      <li><a href="../form/">show more</a></li>-->
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="before" href="#before" class="anchor"></a>Before using this form, users used:<sup>&dagger;&dagger;</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-       <p style="background:#fcf19d"><sup>&dagger;&dagger;</sup><i> With historical form data we could provde insights on 
-       what forms a user used before this one. 
-       If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="after" href="#after" class="anchor"></a>After using this form, users used:<sup>**</sup></h3>
-      <p>For more context, visit the <a href="../../flow/CA">Flows View</a>.</p>
-      <p style="background:#fcf19d"><sup>**</sup><i> With historical form data we could provde insights on 
-      what forms a user used after this one. 
-      If you work with the court and can help provide historic form data, <a href="mailto:litlab@suffolk.edu">let us know</a>.
-      </i></p>
-      
-      <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
-      <h3><a name="linter" href="#linter" class="anchor"></a>See Suggestions for Improving this Form:</h3>
-      <p>Using the Document Assembly Line Linter you can...</p>
-      <p>
-        <a href="javascript:alert('Coming Soon!');">Run this form through the Linter</a>
-      </p>
+      <div id="orig_fields" style="padding-left:15px;"><p>Here are the fields we could identify.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><ul><li><code>f_w_page_p_sf_case_number</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].CaseNumber[0].CaseNumber_ft[0]</i> (0.58 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_info_bar_dc</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyBarNo_dc[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_caption_info_name</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyName_ft[0]</i> (0.40 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_sf_info_ft__1</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyFirm_ft[0]</i> (0.43 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_info_street__1</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyStreet_ft[0]</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_sf_info_city</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyCity_ft[0]</i> (0.42 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_info_state_ft</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyState_ft[0]</i> (0.42 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_sf_info_ft__2</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyZip_ft[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_sf_info_phone</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].Phone_ft[0]</i> (0.42 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_caption_sf_info__1</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].Fax_ft[0]</i> (0.42 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_sf_info_email</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].Email_ft[0]</i> (0.45 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_caption_sf_info__2</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].AttyInfo[0].AttyFor_ft[0]</i> (0.42 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_sf_county</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].CourtInfo[0].CrtCounty_ft[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_info_street__2</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].CourtInfo[0].Street_ft[0]</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_caption_info</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].CourtInfo[0].MailingAdd_ft[0]</i> (0.37 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_info_city_ft</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].CourtInfo[0].CityZip_ft[0]</i> (0.34 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_info_branch</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].CourtInfo[0].Branch_ft[0]</i> (0.38 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_title_name__1</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].TitlePartyName[0].Party1_ft[0]</i> (0.34 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_title_name__2</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].TitlePartyName[0].Party2_ft[0]</i> (0.34 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_p_title_name__3</code> was <i>FW-020[0].Page1[0].P1Caption_sf[0].TitlePartyName[0].Party3_ft[0]</i> (0.34 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_list_l_text_field</code> was <i>FW-020[0].Page1[0].List2[0].LI1[0].TextField1[0]</i> (0.33 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_list_l_checkbox__1</code> was <i>FW-020[0].Page1[0].List2[0].LI1[0].List1[0].LI1[0].Checkbox1[0]</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_list_l_checkbox__2</code> was <i>FW-020[0].Page1[0].List2[0].LI1[0].List1[0].LI2[0].Checkbox1[0]</i> (0.35 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_list_l_checkbox__3</code> was <i>FW-020[0].Page1[0].List2[0].LI2[0].Checkbox3[0]</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_list_l_checkbox__4</code> was <i>FW-020[0].Page1[0].List2[0].LI2[0].Checkbox3[1]</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_list_l_date_field</code> was <i>FW-020[0].Page1[0].List2[0].LI2[0].DateField1[0]</i> (0.36 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_sign_sub_date_field</code> was <i>FW-020[0].Page1[0].SignSub[0].DateField2[0]</i> (0.33 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li><li><code>f_w_page_sign_sub_print_name</code> was <i>FW-020[0].Page1[0].SignSub[0].PrintName[0]</i> (0.34 conf)<!--100% completed. <a href="">Learn more about distribution of answers.</a>--></li></ul></div></div><div id="sug_screens" style="display:none;padding-left:15px;"><p>We've done our best to group similar variables togther to avoid overwhelming the user.</p><div style="max-height:550px;overflow-y: auto;padding-bottom:25px;"><p>Suggested Screen 0:</p><ul><li><code>f_w_page_p_sf_case_number</code></li><li><code>f_w_page_p_sf_info_city</code></li><li><code>f_w_page_p_sf_info_phone</code></li><li><code>f_w_page_p_sf_info_email</code></li><li><code>f_w_page_p_sf_county</code></li></ul><p>Suggested Screen 1:</p><ul><li><code>f_w_page_p_caption_info_name</code></li><li><code>f_w_page_p_sf_info_ft__1</code></li><li><code>f_w_page_p_sf_info_ft__2</code></li><li><code>f_w_page_p_caption_sf_info__1</code></li><li><code>f_w_page_p_caption_sf_info__2</code></li><li><code>f_w_page_p_caption_info</code></li></ul><p>Suggested Screen 2:</p><ul><li><code>f_w_page_p_info_bar_dc</code></li><li><code>f_w_page_p_info_state_ft</code></li><li><code>f_w_page_p_info_city_ft</code></li><li><code>f_w_page_p_info_branch</code></li></ul><p>Suggested Screen 3:</p><ul><li><code>f_w_page_p_info_street__1</code></li><li><code>f_w_page_p_info_street__2</code></li><li><code>f_w_page_p_title_name__1</code></li><li><code>f_w_page_p_title_name__2</code></li><li><code>f_w_page_p_title_name__3</code></li><li><code>f_w_page_sign_sub_print_name</code></li></ul><p>Suggested Screen 4:</p><ul><li><code>f_w_page_list_l_checkbox__1</code></li><li><code>f_w_page_list_l_checkbox__2</code></li><li><code>f_w_page_list_l_checkbox__3</code></li><li><code>f_w_page_list_l_checkbox__4</code></li></ul><p>Suggested Screen 5:</p><ul><li><code>f_w_page_list_l_text_field</code></li><li><code>f_w_page_list_l_date_field</code></li><li><code>f_w_page_sign_sub_date_field</code></li></ul></div></div>
       
       <hr style="border: 1px solid #fff;border-bottom: 1px solid #555;">
       <h3><a name="weaver" href="#weaver" class="anchor"></a>Create an Interactive Version of this Form:</h3>

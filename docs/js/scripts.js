@@ -540,10 +540,10 @@ function norm(a) {
         html += metric+"</td>"
       }
 
-      html += "</tr><tr><td>Court Applied Label</td>"
-      for (id in ids) {
-        html += "<td><a href='../../list/"+filterbyID(ids[id])["jur"]+"/#"+filterbyID(ids[id])["label"].replaceAll(/[^a-z0-9]+/gi,"_")+"' target='_blank'>"+filterbyID(ids[id])["label"]+"</a></td>"
-      }
+      //html += "</tr><tr><td>Court Applied Label</td>"
+      //for (id in ids) {
+      //  html += "<td><a href='../../list/"+filterbyID(ids[id])["jur"]+"/#"+filterbyID(ids[id])["label"].replaceAll(/[^a-z0-9]+/gi,"_")+"' target='_blank'>"+filterbyID(ids[id])["label"]+"</a></td>"
+      //}
 
       var all_list = []
       for (id in ids) {
