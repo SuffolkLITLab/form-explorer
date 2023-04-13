@@ -211,8 +211,8 @@ function norm(a) {
       var output = ""
       var selected = $("#search_results :selected").map((_, e) => e.value).get();
       for (item in selected) {
-        alert("We're still moving over the new library. 24K forms is a lot. This feature will be available in a few days.");  
-        //window.open("https://suffolklitlab.org/form-explorer/form/"+filterbyID(selected[item])["jur"]+"/"+selected[item]+".html", "_blank");
+        //alert("We're still moving over the new library. 24K forms is a lot. This feature will be available in a few days.");  
+        window.open("https://suffolklitlab.org/form-explorer/form/"+filterbyID(selected[item])["jur"]+"/"+selected[item]+".html", "_blank");
       }
     }
 
@@ -395,7 +395,8 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://courtformsonline.org/js_bin/formsinfo.js" ).done(function( script, textStatus ) {
+      //$.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
 
@@ -418,7 +419,8 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://courtformsonline.org/js_bin/formsinfo.js" ).done(function( script, textStatus ) {
+      //$.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
 
@@ -453,8 +455,8 @@ function norm(a) {
       html += "<tr><td>Title</td>"
       // names
       for (id in ids) {
-        html += "<td><a href='javascript:alert(`We are still moving over the new library. 24K forms is a lot. This feature will be available in a few days.`);'>"+filterbyID(ids[id])["name"]+"</a></td>"
-        //html += "<td><a href='../../form/"+filterbyID(ids[id])["jur"]+"/"+filterbyID(ids[id])["fid"]+".html' target='_blank'>"+filterbyID(ids[id])["name"]+"</a></td>"
+        //html += "<td><a href='javascript:alert(`We are still moving over the new library. 24K forms is a lot. This feature will be available in a few days.`);'>"+filterbyID(ids[id])["name"]+"</a></td>"
+        html += "<td><a href='../../form/"+filterbyID(ids[id])["jur"]+"/"+filterbyID(ids[id])["fid"]+".html' target='_blank'>"+filterbyID(ids[id])["name"]+"</a></td>"
       }
 
       var array = []
