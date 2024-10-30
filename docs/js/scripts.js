@@ -395,7 +395,7 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://courtformsonline.org/js_bin/formsinfo.js" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://suffolklitlab.org/js_bin/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
@@ -419,7 +419,7 @@ function norm(a) {
 
       // Usage
 
-      $.cachedScript( "https://courtformsonline.org/js_bin/formsinfo.js" ).done(function( script, textStatus ) {
+      $.cachedScript( "https://suffolklitlab.org/js_bin/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://suffolklitlab.org/form-explorer/js/formsinfo.js" ).done(function( script, textStatus ) {
       //$.cachedScript( "https://findmycite.org/js/word2vec.js?=2022-08-22" ).done(function( script, textStatus ) {
         console.log( textStatus );
